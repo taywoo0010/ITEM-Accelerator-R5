@@ -33,7 +33,7 @@ class DeckAssemblyTests(unittest.TestCase):
             ('D1.2.8.3', '自建模型实验复盘', ['r5_c09_08', 'r5_c09_09', 'r5_c09_10']),
             ('D1.2.8.4', '小模型训练复盘：样本、规则与可解释性的边界', ['r5_c09_small_models', 'r5_c09_model_selection']),
             ('D1.2.8.5', 'AI 招聘的跨国本地化', ['r5_c09_hiring']),
-            ('D1.2.8.6', '可信 Agent：一套标准，三重验证', ['r5_agent_assurance']),
+            ('D1.2.8.6', '可信 Agent：一套标准，三重保障', ['r5_agent_assurance']),
         )
         document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
         reader = html.fromstring((ROOT / 'docs/reader.html').read_text())
@@ -190,6 +190,8 @@ class DeckAssemblyTests(unittest.TestCase):
         self.assertEqual([button.get('data-trust-step') for button in buttons], ['0', '1', '2', '3'])
         self.assertEqual([panel.get('aria-label') for panel in panels], ['1 / 4', '2 / 4', '3 / 4', '4 / 4'])
         self.assertIn('从哪个真实任务开始？', panels[-1].text_content())
+        metadata = json.loads(document.get_element_by_id('page-data').text)
+        self.assertTrue(next(page for page in metadata['pages'] if page['id'] == 'r5_agent_assurance')['notes'])
         for filename in ('Item_ISS_AI_Native_Workshop_R5.md', 'docs/reader.html'):
             notes = (ROOT / filename).read_text()
             headings = [f'D1.2.8.{n} ' for n in range(1, 7)]

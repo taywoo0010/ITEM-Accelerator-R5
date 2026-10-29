@@ -85,8 +85,6 @@ html[data-theme=night] #r5_agent_assurance .trust-benchmark-marker{background-co
 #r5_agent_assurance .trust-benchmark-heading{flex-wrap:wrap;gap:4px}
 }
 @media(max-width:520px){
-#r5_agent_assurance .title-zone h1{font-size:30px!important}
-#r5_agent_assurance .title-zone h1 .title-note{display:block;margin:7px 0 0;font-size:21px}
 #r5_agent_assurance .lead{font-size:16px!important}
 }
 @media(prefers-reduced-motion:reduce){

@@ -1108,8 +1108,8 @@
     },
     {
       "id": "r5_agent_assurance",
-      "title": "可信 Agent：一套标准，三重验证",
-      "en": "Trustworthy agents: one set of standards, three checks",
+      "title": "可信 Agent：一套标准，三重保障",
+      "en": "Trustworthy agents: one set of standards, three safeguards",
       "summary": "四个横向画面按统一标准、严谨测试、精准知识、可靠验收展开：以脚本与 LLM 对照 Gold Set 自动核对、人工审核的知识基础和第三方交叉评估形成验收证据。测试页展示 PDF A1、A5、A12 参考门槛，评估页标记 K4、K5、A7 核验门槛，均不作为实测结果。",
       "md": "D1.2.8.6",
       "refs": [
@@ -1117,13 +1117,13 @@
       ],
       "chapter": 2,
       "day": 1,
-      "notes": false,
+      "notes": true,
       "case": "c09",
       "index": 62,
       "number": 63,
       "total": 144,
-      "topic": "可信 Agent：一套标准，三重验证",
-      "topic_en": "Trustworthy agents: one set of standards, three checks"
+      "topic": "可信 Agent：一套标准，三重保障",
+      "topic_en": "Trustworthy agents: one set of standards, three safeguards"
     },
     {
       "id": "d33_architecture",

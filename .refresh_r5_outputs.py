@@ -12,7 +12,7 @@ C09_GROUPS = (
     ("D1.2.8.3", "自建模型实验复盘", "Self-built model experiment review", ("r5_c09_08", "r5_c09_09", "r5_c09_10")),
     ("D1.2.8.4", "小模型训练复盘：样本、规则与可解释性的边界", "Small-model training review: limits of samples, rules and explainability", ("r5_c09_small_models", "r5_c09_model_selection")),
     ("D1.2.8.5", "AI 招聘的跨国本地化", "AI recruitment localisation", ("r5_c09_hiring",)),
-    ("D1.2.8.6", "可信 Agent：一套标准，三重验证", "Trustworthy agents: one set of standards, three checks", ("r5_agent_assurance",)),
+    ("D1.2.8.6", "可信 Agent：一套标准，三重保障", "Trustworthy agents: one set of standards, three safeguards", ("r5_agent_assurance",)),
 )
 
 
@@ -103,6 +103,7 @@ def merge_detailed_manifest():
             continue
         if page["id"] == "r5_agent_assurance":
             assurance = copy.deepcopy(page)
+            assurance["notes"] = True
             continue
         if page.get("case") == "c07" or page["id"].startswith("r5_c07_"):
             continue
@@ -293,7 +294,7 @@ MODEL_FAILURE_READER = """
 
 MODEL_FAILURE_OVERVIEW_READER = """
 <h5 id="md-D1-2-8-0">D1.2.8.0 其他踩过的坑：先定义可验收的业务结果</h5>
-<p>当前 2.8 依次复盘知识抽取与生成、WMS Agent 业务本体、自建模型实验、小模型训练与选型、AI 招聘本地化，最后以“可信 Agent：一套标准，三重验证”收束。</p>
+<p>当前 2.8 依次复盘知识抽取与生成、WMS Agent 业务本体、自建模型实验、小模型训练与选型、AI 招聘本地化，最后以“可信 Agent：一套标准，三重保障”收束。</p>
 <p><strong>讨论：</strong>先选一个可验收任务：什么输入、谁负责、什么证据才算完成？</p>
 <p><strong>验收链：</strong>先选一个可验证的小范围问题，补齐来源、权限、样本和分母，明确 Owner、人工接管与停止条件，再把结果回写业务状态后决定是否扩展。</p>
 """
@@ -327,7 +328,7 @@ def append_model_failure_reader_sections(text):
     assurance_body = assurance.group(1) if assurance else (overview_details.group(1) if overview_details else "")
     if not assurance_body:
         raise ValueError("Missing Agent assurance reader notes")
-    assurance_body = re.sub(r'^\s*<h6>可信 Agent：一套标准，三重验证</h6>\s*', '', assurance_body)
+    assurance_body = re.sub(r'^\s*<h6>可信 Agent：一套标准，三重保障</h6>\s*', '', assurance_body)
     testing_marker = '<p><strong>横向画面 2｜自动化测试与人工把关。</strong>'
     if testing_marker in assurance_body:
         testing_start = assurance_body.index(testing_marker)
@@ -340,7 +341,7 @@ def append_model_failure_reader_sections(text):
     closing = '<p><strong>客户讨论：</strong>从哪个真实任务开始？输入和权限是什么、谁负责验收、什么证据算完成、异常时由谁接管？</p>'
     if closing not in assurance_body:
         assurance_body = assurance_body.rstrip() + '\n' + closing
-    assurance_section = '\n<h5 id="md-D1-2-8-6">D1.2.8.6 可信 Agent：一套标准，三重验证</h5>\n' + assurance_body.strip() + '\n'
+    assurance_section = '\n<h5 id="md-D1-2-8-6">D1.2.8.6 可信 Agent：一套标准，三重保障</h5>\n' + assurance_body.strip() + '\n'
     text = re.sub(r'<h5 id="md-D1-2-8-0">.*?(?=<h5 id="md-D1-2-8-1">)', "", text, flags=re.S)
     text = re.sub(
         r'<h5 id="md-D1-2-8-model-(?:experiment|limitations|architecture)">.*?(?=<h3 id="md-D1-3")',
