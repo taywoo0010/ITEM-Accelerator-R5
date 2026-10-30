@@ -17,7 +17,7 @@
       <div style="margin-top:12px;font-size:28px;font-weight:800">${title}</div>
       <div style="font-size:17.5px;color:var(--secondary);margin-top:4px">${desc}</div>`;
     root.innerHTML = `
-      ${chapter('Part 1 · GenUI 核心概念', '从一次对话，到日常应用，再到跨环境发布')}
+      ${chapter('Part 2 · GenUI 核心概念', '从一次对话，到日常应用，再到跨环境发布')}
       <div class="c c1 card" style="position:absolute;left:${col(0)}px;top:200px;width:400px;height:760px;padding:24px">
         ${head('01', 'Dynamic Card', '在 Agent 对话里：一次确认、一张结果表')}
         <div style="margin-top:18px">${miniPhone(UI.agentPage('库存位置查询', `
@@ -137,7 +137,7 @@
     const trait = (text) => `<div style="position:absolute;left:24px;right:24px;bottom:20px;display:flex;align-items:center;gap:8px;font-size:14.5px;color:var(--secondary)">${icon('check', 15, 'var(--success)', 3)}${text}</div>`;
     const lineRows = ['A12-05-1', 'A12-05-2', 'A12-06-1', 'A12-06-2'];
     root.innerHTML = `
-      ${chapter('Part 1 · 持久化积木', 'GenUI 通用三层存储，结构由 Agent 按场景定制', 'GenUI 提供存储，<b style="color:var(--text)">Agent 按场景定制每层结构</b> · 存为 JSON 文档、写入时校验 · 换场景只换声明，不建表')}
+      ${chapter('Part 2 · 持久化积木', 'GenUI 通用三层存储，结构由 Agent 按场景定制', 'GenUI 提供存储，<b style="color:var(--text)">Agent 按场景定制每层结构</b> · 存为 JSON 文档、写入时校验 · 换场景只换声明，不建表')}
       <div class="task" style="position:absolute;left:96px;top:238px;display:flex;align-items:center;gap:12px"><span style="font-size:17px;color:var(--muted)">以巡检任务为例</span><span class="pill primary" style="font-size:19px;padding:8px 18px">${icon('listChecks', 18)} TASK-18651 · Inventory Patrol</span></div>
       <svg class="brk" style="position:absolute;left:0;top:0;overflow:visible" width="1920" height="400"><path d="M960 352 V325 Q960 315 970 315 H1544 Q1554 315 1554 325 V352" stroke="#8b74c9" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
       <div style="position:absolute;left:1257px;top:315px;transform:translate(-50%,-50%)"><div class="brkl" style="display:flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;background:#fff;border:1.5px solid var(--primary-line);font-size:15.5px;color:var(--primary);font-weight:600;white-space:nowrap">${icon('layers', 16)} 同一套文档集合引擎 · 未声明字段拒绝 · 全程审计</div></div>
@@ -235,7 +235,7 @@
         ${body}
       </div>`;
     root.innerHTML = `
-      ${chapter('Part 1 · Web 端', 'Dynamic Page：GenUI 动态构建的 Web 页面', '与 Dynamic Task 同一套 GenUI · 调度台 · 审核队列 · 统计看板 · 查询工具，数据来自 Dynamic View API')}
+      ${chapter('Part 2 · Web 端', 'Dynamic Page：GenUI 动态构建的 Web 页面', '与 Dynamic Task 同一套 GenUI · 调度台 · 审核队列 · 统计看板 · 查询工具，数据来自 Dynamic View API')}
       <div class="win window" style="left:96px;top:228px;width:1090px;height:658px;transform-origin:0 0">
         <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">/custom-apps/pages/inventory-issue-overview</span><span class="pill primary" style="margin-left:auto;font-size:12.5px;padding:2px 10px">统计看板</span></div>
         <div class="web" style="position:relative;width:1090px;height:624px">

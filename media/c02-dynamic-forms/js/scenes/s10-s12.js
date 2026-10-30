@@ -18,14 +18,117 @@
   const phone = (cls, inner) => `<div class="pw ${cls}" style="position:absolute;left:${PHONE.left}px;top:${PHONE.top}px;width:404px;height:794px"><div class="phone" style="position:relative;transform:scale(${PHONE.scale})">${phoneShell(inner)}</div></div>`;
   window.PHONE_HTML = phone;
 
-  Scene('s10-case', { title: '案例总览', tag: '示意画面 · 基于本地 WMS 真实定义', tagKind: 'sim' }, ({ root, S, show, pop, stagger, fadeIn }) => {
+  // The moment the narration reaches `phrase` inside a segment (by character position).
+  const sayIn = (segs) => (seg, phrase, delta = 0) => {
+    const g = segs[seg];
+    if (!g) return delta;
+    return g.start + (g.end - g.start) * (Math.max(0, g.text.indexOf(phrase)) / g.text.length) + delta;
+  };
+
+  // Background for viewers outside warehousing: where the warehouse sits, what Item WMS keeps, and why
+  // floor-level requests pile up behind the dev backlog. The damage note it ends on opens the case.
+  Scene('s10-context', { title: '背景：Item 体系里的仓库', tag: '业务背景示意', tagKind: '' }, ({ root, segs, S, E, show, pop, stagger, fadeIn, anim, cls }) => {
+    const say = sayIn(segs);
+    const stages = [
+      ['inbox', '收货', 'Receive'],
+      ['download', '上架', 'Put Away'],
+      ['warehouse', '在库保管', 'Storage'],
+      ['listChecks', '拣货', 'Pick'],
+      ['truck', '发运', 'Ship'],
+    ];
+    const notes = [
+      ['这个客户收货，要多拍一张封条照片', '客户 A'],
+      ['退货先质检，再决定放到哪', '退货组'],
+      ['外箱破损，要拍照上报，别再被拣走', '巡检员'],
+      ['电池类订单，出库前要多复核一次', '客户 B'],
+      ['大客户发货前，要再点一次数', '发运主管'],
+    ];
+    const W = 300, GAP = 57, X0 = 96;
+    const cx = (index) => X0 + index * (W + GAP);
+    root.innerHTML = `
+      ${chapter('背景 · Item 体系里的仓库', '仓库：货物流转的枢纽，也是问题冒出来的现场')}
+      <div class="cx-std pill success">${icon('checkCircle', 17)} 标准功能 · 主流程</div>
+      ${stages.map(([ic, zh, en], index) => `
+        <div class="cx-stage card s${index}" style="left:${cx(index)}px;width:${W}px">
+          <div class="cx-ic">${icon(ic, 34)}</div>
+          <div><div class="cx-zh">${zh}</div><div class="cx-en">${en}</div></div>
+        </div>`).join('')}
+      ${[0, 1, 2, 3].map((index) => `<div class="cx-arrow a${index}" style="left:${cx(index) + W + 8}px">${icon('chevronRight', 40, 'rgba(85,53,160,.5)', 2.6)}</div>`).join('')}
+      <div class="cx-track"><i></i></div>
+      <div class="cx-goods">${icon('box', 26, '#fff')}</div>
+      <div class="cx-wms card">
+        <div class="cx-wms-h">${UI.logo(40)}<b>Item WMS</b><span>记录每一件货</span></div>
+        ${[['pin', '在哪里', '库位 · LPN'], ['tag', '什么状态', '货况 · 可用 / 冻结'], ['history', '谁动过它', '每一次移动都有流水']].map(([ic, k, v]) => `
+          <div class="cx-fact">${icon(ic, 24, 'var(--primary)')}<div><b>${k}</b><span>${v}</span></div></div>`).join('')}
+      </div>
+      ${notes.map(([quote, who], index) => `
+        <div class="cx-note n${index}${index === 2 ? ' hot' : ''}" style="left:${cx(index)}px;width:${W}px">
+          <div class="cx-q">“${quote}”</div>
+          <div class="cx-who">${icon('user', 16)} ${who}<span class="cx-wait">${icon('clock', 14)} 待排期</span></div>
+        </div>`).join('')}`;
+
+    // ctx-1: the stages light up as they are named; one carton travels the flow; then what WMS records.
+    ['收货', '上架', '在库', '拣货', '发运'].forEach((phrase, index) => {
+      const t = Math.max(S('ctx-1', 0.3) + index * 0.35, say('ctx-1', phrase, -0.25));
+      show(`.cx-stage.s${index}`, t);
+      if (index) fadeIn(`.cx-arrow.a${index - 1}`, t - 0.15);
+    });
+    fadeIn('.cx-track', say('ctx-1', '收货', -0.2));
+    anim('.cx-track i', say('ctx-1', '收货'), say('ctx-1', '发运') - say('ctx-1', '收货') + 0.6, { clip: [0, 100] }, 'linear');
+    anim('.cx-goods', say('ctx-1', '收货', -0.2), 0.3, { opacity: [0, 1] });
+    anim('.cx-goods', say('ctx-1', '收货'), say('ctx-1', '发运') - say('ctx-1', '收货') + 0.6, { x: [0, 4 * (W + GAP)] }, 'inOut');
+    show('.cx-wms', say('ctx-1', '货在哪里', -0.4));
+    stagger('.cx-fact', say('ctx-1', '货在哪里', -0.1), 0.7, 'pop');
+    // ctx-2: the floor. The WMS card and carton make way; requests pop up under each stage.
+    anim('.cx-wms', S('ctx-2', -0.2), 0.4, { opacity: [1, 0], y: [0, 20] });
+    anim('.cx-goods, .cx-track', S('ctx-2', -0.2), 0.4, { opacity: [1, 0] });
+    const firstNote = say('ctx-2', '问题随时', -0.4);
+    [2, 0, 3, 1, 4].forEach((index, order) => pop(`.cx-note.n${index}`, firstNote + order * Math.max(0.45, (say('ctx-2', '各不相同') - firstNote) / 5)));
+    // ctx-3: the standard flow is covered; everything else waits in line.
+    pop('.cx-std', say('ctx-3', '标准功能', -0.2));
+    stagger('.cx-stage', say('ctx-3', '标准功能'), 0.08, 'fadeIn');
+    cls('.cx-stage', 'ok', say('ctx-3', '标准功能'));
+    stagger('.cx-wait', say('ctx-3', '排队', -0.2), 0.12, 'pop');
+    cls('.cx-note', 'waiting', say('ctx-3', '排队'));
+    // The damage note is the case we are about to open.
+    cls('.cx-note.hot', 'lit', E('ctx-3', -0.4));
+    anim('.cx-note.hot', E('ctx-3', -0.4), 0.5, { scale: [1, 1.08] }, 'back');
+  });
+
+  // Part 1 opens on one carton: what the floor sees, what the system still believes, and where that leads.
+  // Only then the three apps that close the gap.
+  Scene('s10-case', { title: '用例：库存巡检与破损处理', tag: '示意画面 · 基于本地 WMS 真实定义', tagKind: 'sim' }, ({ root, segs, S, E, show, pop, stagger, fadeIn, anim, cls }) => {
+    const say = sayIn(segs);
     const acts = [
       ['phone', 'Mobile · Dynamic Task', 'Inventory Patrol', 'John Smith · 巡检员', '巡检中发现破损，拍照上报 Inventory Issue', 'Dynamic Task → Save as Task Type'],
-      ['monitor', 'Web · Dynamic Page', 'Damaged Inventory Relocation', 'Quinn Chen · 主管', '集中审核破损记录，派出 Move Damage 任务', 'Agent 起草 → 发布'],
+      ['monitor', 'Web · Dynamic Page', 'Damaged Inventory Relocation', 'Emily Carter · 主管', '集中审核破损记录，派出 Move Damage 任务', 'Agent 起草 → 发布'],
       ['phone', 'Mobile · Dynamic Task Type', 'Move Damage', 'Maria Garcia · 搬运员', 'Take → Place，按上架策略放入 DMG 坏货区', 'Composable Move Inventory'],
     ];
+    const chain = [['listChecks', '明天被拣走'], ['truck', '打包发运'], ['users', '终端客户']];
     root.innerHTML = `
-      ${chapter('Part 2 · 实际案例', '库存巡检 → 破损上报 → 集中处理 → 搬到坏货区', 'Valley View 仓 · 客户 Northbridge Service Parts · NB-BAT57-3C 57Wh 笔记本电池')}
+      <div class="chapter"><div class="eyebrow">Part 1 · 用例</div>
+        <div class="headline cs-hl"><span class="hA">一箱破损的电池，明天可能就发到客户手里</span><span class="hB">库存巡检 → 破损上报 → 集中处理 → 搬到坏货区</span></div>
+        <div class="subline">Valley View 仓 · 客户 Northbridge Service Parts · NB-BAT57-3C 57Wh 笔记本电池</div></div>
+      <div class="cs-a">
+        <div class="cs-floor card">
+          <div class="cs-h">${icon('user', 22)} 现场 · 巡检员看到的</div>
+          <div class="cs-box">${damagedBoxSvg(330)}<span class="cs-crack">外箱破损</span></div>
+          <div class="cs-facts">
+            <div>${icon('pin', 18)} A12-05-1</div><div>${icon('tag', 18)} CLP-1005744</div><div>${icon('box', 18)} NB-BAT57-3C · 12 EA</div>
+          </div>
+        </div>
+        <div class="cs-ne">≠</div>
+        <div class="cs-sys card">
+          <div class="cs-h">${icon('monitor', 22)} 系统里 · Item WMS 记录的</div>
+          <div class="cs-row">
+            <div><span>Item</span><b>NB-BAT57-3C</b></div><div><span>LPN</span><b>CLP-1005744</b></div><div><span>Location</span><b>A12-05-1</b></div><div><span>Qty</span><b>12 EA</b></div>
+            <div><span>Condition</span><b class="pill success cs-good">Good</b></div><div><span>Pickable</span><b class="pill success cs-pick">Yes</b></div>
+          </div>
+          <div class="cs-if">${icon('alert', 20)} 如果没人处理</div>
+          <div class="cs-chain">${chain.map(([ic, label], index) => `<div class="cs-hop h${index}">${icon(ic, 26)}<span>${label}</span></div>${index < chain.length - 1 ? `<div class="cs-dash d${index}"></div>` : ''}`).join('')}</div>
+          <div class="cs-risk"><span class="pill danger r0">${icon('message', 16)} 客诉 · 退货</span><span class="pill danger r1">${icon('zap', 16)} 锂电池安全隐患</span></div>
+        </div>
+      </div>
       ${acts.map(([ic, surface, name, who, what, how], i) => `
         <div class="act card" style="position:absolute;left:${96 + i * 600}px;top:330px;width:528px;height:420px;padding:30px">
           <div style="display:flex;align-items:center;gap:14px"><div style="width:60px;height:60px;border-radius:16px;background:var(--primary);color:#fff;display:grid;place-items:center">${icon(ic, 32)}</div><div><div style="font-size:16px;font-weight:700;letter-spacing:1.5px;color:var(--primary)">0${i + 1} · ${surface}</div><div style="font-size:27px;font-weight:800;margin-top:2px">${name}</div></div></div>
@@ -33,9 +136,40 @@
           <div style="margin-top:18px;font-size:21px;line-height:1.6">${what}</div>
           <div style="position:absolute;left:30px;bottom:28px" class="pill primary">${how}</div>
         </div>`).join('')}
+      <div class="need pill primary" style="position:absolute;left:96px;top:262px;font-size:18px;padding:6px 16px">${icon('blocks', 18)} 需要 3 个应用：2 个手机任务 + 1 个 Web 工作台</div>
       ${[0, 1].map((i) => `<div class="aa" style="position:absolute;left:${626 + i * 600}px;top:510px">${icon('chevronRight', 60, 'rgba(85,53,160,.55)', 2.6)}</div>`).join('')}`;
-    stagger('.act', S('case-1', 1.0), 2.2, 'show');
-    stagger('.aa', S('case-1', 2.4), 2.2, 'fadeIn');
+
+    // case-1: the carton on the shelf, as the patroller sees it.
+    show('.cs-floor', S('case-1', -0.3));
+    pop('.cs-box', S('case-1', 0.2));
+    pop('.cs-crack', say('case-1', '外箱破了', -0.1));
+    stagger('.cs-facts > div', say('case-1', '笔记本锂电池', -0.3), 0.25, 'fadeIn');
+    // case-2: the system still believes it is good stock, and the order flow would carry it to a customer.
+    show('.cs-sys', say('case-2', '可在系统里', -0.3));
+    stagger('.cs-row > div', say('case-2', '可在系统里'), 0.12, 'fadeIn');
+    pop('.cs-ne', say('case-2', '好货', -0.2));
+    cls('.cs-good, .cs-pick', 'flag', say('case-2', '好货'));
+    show('.cs-if', say('case-2', '如果没人处理', -0.2));
+    ['拣走', '发到', '终端客户'].forEach((phrase, index) => {
+      const t = say('case-2', phrase, -0.25);
+      pop(`.cs-hop.h${index}`, t);
+      if (index) anim(`.cs-dash.d${index - 1}`, t - 0.35, 0.35, { opacity: [0, 1], clip: [0, 100] });
+    });
+    pop('.cs-risk .r0', say('case-2', '客诉', -0.2));
+    pop('.cs-risk .r1', say('case-2', '安全隐患', -0.3));
+    // case-3: the story gives way to the three apps that close the gap, each landing with its name.
+    const tSwap = S('case-3', -0.3);
+    anim('.cs-a', tSwap, 0.45, { opacity: [1, 0], y: [0, -16] });
+    anim('.cs-hl .hA', tSwap, 0.4, { opacity: [1, 0] });
+    anim('.cs-hl .hB', tSwap + 0.2, 0.45, { opacity: [0, 1], y: [10, 0] });
+    const actCards = root.querySelectorAll('.act'), arrows = root.querySelectorAll('.aa');
+    // The first card lands with "三个应用" so the stage is never empty after the swap.
+    [['三个应用', -0.1], ['派工工作台', -0.3], ['Move Damage', -0.3]].forEach(([phrase, delta], index) => {
+      const t = say('case-3', phrase, delta);
+      show(actCards[index], t);
+      if (index) fadeIn(arrows[index - 1], t - 0.2);
+    });
+    fadeIn('.need', S('case-3', 0.3));
   });
 
   Scene('s11-patrol-plan', { title: '构建巡检任务', tag: '示意画面 · 基于本地 WMS 真实定义', tagKind: 'sim' }, ({ root, S, E, show, pop, stagger, anim, fadeIn, slideIn, type, text, cls, hide, pointer, fn }) => {

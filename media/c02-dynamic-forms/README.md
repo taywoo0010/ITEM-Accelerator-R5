@@ -4,9 +4,9 @@ D1.2.2（ITEM WMS Dynamic Form）第一页视频区嵌入的播放器。`assets/
 
 ## 这是什么
 
-- 不是录屏：HTML 场景动画（画面状态是时间 t 的纯函数，可任意拖动）＋ TTS 中文旁白＋烧录字幕，约 11:37，19 个场景。
+- 不是录屏：HTML 场景动画（画面状态是时间 t 的纯函数，可任意拖动）＋ TTS 中文旁白＋烧录字幕，约 13:12，22 个场景（Part 1：仓库背景 → 破损用例 → 与传统交付的工时/周期/效果对比 → 三个应用的构建与使用；Part 2：技术实现；结尾回扣对比）。
 - 界面按真实 wms-web、wms-mobile 和 Agent Shell 的样式重画。每个场景右上角标注性质：**架构示意 / 真实机制**，或 **示意画面 · 基于本地 WMS 真实定义**（Move Damage = `TDEF-151` v1，工作台 = `PDEF-101`）。
-- 人物和单据号是示意数据（John Smith、Quinn Chen、Maria Garcia；ISSUE-106/107、TASK-18651/18652、ADJ-512）；客户、物料和库位使用本地环境主数据（Northbridge Service Parts、NB-BAT57-3C、A12-05-1、DMG-01）。
+- 人物和单据号是示意数据（巡检员 John Smith、主管 Emily Carter、搬运员 Maria Garcia；ISSUE-106/107、TASK-18651/18652、ADJ-512）；客户、物料和库位使用本地环境主数据（Northbridge Service Parts、NB-BAT57-3C、A12-05-1、DMG-01）。
 
 ## 操作
 

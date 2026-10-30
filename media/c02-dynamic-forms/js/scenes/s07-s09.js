@@ -38,7 +38,7 @@
     const api = (text) => `<div class="bapi mono" style="height:40px;display:flex;align-items:center;padding:0 12px;border-radius:10px;background:#fff;border:1px solid var(--line);font-size:13px;color:#3b2a72;white-space:nowrap">${text}</div>`;
     const consumer = (ic, title, sub) => `<div class="bcons card" style="padding:12px 14px;display:flex;align-items:center;gap:10px">${icon(ic, 20, 'var(--primary)')}<div><div style="font-size:16px;font-weight:700">${title}</div><div style="font-size:13.5px;color:var(--muted)">${sub}</div></div></div>`;
     root.innerHTML = `
-      ${chapter('Part 1 · Dynamic View API', 'Agent 按场景生成只读 View API，WMS 在 Wasm 沙箱里受控执行')}
+      ${chapter('Part 2 · Dynamic View API', 'Agent 按场景生成只读 View API，WMS 在 Wasm 沙箱里受控执行')}
       <div class="codebox cb" style="left:96px;top:240px;width:880px;height:600px;font-size:14.5px;white-space:normal">
         <div class="code-h">${icon('code', 15)} views.ts · module 25c4a743…ee62d <span style="margin-left:auto">${icon('sparkles', 14, '#c4a7ff')} written by Agent</span></div>
         ${code.map((line) => `<div class="cl">${hl(line) || ' '}</div>`).join('')}
@@ -179,7 +179,7 @@
       </div>`;
     const chain = ['Requested', 'In Progress', 'Closed'];
     root.innerHTML = `
-      ${chapter('Part 1 · Custom Object', '需要长期保存的客户数据，用 Custom Object', '以仓库常见的增值服务（VAS）为例：单头 · VAS 指令 · 完成记录')}
+      ${chapter('Part 2 · Custom Object', '需要长期保存的客户数据，用 Custom Object', '以仓库常见的增值服务（VAS）为例：单头 · VAS 指令 · 完成记录')}
       <div class="ow window" style="left:96px;top:228px;width:900px;height:658px">
         <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">/custom-objects/ODEF-3/VAS-12</span></div>
         <div class="web" style="position:relative;width:900px;height:624px">
@@ -189,7 +189,7 @@
               <div class="title" style="margin:0;font-size:19px">Retail Prep · VAS-12</div>
               <span class="ost" style="margin-left:auto">${status('In Progress')}</span><span class="ost" style="color:var(--primary);font-weight:600;font-size:13.5px">Close</span>
             </div>
-            ${ocard('ohdr', 'Details', '', 'Header', `<div class="ocd-b" style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:12px">${[['Customer', 'Northbridge Service Parts'], ['Outbound Order', 'OB-2318'], ['Due Date', '10/30/2026'], ['Requested By', 'Quinn Chen']].map(([l, v]) => `<div><div style="font-size:11.5px;color:var(--muted)">${l}</div><div style="font-size:13.5px;font-weight:500;white-space:nowrap">${v}</div></div>`).join('')}</div>`)}
+            ${ocard('ohdr', 'Details', '', 'Header', `<div class="ocd-b" style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:12px">${[['Customer', 'Northbridge Service Parts'], ['Outbound Order', 'OB-2318'], ['Due Date', '10/30/2026'], ['Requested By', 'Emily Carter']].map(([l, v]) => `<div><div style="font-size:11.5px;color:var(--muted)">${l}</div><div style="font-size:13.5px;font-weight:500;white-space:nowrap">${v}</div></div>`).join('')}</div>`)}
             ${ocard('olin', 'VAS Instructions', '2 of 4 closed', 'Lines', `<table><tr><th>Line</th><th>Instruction</th><th>Item</th><th>Qty</th><th>Status</th></tr>${lines.map(([no, what, item, qty, st]) => `<tr class="olr"><td>${no}</td><td>${what}</td><td>${item}</td><td>${qty}</td><td>${status(st)}</td></tr>`).join('')}</table>`)}
             ${ocard('orec', 'Completion Records', '3 records', 'Records', `<table><tr><th>Recorded At</th><th>Line</th><th>Done Qty</th><th>Photo</th><th>By</th></tr>${records.map(([at, no, qty, by]) => `<tr class="orr"><td>${at}</td><td>${no}</td><td>${qty}</td><td><span class="oph">${icon('image', 14, 'var(--muted)')}</span></td><td>${by}</td></tr>`).join('')}</table>`)}
             ${ocard('otsk', 'Related Tasks', '', '3 个任务', `<div class="ocd-b" style="display:flex;gap:10px">${tasks.map(([title, id, st]) => `<div class="otk"><span style="color:var(--primary);font-weight:500">${title}</span><span class="mono" style="font-size:12px;color:var(--muted)">${id}</span>${status(st)}</div>`).join('')}</div>`)}
@@ -282,7 +282,7 @@ ${K('transitions')}: [ Requested → In Progress → Closed, … ],</div>
       ['alert', '坏货处理 Move Damage', '取出破损库存（整托或部分）→ 放到坏货区', 1344, 520],
     ];
     root.innerHTML = `
-      ${chapter('Part 1 · Composable Step', '把反复出现的常用模块，抽象成可组合的步骤', '随系统演进持续发现、沉淀，供 Agent 和用户按需选用 · Move Inventory 是其中一个典型')}
+      ${chapter('Part 2 · Composable Step', '把反复出现的常用模块，抽象成可组合的步骤', '随系统演进持续发现、沉淀，供 Agent 和用户按需选用 · Move Inventory 是其中一个典型')}
       <div class="lib" style="position:absolute;left:96px;top:232px;width:1728px;display:flex;align-items:center;gap:12px">
         <span class="lib-h">${icon('layers', 20, 'var(--primary)')} Composable Step 库</span>
         <span class="lib-step on">${icon('box', 16)} Move Inventory <em>本页示例</em></span>
@@ -391,7 +391,7 @@ ${K('transitions')}: [ Requested → In Progress → Closed, … ],</div>
     const X0 = 266, W = 350, STEP = 398;
     const cx = (k) => X0 + k * STEP + W / 2;
     root.innerHTML = `
-      ${chapter('Part 1 · 开发、测试与发布', '生成成功 ≠ 上线：发布始终是人的决定')}
+      ${chapter('Part 2 · 开发、测试与发布', '生成成功 ≠ 上线：发布始终是人的决定')}
       ${lanes.map(([lane, ic, name, top, steps]) => `
         <div class="rl-band ${lane}" style="top:${top}px">
           <div class="rl-env">${icon(ic, 22, 'var(--primary)')}<b>${name}</b></div>
