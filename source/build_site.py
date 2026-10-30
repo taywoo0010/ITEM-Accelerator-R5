@@ -92,7 +92,7 @@ def build(kind):
         if not slide or slide.select('script'):raise ValueError('Invalid native slide: '+p['id'])
         for frame in slide.select('iframe'):
             url=urlsplit(frame.get('src',''))
-            if (url.scheme!='https' or url.netloc!='www.youtube-nocookie.com'
+            if (url.scheme!='https' or url.netloc not in {'www.youtube.com','www.youtube-nocookie.com'}
                     or not re.fullmatch(r'/embed/[A-Za-z0-9_-]{11}',url.path)):
                 raise ValueError('Invalid native iframe: '+p['id'])
         for link in slide.select('a[data-trust-attachment]'):
