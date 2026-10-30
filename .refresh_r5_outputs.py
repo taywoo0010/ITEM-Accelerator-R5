@@ -323,6 +323,9 @@ SMALL_MODEL_READER = """
 
 def append_model_failure_reader_sections(text):
     """Keep the new slide notes addressable without colliding with legacy D1.2.8.x IDs."""
+    # The deck now carries nine cases again, so this eight-case migration no longer applies.
+    if "md-D1-2-9-" in text:
+        return text
     overview_details = re.search(r'<h5 id="md-D1-2-8-0">.*?(<h6\b.*?)(?=<h5 id="md-D1-2-8-1">)', text, flags=re.S)
     assurance = re.search(r'<h5 id="md-D1-2-8-6">.*?</h5>(.*?)(?=<h5\b|<h3 id="md-D1-3")', text, flags=re.S)
     assurance_body = assurance.group(1) if assurance else (overview_details.group(1) if overview_details else "")
