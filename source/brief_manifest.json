@@ -22,8 +22,8 @@
     {
       "id": 2,
       "label": "D1.2",
-      "zh": "八案例与组织实践",
-      "en": "Eight cases and operating change",
+      "zh": "九案例与组织实践",
+      "en": "Nine cases and operating change",
       "day": 1
     },
     {
@@ -125,8 +125,8 @@
     },
     {
       "id": "b5_02_day1",
-      "title": "Day 1：八案例、平台演进与 ISS 对标",
-      "en": "Day 1: Eight cases, platform evolution and ISS benchmarking",
+      "title": "Day 1：九案例、平台演进与 ISS 对标",
+      "en": "Day 1: Nine cases, platform evolution and ISS benchmarking",
       "md": "D1.2",
       "refs": [
         "D1.2"

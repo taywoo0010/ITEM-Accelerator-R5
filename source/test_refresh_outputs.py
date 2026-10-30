@@ -28,12 +28,12 @@ class DeckAssemblyTests(unittest.TestCase):
 
     def test_failure_topics_share_section_numbers_and_reader_targets(self):
         groups = (
-            ('D1.2.8.1', '知识抽取与知识生成', ['r5_c09_01', 'r5_c09_02', 'r5_c09_02b']),
-            ('D1.2.8.2', 'WMS Agent：业务本体连接规则与动作', ['r5_c09_wms']),
-            ('D1.2.8.3', '自建模型实验复盘', ['r5_c09_08', 'r5_c09_09', 'r5_c09_10']),
-            ('D1.2.8.4', '小模型训练复盘：样本、规则与可解释性的边界', ['r5_c09_small_models', 'r5_c09_model_selection']),
-            ('D1.2.8.5', 'AI 招聘的跨国本地化', ['r5_c09_hiring']),
-            ('D1.2.8.6', '可信 Agent：一套标准，三重保障', ['r5_agent_assurance']),
+            ('D1.2.9.1', '知识抽取与知识生成', ['r5_c09_01', 'r5_c09_02', 'r5_c09_02b']),
+            ('D1.2.9.2', 'WMS Agent：业务本体连接规则与动作', ['r5_c09_wms']),
+            ('D1.2.9.3', '自建模型实验复盘', ['r5_c09_08', 'r5_c09_09', 'r5_c09_10']),
+            ('D1.2.9.4', '小模型训练复盘：样本、规则与可解释性的边界', ['r5_c09_small_models', 'r5_c09_model_selection']),
+            ('D1.2.9.5', 'AI 招聘的跨国本地化', ['r5_c09_hiring']),
+            ('D1.2.9.6', '可信 Agent：一套标准，三重保障', ['r5_agent_assurance']),
         )
         document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
         reader = html.fromstring((ROOT / 'docs/reader.html').read_text())
@@ -83,7 +83,7 @@ class DeckAssemblyTests(unittest.TestCase):
                 for button in scene.xpath('./div[@class="scene-tools"]//button'):
                     self.assertIsNotNone(document.get_element_by_id('md-' + button.get('data-md').replace('.', '-')))
         hiring = document.get_element_by_id('r5_c09_hiring')
-        self.assertEqual(hiring.get('data-md'), 'D1.2.8.5')
+        self.assertEqual(hiring.get('data-md'), 'D1.2.9.5')
         self.assertTrue(hiring.xpath('.//img')[0].get('src').startswith('data:image/png;base64,'))
 
     def test_new_failure_pages_localize_all_visible_chinese_content(self):
@@ -139,7 +139,7 @@ class DeckAssemblyTests(unittest.TestCase):
         self.assertEqual(scene.getprevious().get('id'), 'r5_c09_hiring')
         self.assertEqual(scene.getnext().get('data-md'), 'D1.3.1')
         self.assertEqual(len(scene.xpath('.//*[@data-trust-step]')), 4)
-        self.assertEqual(scene.get('data-md'), 'D1.2.8.6')
+        self.assertEqual(scene.get('data-md'), 'D1.2.9.6')
         link = scene.xpath('.//a[@data-trust-attachment]')[0].get('href')
         self.assertTrue((ROOT / link).is_file())
         video = scene.xpath('.//video[@data-trust-video]')[0]
@@ -147,11 +147,11 @@ class DeckAssemblyTests(unittest.TestCase):
             self.assertTrue((ROOT / 'media/attachments' / video.get(attr)).is_file())
         for filename in ('assurance.js', 'workshop.js'):
             self.assertIn((ROOT / 'assets' / filename).read_text().strip(), text)
-        self.assertEqual(len(document.xpath('//*[@id="md-D1-2-8-0"]')), 1)
+        self.assertEqual(len(document.xpath('//*[@id="md-D1-2-9-0"]')), 1)
         reader = html.fromstring((ROOT / 'docs/reader.html').read_text())
         self.assertIn('Evaluation Agent', reader.text_content())
         self.assertIn('ItemGPT', reader.text_content())
-        self.assertEqual(len(document.xpath('//section[@class="scene"]')), 140)
+        self.assertEqual(len(document.xpath('//section[@class="scene"]')), 148)
 
     def test_small_model_review_keeps_both_pages_and_all_examples(self):
         document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
@@ -164,7 +164,7 @@ class DeckAssemblyTests(unittest.TestCase):
         overview = document.get_element_by_id('r5_c09_00')
         self.assertEqual(len(overview.xpath('.//*[@class="case-item"]')), 6)
         for scene in (cases, selection):
-            self.assertEqual(scene.get('data-md'), 'D1.2.8.4')
+            self.assertEqual(scene.get('data-md'), 'D1.2.9.4')
             self.assertIn(f'#{scene.get("id")} .small-model-page', document.get_element_by_id('model-failure-css').text)
 
     def test_reader_refresh_preserves_assurance_and_is_repeatable(self):
@@ -176,7 +176,7 @@ class DeckAssemblyTests(unittest.TestCase):
 
     def test_failure_chapter_builds_toward_customer_acceptance(self):
         document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
-        scenes = document.xpath('//section[@class="scene"][starts-with(@data-md, "D1.2.8.")]')
+        scenes = document.xpath('//section[@class="scene"][starts-with(@data-md, "D1.2.9.")]')
         refs = [scene.get('data-md') for scene in scenes]
         self.assertEqual(refs, sorted(refs))
         overview = document.get_element_by_id('r5_c09_00')
@@ -195,7 +195,7 @@ class DeckAssemblyTests(unittest.TestCase):
         self.assertTrue(next(page for page in metadata['pages'] if page['id'] == 'r5_agent_assurance')['notes'])
         for filename in ('Item_ISS_AI_Native_Workshop_R5.md', 'docs/reader.html'):
             notes = (ROOT / filename).read_text()
-            headings = [f'D1.2.8.{n} ' for n in range(1, 7)]
+            headings = [f'D1.2.9.{n} ' for n in range(1, 7)]
             positions = [notes.index(heading) for heading in headings]
             self.assertEqual(positions, sorted(positions))
             self.assertLess(notes.index('横向画面 2｜人工审核'), notes.index('横向画面 3｜自动化测试'))
@@ -258,7 +258,7 @@ class DeckAssemblyTests(unittest.TestCase):
                         self.assertIn(button.get("data-md"), [page["reader_md"]] if page.get("reader_md") else page["refs"])
                 if kind == "detailed":
                     self.assertEqual(document.get_element_by_id("r5_c06_07").getnext().get("id"), "r5_c08_01")
-                    self.assertEqual(document.get_element_by_id("r5_c08_01").get("data-md"), "D1.2.7.1")
+                    self.assertEqual(document.get_element_by_id("r5_c08_01").get("data-md"), "D1.2.8.1")
                     self.assertIn("其他踩过的坑：", document.get_element_by_id("r5_c09_00").text_content())
 
     def test_rebuild_removes_orphaned_tails_and_is_repeatable(self):
