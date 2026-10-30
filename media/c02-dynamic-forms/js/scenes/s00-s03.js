@@ -1,4 +1,4 @@
-// s00 title · s01 pain · s02 ontology · s03 permission
+// s00 title · s01 old vs new · s02 ontology · s03 permission
 (() => {
   const { icon, logo, chapter } = UI;
 
@@ -10,133 +10,121 @@
         <div class="t-brand" style="margin-top:20px;font-size:34px;font-weight:600;color:var(--strong)">Item WMS</div>
         <div class="t-head" style="margin-top:26px;font-size:76px;font-weight:800;color:var(--strong);letter-spacing:2px">动态表单 <span style="color:var(--primary)">Dynamic Forms</span></div>
         <div class="t-sub" style="margin-top:20px;font-size:32px;color:var(--secondary)">懂 WMS 的 Agent，把现场需求变成可发布的业务应用</div>
-        <div class="t-meta" style="margin-top:34px;font-size:20px;color:var(--muted);letter-spacing:1px">ITEM × COO AI Team · R5 · MD §D1.2.2 · 02 WMS 动态表单</div>
       </div>
-      <div class="t-legend" style="position:absolute;left:0;right:0;top:790px;display:flex;justify-content:center;gap:18px">
+      <div class="t-legend" style="position:absolute;left:0;right:0;top:720px;display:flex;justify-content:center;gap:18px">
         <span class="chip"><span class="tag-dot real"></span>真实定义 / 真实数据</span>
-        <span class="chip"><span class="tag-dot sim"></span>示意画面（基于本地 WMS 真实定义）</span>
+        <span class="chip"><span class="tag-dot sim"></span>示意画面</span>
       </div>`;
     pop('.t-logo', 0.3, 0.7);
     show('.t-brand', 0.6);
     show('.t-head', 0.9, 0.6, 26);
     show('.t-sub', 1.6);
-    fadeIn('.t-meta', 2.4);
     stagger('.t-legend .chip', E('title-1', -3), 0.25);
   });
 
-  Scene('s01-pain', { title: '从层层转述到直接对话' }, ({ root, segs, anim, show, fadeIn, pop, stagger, cls }) => {
-    // Place a beat at a fraction of a narration segment.
-    const P = (segId, fraction) => (segs[segId] ? segs[segId].start + fraction * (segs[segId].end - segs[segId].start) : 0);
-    const chain = [
-      ['warehouse', '现场', '提出需求'],
-      ['users', '支持 / 实施', '收集、转述'],
-      ['file', '产品经理', '整理需求文档'],
-      ['code', '开发', '排期开发'],
-      ['flask', '测试', '测试验证'],
-      ['rocket', '上线', '发布上线'],
+  // Part 2 divider (no narration): s17 ends on "背后的几块基石，下面展开来看". A progress rail marks Part 1 done and
+  // lights Part 2, the agenda lists the cornerstones in the order Part 2 covers them, and the first one (Item
+  // Ontology) is singled out to hand over to s02.
+  Scene('s19-part2', { title: 'Part 2 · 技术实现' }, ({ root, D, show, pop, fadeIn, stagger, anim, cls }) => {
+    const stones = [
+      ['brain', 'Item Ontology', '懂 WMS'],
+      ['shield', '权限模型', '代表用户办事'],
+      ['layers', 'GenUI 核心概念', 'Card · Task · Type'],
+      ['database', '三层存储', '不建表'],
+      ['code', 'Dynamic View API', '只读 · Wasm 沙箱'],
+      ['box', 'Custom Object', '长期客户数据'],
+      ['puzzle', 'Composable Step', 'Move Inventory'],
+      ['rocket', '开发与发布', '人来拍板'],
     ];
-    // What each hand-off passes on (illustrative): the request as that role words it, and which of the three
-    // context tags the narration names survive. A tag is lost at hop `lostAt` and stays lost downstream.
-    const quotes = ['破损要拍照留证', '破损要拍照留证', '破损拍照登记', '破损登记页面', '破损登记页面', '破损登记页面'];
-    const contexts = [['背景', 2], ['痛点', 3], ['优先级', 1]];
-    const tags = (hop = 0) => `<div class="pn-tags">${contexts.map(([label, lostAt]) => `
-      <span class="pn-tag" data-lost-at="${lostAt <= hop ? lostAt : ''}">${label}<i class="pn-wash"></i></span>`).join('')}</div>`;
-    const CARD_W = 236, STEP = 284, LEFT = 132;
-    const centerX = (index) => LEFT + index * STEP + CARD_W / 2;
-    const card = (cls, x, y, w, ic, name, desc, no = '', extra = '') => `
-      <div class="card pn-card ${cls}" style="left:${x}px;top:${y}px;width:${w}px">
-        <div class="pn-head">${icon(ic, 24)}${no ? `<span class="pn-no">${no}</span>` : ''}</div>
-        <div class="pn-name">${name}</div>
-        <div class="pn-desc">${desc}</div>
-        ${extra}
-      </div>`;
-    // Vertical layout: chain cards, the hand-off notes under them, the rework loop, then the after section.
-    const NOTE_Y = 436, LOOP_TOP = 530, LOOP_Y = 578, AFTER = 656;
-    // Iteration cycle: four stops on a circle, clockwise from the top.
-    const CX = 1062, CY = AFTER + 122, R = 80;
-    const stops = ['描述', '初版', '试用', '修改'];
-    const at = (deg) => [CX + R * Math.cos((deg * Math.PI) / 180), CY + R * Math.sin((deg * Math.PI) / 180)];
-    const arcs = stops.map((_, index) => {
-      const [x1, y1] = at(-90 + index * 90 + 24), [x2, y2] = at(-90 + (index + 1) * 90 - 24);
-      return `<path d="M${x1.toFixed(1)} ${y1.toFixed(1)} A${R} ${R} 0 0 1 ${x2.toFixed(1)} ${y2.toFixed(1)}" marker-end="url(#pn-tip-primary)"/>`;
-    }).join('');
     root.innerHTML = `
-      ${chapter('背景 · Before / After', '从层层转述，到需求方直接对话', '异常登记、状态采集、任务确认、临时分析页面')}
-      <svg width="0" height="0" style="position:absolute"><defs>
-        <marker id="pn-tip-warning" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M2 1.5 L9 6 L2 10.5" fill="none" stroke="#b45309" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
-        <marker id="pn-tip-primary" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M2 1.5 L9 6 L2 10.5" fill="none" stroke="#5535a0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
-        <marker id="pn-tip-link" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M2 1.5 L9 6 L2 10.5" fill="none" stroke="#5535a0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
-        <mask id="pn-loop-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><path class="pn-loop-reveal" d="M${centerX(5)} ${LOOP_TOP - 4} V${LOOP_Y - 16} Q${centerX(5)} ${LOOP_Y} ${centerX(5) - 16} ${LOOP_Y} H${centerX(0) + 16} Q${centerX(0)} ${LOOP_Y} ${centerX(0)} ${LOOP_Y - 16} V${LOOP_TOP}" fill="none" stroke="#fff" stroke-width="24" pathLength="1" stroke-dasharray="1"/></mask>
-      </defs></svg>
-
-      <div class="pn-before">
-        <div class="pn-section" style="top:252px">改造前 · 传统交付链路</div>
-        <div class="pn-legend">每一环拿到的需求（示意）</div>
-        ${chain.map(([ic, name, desc], index) => card('pn-step', LEFT + index * STEP, 292, CARD_W, ic, name, desc, String(index + 1).padStart(2, '0'))).join('')}
-        ${chain.slice(1).map((_, index) => `<div class="pn-arrow" style="left:${LEFT + index * STEP + CARD_W + 10}px;top:343px">${icon('chevronRight', 28, 'rgba(85,53,160,.5)', 2.4)}</div>`).join('')}
-        ${quotes.map((quote, index) => `
-          <div class="pn-note" style="left:${LEFT + index * STEP}px;top:${NOTE_Y}px;width:${CARD_W}px">
-            <div class="pn-quote">“${quote}”</div>${tags(index)}
-          </div>`).join('')}
-        <svg class="pn-loop" style="position:absolute;left:0;top:0" width="1920" height="1080" mask="url(#pn-loop-mask)">
-          <path d="M${centerX(5)} ${LOOP_TOP - 4} V${LOOP_Y - 16} Q${centerX(5)} ${LOOP_Y} ${centerX(5) - 16} ${LOOP_Y} H${centerX(0) + 16} Q${centerX(0)} ${LOOP_Y} ${centerX(0)} ${LOOP_Y - 16} V${LOOP_TOP}" fill="none" stroke="#b45309" stroke-width="2.4" stroke-dasharray="9 7" marker-end="url(#pn-tip-warning)"/>
-        </svg>
-        <div class="pn-loop-label pill warning" style="top:${LOOP_Y}px">${icon('clock', 16)} 周期长 · 上线后改一处，整条链路重走一遍</div>
+      <div style="position:absolute;inset:0;background:radial-gradient(1000px 560px at 50% 40%, rgba(85,53,160,.10), transparent 70%)"></div>
+      <div class="pt-rail">
+        <div class="pt-step done"><span class="pt-dot">${icon('check', 16, '#fff', 3)}</span><div><div class="pt-n">Part 1</div><div class="pt-t">用例与案例</div></div></div>
+        <div class="pt-line"><i></i></div>
+        <div class="pt-step p2"><span class="pt-dot">2</span><div><div class="pt-n">Part 2</div><div class="pt-t">技术实现</div></div></div>
       </div>
-
-      <div class="pn-after">
-        <div class="pn-section primary" style="top:${AFTER}px">现在 · 需求方直接和 Agent 对话</div>
-        ${card('pn-me', LEFT, AFTER + 42, 300, 'warehouse', '现场 · 需求方', '仓库主管 / 一线员工', '', tags())}
-        <div class="pn-link" style="left:${LEFT + 300}px;top:${AFTER + 42}px">
-          <div class="pn-link-label">直接对话</div>
-          <svg width="120" height="40" viewBox="0 0 120 40"><path d="M14 20 H106" stroke="#5535a0" stroke-width="2.4" marker-start="url(#pn-tip-link)" marker-end="url(#pn-tip-link)"/></svg>
-        </div>
-        ${card('pn-agent', LEFT + 420, AFTER + 42, 300, 'sparkles', 'Item WMS Agent', '当场生成初版，按反馈修改', '', tags())}
-        <div class="pn-cycle">
-          <svg style="position:absolute;left:0;top:0" width="1920" height="1080"><g fill="none" stroke="#5535a0" stroke-width="2.2" stroke-opacity=".55">${arcs}</g></svg>
-          <div class="pn-cycle-core" style="left:${CX}px;top:${CY}px">一次对话<br>一轮迭代</div>
-          ${stops.map((stop, index) => { const [x, y] = at(-90 + index * 90); return `<div class="pn-stop" style="left:${x}px;top:${y}px">${stop}</div>`; }).join('')}
-        </div>
-        <div class="pn-gains" style="top:${AFTER + 50}px">
-          ${[['一手语境', '需求方亲自说明，没有转述损耗'], ['当场试用', '初版生成后，现场直接上手'], ['低成本迭代', '哪里不对直接改，不再重走链路']].map(([head, desc]) => `
-            <div class="pn-gain"><span class="pn-check">${icon('check', 18, '#fff', 3)}</span><div><b>${head}</b><span>${desc}</span></div></div>`).join('')}
-        </div>
+      <div class="pt-head">
+        <div class="pt-eyebrow">Part 2 · 技术实现</div>
+        <div class="pt-h">案例能跑通，靠的是背后的几块基石</div>
+      </div>
+      <div class="pt-stones">${stones.map(([ic, name, sub], index) => `
+        <div class="pt-stone st${index}"><span class="pt-i">${index + 1}</span><div class="pt-ic">${icon(ic, 26)}</div><div class="pt-name">${name}</div><div class="pt-sub">${sub}</div></div>`).join('')}
       </div>`;
+    show('.pt-rail', 0.2, 0.45, 12);
+    anim('.pt-line i', 0.6, 0.7, { width: [0, 220] }, 'inOut');
+    cls('.pt-step.p2', 'on', 1.25);
+    pop('.pt-step.p2 .pt-dot', 1.25, 0.4);
+    show('.pt-eyebrow', 1.0);
+    show('.pt-h', 1.25, 0.55, 22);
+    stagger('.pt-stone', 2.0, 0.13, 'show');
+    // Hand over to s02: Item Ontology comes first.
+    const tFocus = D - 1.5;
+    cls('.st0', 'focus', tFocus);
+    anim('.pt-stone:not(.st0)', tFocus, 0.4, { opacity: 0.45 });
+  });
 
-    // pain-1: the chain builds up as the narration names each hand-off.
-    show('.pn-before .pn-section', P('pain-1', 0.4));
-    root.querySelectorAll('.pn-step').forEach((el, index) => {
-      const t = P('pain-1', 0.44 + index * 0.085);
-      show(el, t);
-      if (index) fadeIn(root.querySelectorAll('.pn-arrow')[index - 1], t - 0.15);
-    });
-    // pain-2: the note passed down each hand-off; the tag lost at that hop slowly fades out after the note lands
-    // (overlooked, not rejected: no red), tags lost upstream arrive already faded. Then the rework loop.
-    fadeIn('.pn-legend', P('pain-2', 0.02));
-    root.querySelectorAll('.pn-note').forEach((note, index) => {
-      const t = P('pain-2', 0.04 + index * 0.075);
-      show(note, t, 0.4, -12);
-      note.querySelectorAll('.pn-tag[data-lost-at]').forEach((tag) => {
-        if (!tag.dataset.lostAt) return;
-        const fresh = Number(tag.dataset.lostAt) === index;
-        if (fresh) anim(tag.querySelector('.pn-wash'), t + 0.4, 1.1, { opacity: [0, 0.78] }, 'inOut');
-        else cls(tag, 'lost', t);
-      });
-    });
-    anim('.pn-loop-reveal', P('pain-2', 0.6), 1.4, { draw: [0, 1] }, 'inOut');
-    pop('.pn-loop-label', P('pain-2', 0.72));
-    // pain-3: the old chain steps back; the direct loop takes over.
-    anim('.pn-before', P('pain-3', 0), 0.6, { opacity: [1, 0.42] });
-    show('.pn-after .pn-section', P('pain-3', 0.02));
-    show('.pn-me', P('pain-3', 0.08));
-    fadeIn('.pn-link', P('pain-3', 0.16));
-    show('.pn-agent', P('pain-3', 0.22));
-    stagger('.pn-after .pn-tag', P('pain-3', 0.3), 0.08, 'pop');
-    fadeIn('.pn-cycle', P('pain-3', 0.28));
-    const stopEls = root.querySelectorAll('.pn-stop');
-    const beats = [0.28, 0.34, 0.47, 0.57, 0.66, 0.72, 0.8, 0.88, 0.96].map((f) => P('pain-3', f));
-    beats.forEach((t, index) => cls(stopEls[index % 4], 'on', t, beats[index + 1] ?? Infinity));
-    stagger('.pn-gain', P('pain-3', 0.66), P('pain-3', 0.1) - P('pain-3', 0));
+  Scene('s01-compare', { title: '同样三个应用：旧方式 vs 新方式', tag: '估算 · 传统按典型定制交付流程', tagKind: 'design' }, ({ root, segs, anim, show, fadeIn, pop, stagger, count }) => {
+    const P = (segId, fraction) => (segs[segId] ? segs[segId].start + fraction * (segs[segId].end - segs[segId].start) : 0);
+    const { before, after } = UI.COMPARE;
+    const chain = ['现场', '实施', '产品', '开发', '测试', '上线'];
+    // Bars share one scale per row, so the new side shows its true size against the old.
+    const bar = (cls, value, max) => `<div class="cm-bar ${cls}"><i style="width:max(8px, ${((100 * value) / max).toFixed(2)}%)"></i></div>`;
+    const big = (cls, html) => `<div class="cm-big ${cls}">${html}</div>`;
+    const lines = (kind, items) => items.map((line) => `
+      <div class="cm-line ${kind}"><span class="cm-mark">${icon(kind === 'old' ? 'x' : 'check', 15, '#fff', 3)}</span>${line}</div>`).join('');
+    root.innerHTML = `
+      ${chapter('对比 · 同样三个应用', '从 2 周迭代，到当天上线', '巡检上报 · 派工工作台 · Move Damage 搬运任务')}
+      <div class="cm-grid">
+        <div></div>
+        <div class="cm-col old cm-h0">
+          <div class="cm-title">${icon('clock', 24)} 传统定制交付</div>
+          <div class="cm-chain">${chain.map((hop, index) => `<span class="cm-step">${index ? icon('chevronRight', 18, 'rgba(180,83,9,.55)', 2.4) : ''}<span class="cm-hop">${hop}</span></span>`).join('')}</div>
+        </div>
+        <div class="cm-col new cm-h1">
+          <div class="cm-title">${icon('sparkles', 24)} Item WMS 动态表单</div>
+          <div class="cm-chain"><span class="cm-hop">需求方</span><span class="cm-dual">${icon('arrowLeft', 16)}${icon('arrowRight', 16)}</span><span class="cm-hop">Agent</span><span class="cm-loop">描述 → 初版 → 试用 → 修改</span></div>
+        </div>
+
+        <div class="cm-label">${icon('users', 26)}<b>工时</b></div>
+        <div class="cm-col old cm-c0">${big('', `≈ <span class="cm-n0">${before.effort}</span><small>人天</small>`)}<div class="cm-sub">${before.effortDetail}</div>${bar('old', before.effortHours, before.effortHours)}</div>
+        <div class="cm-col new cm-c1">${big('', `<small class="cm-per">${after.effortPer}</small>${after.effort}<small>${after.effortUnit}</small>`)}<div class="cm-sub">${after.effortDetail}</div>${bar('new', after.effortHours, before.effortHours)}</div>
+
+        <div class="cm-label">${icon('history', 26)}<b>周期</b></div>
+        <div class="cm-col old cm-c2">${big('', `${before.lead}<small>${before.leadUnit}</small>`)}<div class="cm-sub">${before.leadDetail}</div>${bar('old', before.leadDays, before.leadDays)}</div>
+        <div class="cm-col new cm-c3">${big('', after.lead)}<div class="cm-sub">${after.leadDetail}</div>${bar('new', after.leadDays, before.leadDays)}</div>
+
+        <div class="cm-label">${icon('checkCircle', 26)}<b>效果</b></div>
+        <div class="cm-col old cm-c4">${lines('old', before.outcome)}</div>
+        <div class="cm-col new cm-c5">${lines('new', after.outcome)}</div>
+      </div>
+      <div class="cm-note">传统方式按 3PL 定制需求的典型交付流程估算；新方式为本案例示意</div>`;
+
+    // cmp-1: the old way, row by row as the narration names hops, effort and lead time.
+    show('.cm-h0', P('cmp-1', 0.02));
+    // Each hop lands together with the arrow leading into it, so no arrow ever points at nothing.
+    stagger('.cm-h0 .cm-step', P('cmp-1', 0.1), P('cmp-1', 0.06) - P('cmp-1', 0), 'pop');
+    root.querySelectorAll('.cm-label').forEach((el, index) => fadeIn(el, P('cmp-1', 0.5) + index * 0.2));
+    show('.cm-c0', P('cmp-1', 0.55));
+    count('.cm-n0', P('cmp-1', 0.55), 1.6, 0, before.effort);
+    anim('.cm-c0 .cm-bar i', P('cmp-1', 0.6), 1.6, { clip: [0, 100] }, 'inOut');
+    show('.cm-c2', P('cmp-1', 0.8));
+    anim('.cm-c2 .cm-bar i', P('cmp-1', 0.84), 1.4, { clip: [0, 100] }, 'inOut');
+    // cmp-2: what that costs the people who asked.
+    show('.cm-c4', P('cmp-2', 0.05));
+    stagger('.cm-c4 .cm-line', P('cmp-2', 0.1), P('cmp-2', 0.3) - P('cmp-2', 0), 'slideIn');
+    // cmp-3: the new way lands beside it; the old column steps back.
+    anim('.cm-col.old', P('cmp-3', 0.02), 0.6, { opacity: 0.55 });
+    show('.cm-h1', P('cmp-3', 0.02));
+    stagger('.cm-h1 .cm-hop, .cm-h1 .cm-dual, .cm-h1 .cm-loop', P('cmp-3', 0.06), 0.25, 'pop');
+    pop('.cm-c1', P('cmp-3', 0.3));
+    anim('.cm-c1 .cm-bar i', P('cmp-3', 0.34), 0.5, { clip: [0, 100] });
+    pop('.cm-c3', P('cmp-3', 0.44));
+    anim('.cm-c3 .cm-bar i', P('cmp-3', 0.48), 0.5, { clip: [0, 100] });
+    show('.cm-c5', P('cmp-3', 0.58));
+    stagger('.cm-c5 .cm-line', P('cmp-3', 0.62), P('cmp-3', 0.12) - P('cmp-3', 0), 'slideIn');
+    fadeIn('.cm-note', P('cmp-3', 0.9));
+    // cmp-4: hand over to the case.
+    anim('.cm-col.old', P('cmp-4', 0), 0.4, { opacity: 1 });
   });
 
   Scene('s02-ontology', { title: 'Item Ontology', tag: '架构示意', tagKind: '' }, ({ root, S, E, show, anim, pop, stagger, slideIn, fadeIn }) => {
@@ -160,7 +148,7 @@
     const cardHead = (ic, title, sub) => `
       <div style="display:flex;align-items:center;gap:12px">${icon(ic, 30, 'var(--primary)')}<div><div style="font-size:26px;font-weight:800;line-height:1.2">${title}</div><div style="font-size:16px;color:var(--muted)">${sub}</div></div></div>`;
     root.innerHTML = `
-      ${chapter('Part 1 · AI Native', 'Agent 长在 WMS 内部，用 Item Ontology 理解业务')}
+      ${chapter('Part 2 · 技术实现 · AI Native', 'Agent 长在 WMS 内部，用 Item Ontology 理解业务')}
       <div class="top" style="position:absolute;inset:0;transform-origin:960px 520px">
       <div class="onto card" style="position:absolute;left:96px;top:240px;width:648px;height:560px;padding:24px 26px;display:flex;flex-direction:column">
         ${cardHead('brain', 'Item Ontology', 'WMS 业务本体 · 随系统演进持续更新')}
@@ -251,19 +239,19 @@
 
   Scene('s03-permission', { title: '权限模型', tag: '架构示意' }, ({ root, segs, S, show, anim, pop, fadeIn, cls }) => {
     const P = (segId, fraction) => (segs[segId] ? segs[segId].start + fraction * (segs[segId].end - segs[segId].start) : 0);
-    // Three requests leave the Agent; the gate judges each by Quinn's own role permissions (RBAC)
-    // and by which data and objects are Quinn's (facility grants, task assignment).
+    // Three requests leave the Agent; the gate judges each by Emily's own role permissions (RBAC)
+    // and by which data and objects are Emily's (facility grants, task assignment).
     const requests = [
-      { cls: 'ok', path: 'POST …/TDEF-151/tasks', code: '201 Created', desc: '创建 Move Damage 任务 · 在 Quinn 的权限内', at: 0.02, lights: '.rb-yes' },
+      { cls: 'ok', path: 'POST …/TDEF-151/tasks', code: '201 Created', desc: '创建 Move Damage 任务 · 在 Emily 的权限内', at: 0.02, lights: '.rb-yes' },
       { cls: 'no', path: 'PATCH …/facility-setting/:id', code: '403 Forbidden', desc: '修改仓库设置 · 角色没有这个权限', at: 0.3, lights: '.rb-no' },
-      { cls: 'no', path: 'POST …/TASK-18652/records', code: '403 notAssignee', desc: '任务指派给 Maria Garcia，不是 Quinn', at: 0.52, lights: '.dac-task' },
+      { cls: 'no', path: 'POST …/TASK-18652/records', code: '403 notAssignee', desc: '任务指派给 Maria Garcia，不是 Emily', at: 0.52, lights: '.dac-task' },
     ];
     const LANES = [492, 578, 664];
     const perm = (cls, kind, html) => `<div class="pm-perm ${kind} ${cls}">${icon({ yes: 'check', no: 'x', rule: 'lock' }[kind], 16, 'currentColor', kind === 'rule' ? 2.2 : 3)}${html}</div>`;
     root.innerHTML = `
-      ${chapter('Part 1 · 权限模型', 'Agent 代表用户办事，权限上限就是用户本人')}
+      ${chapter('Part 2 · 权限模型', 'Agent 代表用户办事，权限上限就是用户本人')}
       <div class="card pm-user">
-        <div class="pm-col pm-id"><div class="pm-row">${icon('user', 26)}<div><div class="pm-name">Quinn Chen</div><div class="pm-sub">Supervisor · Valley View</div></div></div></div>
+        <div class="pm-col pm-id"><div class="pm-row">${icon('user', 26)}<div><div class="pm-name">Emily Carter</div><div class="pm-sub">Supervisor · Valley View</div></div></div></div>
         <div class="pm-col">
           <div class="pm-col-h">角色权限 · <b>RBAC</b><span>能调用哪些接口</span></div>
           ${perm('rb-yes', 'yes', '<span class="mono">ops/genui-task:write</span>')}
@@ -277,7 +265,7 @@
       </div>
       <div class="pm-delegate"><span class="pill primary">${icon('key', 15)} 委托 · 同一个 WMS 令牌</span></div>
       <div class="card pm-agent">
-        <div class="pm-row">${icon('sparkles', 26)}<div><div class="pm-name">Item WMS Agent</div><div class="pm-sub">以 Quinn 本人的身份调用接口</div></div></div>
+        <div class="pm-row">${icon('sparkles', 26)}<div><div class="pm-name">Item WMS Agent</div><div class="pm-sub">以 Emily 本人的身份调用接口</div></div></div>
       </div>
       ${LANES.map((y) => `<div class="pm-lane" style="top:${y}px"></div><div class="pm-lane out" style="top:${y}px"></div>`).join('')}
       ${requests.map((r, i) => `<div class="pm-req ${r.cls} r${i} mono" style="top:${LANES[i]}px">${r.path}</div>`).join('')}
@@ -285,7 +273,7 @@
         <div class="pm-gate-icon">${icon('shield', 30)}</div>
         <div class="pm-name">WMS API</div>
         <div class="pm-sub">角色权限校验<br>仓库隔离 · 任务归属</div>
-        <div class="pm-gate-note">按 Quinn 本人判定</div>
+        <div class="pm-gate-note">按 Emily 本人判定</div>
       </div>
       ${requests.map((r, i) => `
         <div class="card pm-result ${r.cls} res${i}" style="top:${LANES[i]}px">
@@ -295,7 +283,7 @@
       <div class="audit card" style="position:absolute;left:96px;top:756px;width:1728px;padding:0;overflow:hidden">
         <div style="padding:12px 20px;background:var(--section);font-weight:700;font-size:17px;display:flex;gap:10px;align-items:center">${icon('history', 18)} 数据变更日志 · Data Change Log</div>
         <div class="mono" style="display:grid;grid-template-columns:230px 160px 260px 110px 1fr;padding:12px 20px;font-size:16px;color:var(--muted);border-bottom:1px solid var(--line)"><span>changed_at</span><span>user</span><span>object</span><span>op</span><span>screen_id</span></div>
-        <div class="arow mono" style="display:grid;grid-template-columns:230px 160px 260px 110px 1fr;padding:12px 20px;font-size:16px"><span>10/27/2026 10:31:08</span><span>Quinn Chen</span><span>Dynamic Task</span><span>INSERT</span><span style="color:var(--primary);font-weight:700">page:damaged-inventory-relocation@v1</span></div>
+        <div class="arow mono" style="display:grid;grid-template-columns:230px 160px 260px 110px 1fr;padding:12px 20px;font-size:16px"><span>10/27/2026 10:31:08</span><span>Emily Carter</span><span>Dynamic Task</span><span>INSERT</span><span style="color:var(--primary);font-weight:700">page:damaged-inventory-relocation@v1</span></div>
       </div>`;
 
     // perm-1: who acts for whom.
@@ -304,7 +292,7 @@
     show('.pm-agent', P('perm-1', 0.5));
     show('.pm-gate', P('perm-1', 0.75));
     fadeIn('.pm-lane', P('perm-1', 0.75));
-    // perm-2: one request inside Quinn's permissions goes through; one beyond the role and one on
+    // perm-2: one request inside Emily's permissions goes through; one beyond the role and one on
     // someone else's task stop flush against the gate (lane start 596 + pill 300 + 8 gap; gate at 1060).
     const travel = 1.6, STOP = 156;
     requests.forEach((r, i) => {

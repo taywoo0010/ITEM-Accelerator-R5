@@ -1,4 +1,4 @@
-// s16 Move Damage on mobile · s17 evidence chain and close
+// s16 Move Damage on mobile · s17 evidence chain (end of the case) · s18 close: the comparison again, then the end cards
 (() => {
   const { icon, logo, chapter, mHeader, askBar } = UI;
   const phone = window.PHONE_HTML;
@@ -14,7 +14,7 @@
       <div class="sA" style="position:absolute;inset:0;background:var(--canvas)">
         ${mHeader('My Tasks', 'Maria Garcia · Valley View', { back: false, acts: ['refresh', 'sparkles', 'more'] })}
         <div class="m-section-title">DYNAMIC TASKS</div>
-        <div class="m-row rowmd" style="background:#f6f3fd">${icon('blocks', 22, 'var(--secondary)')}<div><div style="font-weight:600">Move Damage</div><div style="font-size:13.5px;color:var(--muted)">TASK-18652 · assigned by Quinn Chen</div></div><span class="m-badge" style="margin-left:auto">1</span></div>
+        <div class="m-row rowmd" style="background:#f6f3fd">${icon('blocks', 22, 'var(--secondary)')}<div><div style="font-weight:600">Move Damage</div><div style="font-size:13.5px;color:var(--muted)">TASK-18652 · assigned by Emily Carter</div></div><span class="m-badge" style="margin-left:auto">1</span></div>
         <div class="m-section-title">OPEN TASKS</div>
         ${[['inbox', 'Receive', 17], ['box', 'Put Away', 14], ['route', 'Pick', 17]].map(([ic, n, c]) => `<div class="m-row">${icon(ic, 22, 'var(--secondary)')}${n}<span class="m-badge" style="margin-left:auto">${c}</span></div>`).join('')}
         ${askBar()}
@@ -103,10 +103,10 @@
     show('.e5', c + 2.6);
   });
 
-  Scene('s17-evidence', { title: '闭环与证据链', tag: '真实机制 · 示意数据', holdEnd: true }, ({ root, S, E, D, show, pop, stagger, anim, fadeIn, slideIn, hide, hideTag }) => {
+  Scene('s17-evidence', { title: '闭环与证据链', tag: '真实机制 · 示意数据' }, ({ root, S, E, D, show, pop, stagger, anim, fadeIn, slideIn, hide }) => {
     const states = [
       ['Open', 'warning', '10:12 · John Smith', 'Patrol report · photo ×1 · Good → Damaged (ADJ-512)'],
-      ['In Progress', 'info', '10:31 · Quinn Chen', 'TASK-18652 · via Damaged Inventory Relocation v1'],
+      ['In Progress', 'info', '10:31 · Emily Carter', 'TASK-18652 · via Damaged Inventory Relocation v1'],
       ['Resolved', 'success', '10:47 · Maria Garcia', 'Move Damage closed · 12 EA at DMG-01 (CLP-1005801)'],
     ];
     const evidence = [
@@ -120,9 +120,9 @@
     // One 3-column grid (560px columns, 24px gutters) holds every block: the Issue timeline in column 1, the evidence
     // in columns 2-3 as three equal rows, and the three roles below, so all edges line up.
     root.innerHTML = `
-      ${chapter('总结 · 闭环', '终点不是表单提交，而是有证据的业务状态变化')}
+      ${chapter('Part 1 · 案例闭环', '终点不是表单提交，而是有证据的业务状态变化')}
       <div class="evg">
-        <div class="evl">一条 Issue 的状态</div><div class="evl" style="grid-column:2 / 4">每一步留下的证据</div>
+        <div class="evl">一条 Issue 的状态<span class="pill primary ev-span">从上报到结案 35 分钟</span></div><div class="evl" style="grid-column:2 / 4">每一步留下的证据</div>
         <div class="tlc card">
           <div class="tlh">${icon('alert', 22, 'var(--warning)')} ISSUE-106 · CLP-1005744</div>
           <div class="tll">
@@ -138,6 +138,39 @@
         </div>
         <div class="evl roles-l" style="grid-column:1 / 4">分工</div>
         ${[['sparkles', 'Agent', '理解业务 · 生成计划、页面与 View'], ['shield', 'WMS', '权限 · 校验 · 数据隔离 · 审计 · 库存原语'], ['users', '人', '确认 · 发布 · 派工 · 回退']].map(([ic, who, what]) => `<div class="rl card"><div class="ric">${icon(ic, 28)}</div><div><div class="rt">${who}</div><div class="rd">${what}</div></div></div>`).join('')}
+      </div>`;
+    show('.tlc', S('ev-1', 0.5));
+    stagger('.sti', S('ev-1', 3.0), 1.6, 'slideIn');
+    stagger('.evc', S('ev-1', 8.0), 0.9, 'pop');
+    fadeIn('.roles-l', S('ev-2', 0.1));
+    stagger('.rl', S('ev-2', 0.3), 1.8, 'show');
+    pop('.ev-span', S('ev-1', 7.0));
+  });
+
+  // Close: the opening comparison once more, in three lines, then the punchline card and the thank-you card the video
+  // ends on (held to the last frame).
+  Scene('s18-close', { title: '回到对比 · 结语', tag: '估算 · 传统按典型定制交付流程', tagKind: 'design', holdEnd: true }, ({ root, segs, S, E, show, pop, stagger, anim, fadeIn, hideTag }) => {
+    const say = (seg, phrase, delta = 0) => {
+      const g = segs[seg];
+      if (!g) return delta;
+      return g.start + (g.end - g.start) * (Math.max(0, g.text.indexOf(phrase)) / g.text.length) + delta;
+    };
+    const { before, after } = UI.COMPARE;
+    const rows = [
+      ['users', '工时', `≈ ${before.effort} 人天`, `${after.effortPer} ${after.effort} ${after.effortUnit}`],
+      ['history', '周期', `${before.lead} ${before.leadUnit}`, after.lead],
+      ['checkCircle', '效果', '层层转述 · 改一处等下个迭代', '当场试用 · 说一句就改'],
+    ];
+    root.innerHTML = `
+      ${chapter('回到开头 · 同样三个应用', '从 2 周迭代，到当天上线')}
+      <div class="rc-rows">
+        ${rows.map(([ic, label, was, now], index) => `
+          <div class="rc-row rc${index}">
+            <div class="rc-l">${icon(ic, 28)}<b>${label}</b></div>
+            <div class="rc-was">${was}</div>
+            <div class="rc-to">${icon('arrowRight', 34, 'var(--primary)', 2.4)}</div>
+            <div class="rc-now">${now}</div>
+          </div>`).join('')}
       </div>
       <div class="endc">
         ${logo(84)}
@@ -151,20 +184,20 @@
         <div class="thx-en">Thank you for watching</div>
         <div class="thx-f">Item WMS · Dynamic Forms, powered by GenUI</div>
       </div>`;
-    show('.tlc', S('ev-1', 0.5));
-    stagger('.sti', S('ev-1', 3.0), 1.6, 'slideIn');
-    stagger('.evc', S('ev-1', 8.0), 0.9, 'pop');
-    fadeIn('.roles-l', S('ev-2', 0.1));
-    stagger('.rl', S('ev-2', 0.3), 1.8, 'show');
-    // Closing: the punchline card arrives with its sentence, then the thank-you card holds to the last frame.
-    // ev-2's second sentence starts 8.4 s in: the headline lands with it, "当场就能用" about 2 s later.
-    const tEnd = S('ev-2', 7.9);
+    // close-1 names effort, lead time, then the new way: each row lands with its words.
+    [say('close-1', '传统方式'), say('close-1', '一个迭代'), say('close-1', '现在')].forEach((t, index) => {
+      show(`.rc${index}`, t);
+      fadeIn(`.rc${index} .rc-was`, t);
+    });
+    stagger('.rc-row .rc-to, .rc-row .rc-now', say('close-1', '现在', 0.6), 0.35, 'pop');
+    // close-2: the punchline card, then the thank-you card.
+    const tEnd = S('close-2', -0.3);
     anim('.endc', tEnd, 0.6, { opacity: [0, 1] });
-    show('.endc .end-h', S('ev-2', 8.4));
-    show('.endc .end-s', S('ev-2', 10.3));
-    show('.endc .end-roles', S('ev-2', 12.0));
+    show('.endc .end-roles', S('close-2', 0.2));
+    show('.endc .end-h', say('close-2', '需求不再'));
+    show('.endc .end-s', say('close-2', '现场说出来'));
     hideTag(tEnd + 0.6);
-    anim('.thx', E('ev-2', 1.2), 0.8, { opacity: [0, 1] });
-    stagger('.thx .thx-h, .thx .thx-en, .thx .thx-f', E('ev-2', 1.4), 0.3, 'show');
+    anim('.thx', E('close-2', 1.2), 0.8, { opacity: [0, 1] });
+    stagger('.thx .thx-h, .thx .thx-en, .thx .thx-f', E('close-2', 1.4), 0.3, 'show');
   });
 })();

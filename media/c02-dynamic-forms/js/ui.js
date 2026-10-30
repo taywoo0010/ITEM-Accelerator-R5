@@ -83,6 +83,14 @@
     undo: '<path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"/>',
     grid: '<rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/>',
     plus: '<path d="M5 12h14"/><path d="M12 5v14"/>',
+    panelLeft: '<rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/>',
+    panelLeftClose: '<rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/><path d="m16 15-3-3 3-3"/>',
+    goal: '<path d="M12 13V2l8 4-8 4"/><path d="M20.561 10.222a9 9 0 1 1-12.55-5.29"/><path d="M8.002 9.997a5 5 0 1 0 8.9 2.02"/>',
+    calendarClock: '<path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h5"/><path d="M17.5 17.5 16 16.3V14"/><circle cx="16" cy="16" r="6"/>',
+    smartphone: '<rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/>',
+    rotateCw: '<path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/>',
+    lightbulb: '<path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/>',
+    star: '<path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>',
     hand: '<path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>',
   };
   const icon = (name, size = 20, color = 'currentColor', width = 2) =>
@@ -99,7 +107,7 @@
   const logo = (height = 24) =>
     `<svg class="icon" height="${height}" width="${(height * 196) / 223}" viewBox="0 0 196 223">${LOGO.map(([fill, d]) => `<path fill="${fill}" d="${d}"/>`).join('')}</svg>`;
 
-  const webTopbar = (user = 'Quinn Chen', initials = 'QC') => `
+  const webTopbar = (user = 'Emily Carter', initials = 'EC') => `
     <div class="topbar">
       ${icon('menu', 18, '#525252')}
       <div class="brand">${logo(24)} Item WMS</div>
@@ -256,5 +264,21 @@
     </div>
     <div class="m-footer"><div class="m-btn mp-btn">Confirm Place</div></div>`;
 
-  window.UI = { moveTakeScreen, movePlaceScreen, webAgentPanel, waTool, wsDevice, waCard, saveTypeSheet, icon, logo, agentMark, webTopbar, navBar, phoneShell, agentPage, maTool, maWorked, maCard, mHeader, askBar, chapter, damagedBoxSvg };
+  // Old vs new for the three case apps (patrol report, dispatch page, Move Damage). The old side is an estimate for a
+  // typical 3PL customization request; the new side is this case. s01-compare and s18-close both read it, and the
+  // narration says the same numbers, so change them together.
+  const COMPARE = {
+    before: {
+      effort: 5, effortHours: 40, effortDetail: '需求 1 · 开发 2 · 测试 1 · 实施上线 1',
+      lead: '≈ 2', leadUnit: '周', leadDays: 14, leadDetail: '一个 Scrum 迭代：排期 · 开发 · 测试 · 上线',
+      outcome: ['需求经 5 次转述，背景和优先级层层损耗', '上线之前，现场看不到成品', '改一处要排进下个迭代，再等 2 周'],
+    },
+    after: {
+      effortPer: '每个应用', effort: '< 1', effortUnit: '小时', effortHours: 3, effortDetail: '每个应用一次对话 · 当场试运行 · 审核发布',
+      lead: '当天上线', leadDays: 1, leadDetail: 'Agent 几分钟出初版，人确认后发布',
+      outcome: ['需求方亲自说明，一手语境不丢', '初版当场生成，现场直接试用', '哪里不对说一句，几分钟生效'],
+    },
+  };
+
+  window.UI = { COMPARE, moveTakeScreen, movePlaceScreen, webAgentPanel, waTool, wsDevice, waCard, saveTypeSheet, icon, logo, agentMark, webTopbar, navBar, phoneShell, agentPage, maTool, maWorked, maCard, mHeader, askBar, chapter, damagedBoxSvg };
 })();

@@ -71,6 +71,21 @@
       const [dx, dy] = Array.isArray(y) ? y : [0, 0];
       return [(r.left + r.width / 2 - stage.left) / scale + dx, (r.top + r.height / 2 - stage.top) / scale + dy];
     }
+    // Measure a target as laid out at time `at`: render that frame, measure, then restore the current frame.
+    // Pure renders make this safe; `measuring` keeps pointer/tap callbacks from recursing.
+    let measuring = false, lastT = 0;
+    function locateAt(at, x, y) {
+      if (typeof x !== 'string') return [x, y];
+      // Tracks without a `from` (hide(), …) leave their value untouched before t0, so restore inline styles verbatim.
+      const saved = [...tracks.keys()].map((el) => [el, el.style.cssText]);
+      measuring = true;
+      render(at);
+      const point = locate(x, y);
+      render(lastT);
+      for (const [el, css] of saved) el.style.cssText = css;
+      measuring = false;
+      return point;
+    }
     const api = {
       root, D, S, E, segs, ease,
       $: (sel) => root.querySelector(sel),
@@ -110,11 +125,12 @@
         });
       },
       fn: (callback) => fns.push(callback),
-      tap: (x, y, t0) => {
+      // atKey: measure the target in the layout of time t0 (for scenes whose layout itself changes over time).
+      tap: (x, y, t0, { atKey = false } = {}) => {
         const ripple = document.createElement('div');
         ripple.className = 'tap';
-        const place = () => { const [px, py] = locate(x, y); ripple.style.left = `${px}px`; ripple.style.top = `${py}px`; };
-        if (typeof x === 'string') fns.push(() => { if (!ripple.__placed) { place(); ripple.__placed = true; } });
+        const place = () => { const [px, py] = atKey ? locateAt(t0, x, y) : locate(x, y); ripple.style.left = `${px}px`; ripple.style.top = `${py}px`; };
+        if (typeof x === 'string') fns.push(() => { if (!ripple.__placed && !measuring) { place(); ripple.__placed = true; } });
         else place();
         root.appendChild(ripple);
         anim(ripple, t0, 0.55, { opacity: [0.9, 0], scale: [0.3, 1.6] }, 'out');
@@ -124,7 +140,8 @@
       // Pointer: keyframes [[t, x, y, action], ...] in stage coordinates. action true = tap at that key;
       // 'hold' = pressed from that key until the next one. { touch: true } draws a finger touch (as Android's
       // "show touches") instead of a mouse arrow: visible only while touching, a pulsing ring while held.
-      pointer: (rawKeys, { touch = false } = {}) => {
+      // { atKey: true } measures each selector key in the layout of its own time instead of the first rendered frame.
+      pointer: (rawKeys, { touch = false, atKey = false } = {}) => {
         const el = document.createElement('div');
         el.className = touch ? 'pointer touch' : 'pointer';
         el.innerHTML = touch ? '<span class="tring"></span><span class="tdot"></span>'
@@ -133,7 +150,8 @@
         const ring = el.querySelector('.tring'), dot = el.querySelector('.tdot');
         let resolved;
         fns.push((t) => {
-          if (!resolved) resolved = rawKeys.map(([kt, kx, ky, action]) => [kt, ...locate(kx, ky), action]);
+          if (measuring) return;
+          if (!resolved) resolved = rawKeys.map(([kt, kx, ky, action]) => [kt, ...(atKey ? locateAt(kt, kx, ky) : locate(kx, ky)), action]);
           const keys = resolved;
           const first = keys[0], last = keys[keys.length - 1];
           let x = first[1], y = first[2];
@@ -165,7 +183,7 @@
           ring.style.opacity = held >= 0 ? 0.55 * (1 - cycle) : 0;
           ring.style.transform = `scale(${1 + cycle * 1.1})`;
         });
-        rawKeys.forEach(([t, x, y, action]) => { if (action === true) api.tap(x, y, t); });
+        rawKeys.forEach(([t, x, y, action]) => { if (action === true) api.tap(x, y, t, { atKey }); });
       },
     };
 
@@ -178,6 +196,7 @@
     else root.innerHTML = `<div class="placeholder"><div class="ph-id">${id}</div><div>${Object.values(segs).map((seg) => escapeHtml(seg.text)).join('<br><br>')}</div></div>`;
 
     function render(t) {
+      if (!measuring) lastT = t;
       for (const [el, props] of tracks) {
         const values = {};
         for (const [prop, list] of Object.entries(props)) {
@@ -315,6 +334,7 @@
     window.__audio = audio;
     let audioOk = false;
     audio.addEventListener('loadedmetadata', () => { audioOk = true; });
+    audio.addEventListener('error', () => { audioOk = false; });
     // R5 embed: a static server without Range support (python -m http.server) leaves the audio unseekable;
     // fetch it once as a blob, which the browser can always seek.
     audio.addEventListener('loadedmetadata', () => {
@@ -327,7 +347,6 @@
         if (wasPlaying) audio.play();
       }).catch(() => {});
     });
-    audio.addEventListener('error', () => { audioOk = false; });
     let playing = false, clock = 0, last = 0, rate = 1;
     const RATES = [0.75, 1, 1.25, 1.5, 2];
     const $ = (id) => document.getElementById(id);
