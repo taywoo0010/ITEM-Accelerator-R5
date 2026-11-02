@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh"><head><meta charset="utf-8"><title>七层平台架构</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+.en{display:none!important}
+html[data-lang=en] .zh{display:none!important}
+html[data-lang=en] .en{display:revert!important}
+
+/* Fixed slide size */
+.slide-container{
+  width:1280px;
+  height:720px;
+  background:var(--bg,#F4F6F8);
+  color:var(--ink,#1A2229);
+  font-family:Inter,"Noto Sans SC",Arial,sans-serif;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+/* Tighter page padding to fit 720px */
+.page-inner{
+  margin:28px 48px;
+  display:flex;
+  flex-direction:column;
+  height:calc(100% - 56px);
+}
+
+/* Header */
+.motif{width:48px;height:3px;background:#2C5F6B}
+.kicker{font:11px/14px monospace;color:var(--accent,#2C5F6B);padding-top:6px}
+h1{font-size:26px;line-height:1.08;padding-top:6px}
+.lead{font-size:15px;line-height:1.28;color:var(--muted,#5C6D7E);padding-top:10px}
+.lead strong{color:var(--ink,#1A2229)}
+
+/* Stack of layers: fixed sized rows to guarantee fit */
+.stack{display:flex;flex-direction:column;gap:6px;padding-top:12px;flex:1;justify-content:flex-start}
+
+/* Layer card compacted */
+.layer{
+  display:grid;
+  grid-template-columns:96px 1fr 240px;
+  gap:12px;
+  align-items:center;
+  border:1px solid var(--line,#D1D8E0);
+  background:var(--paper,#FFFFFF);
+  height:56px;
+  padding:6px 10px;
+  overflow:hidden;
+}
+.layer.integration{border-style:dashed;background:transparent}
+
+.lnum{font:11px/1.2 monospace;color:var(--accent,#2C5F6B);white-space:nowrap}
+.lname{font-size:18px;font-weight:700;line-height:1.12;overflow:hidden}
+.lname small{display:block;font-size:12px;font-weight:400;line-height:1.2;color:var(--muted,#5C6D7E);padding-top:3px;overflow:hidden}
+.lprod{font-size:13px;line-height:1.2;color:var(--accent,#2C5F6B);word-break:break-word}
+
+/* Legend and foot compact */
+.legend{font-size:13px;line-height:1.25;padding-top:8px;display:flex;gap:20px;flex-wrap:wrap}
+.legend strong{color:var(--accent,#2C5F6B)}
+.foot{font-size:11px;line-height:1.2;color:var(--muted,#5C6D7E);padding-top:8px;display:flex;justify-content:space-between;gap:20px}
+
+/* Small responsive tweaks within fixed canvas */
+.lname, .lprod, .kicker, .lead, .legend, .foot { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+</style></head><body><div class="slide-container"><div class="page-inner"><div class="motif"></div><header><div class="kicker">DAY 1 · MD §D1.3.1 · 04 PLATFORM ARCHITECTURE</div><h1><span class="zh">七层平台架构：五层核心产品 + 两层开放集成</span><span class="en">The 7-Layer Architecture: 5 Core Product Layers + 2 Open Integration Layers</span></h1></header><p class="lead"><span class="zh">第 1 层与第 7 层<strong>不是 ITEM 的产品</strong>，而是客户已有的基础设施与终端系统。<strong>ITEM 的产品与价值集中在第 2–6 层</strong>：从语义智能到行业模板的完整 AI 运营内核。</span><span class="en">Layers 1 and 7 are <strong>not ITEM products</strong>: they are the customer's existing infrastructure and endpoints. <strong>ITEM's core products occupy Layers 2–6</strong>, from semantic intelligence to industry templates.</span></p><main class="stack">
+<section class="layer integration"><div class="lnum">LAYER 7 · <span class="zh">集成</span><span class="en">INTEGRATION</span></div><div class="lname"><span class="zh">终端与物理执行层</span><span class="en">Endpoint &amp; Physical Execution</span><small><span class="zh">客户已有终端、设备、机器人、POS、门店/现场系统；开放对接</span><span class="en">Existing apps, devices, robots, POS and field systems; open integration</span></small></div><div class="lprod"><span class="zh">任意品牌机器人 / IoT / POS / 移动端</span><span class="en">Any-brand robots / IoT / POS / mobile</span><br>MCP · A2A · API · PLC</div></section>
+<section class="layer"><div class="lnum">LAYER 6</div><div class="lname"><span class="zh">行业模板层</span><span class="en">Industry Template Layer</span><small><span class="zh">可插拔垂直方案；供应链已验证，其余按模板机制复制</span><span class="en">Pluggable vertical solutions; supply chain proven, other templates replicate the mechanism</span></small></div><div class="lprod">ItemChain · ItemFin · ItemDine<br>ItemEstate · ItemBuild · +5</div></section>
+<section class="layer"><div class="lnum">LAYER 5</div><div class="lname"><span class="zh">通用 AI 应用层</span><span class="en">General AI Application Layer</span><small><span class="zh">跨行业复用的 12 个命名应用：决策、执行、预测、支持、增长</span><span class="en">12 reusable apps: decide, execute, predict, support and grow</span></small></div><div class="lprod">ItemGPT · ItemClaw · ItemFlow<br>ItemSense · ItemPredict · +7</div></section>
+<section class="layer"><div class="lnum">LAYER 4</div><div class="lname"><span class="zh">企业运营平台层</span><span class="en">Enterprise Operations Platform</span><small><span class="zh">应用构建、工作流编排、人机协同工作区</span><span class="en">App building, workflow orchestration, human + AI workspace</span></small></div><div class="lprod">Item Foundry · Item AI OS</div></section>
+<section class="layer"><div class="lnum">LAYER 3</div><div class="lname"><span class="zh">AI 运行时层</span><span class="en">AI Runtime Layer</span><small><span class="zh">多模型编排、智能体运行时、治理与合规审计、自主部署</span><span class="en">Multi-model orchestration, agent runtime, governance, audit and autonomous deployment</span></small></div><div class="lprod">Item AIP · Blackbox Router · Harness</div></section>
+<section class="layer"><div class="lnum">LAYER 2</div><div class="lname"><span class="zh">数据与语义智能层</span><span class="en">Data &amp; Semantic Intelligence</span><small><span class="zh">本体、知识图谱、数字孪生；统一业务事实与知识底座</span><span class="en">Ontology, knowledge graph and digital twin; one business truth</span></small></div><div class="lprod">Item Ontology · GraphRAG · Digital Twin</div></section>
+<section class="layer integration"><div class="lnum">LAYER 1 · <span class="zh">集成</span><span class="en">INTEGRATION</span></div><div class="lname"><span class="zh">基础设施层</span><span class="en">Infrastructure Layer</span><small><span class="zh">客户已有云、本地、边缘算力与存储；非 ITEM 产品</span><span class="en">Existing cloud, on-prem and edge compute/storage; not ITEM products</span></small></div><div class="lprod">AWS · Azure · GCP<br><span class="zh">私有云 · 本地 · 边缘</span><span class="en">Private cloud · on-prem · edge</span></div></section>
+</main><div class="legend"><span><strong>2–6</strong> <span class="zh">核心产品：共用内核，配置行业差异</span><span class="en">Core products: shared kernel, configured industry differences</span></span><span><strong>1 / 7</strong> <span class="zh">开放集成：对接已有系统，不重复建设</span><span class="en">Open integration: connect, not rebuild</span></span></div><footer class="foot"><span><span class="zh">来源：product_general_investor_v4.3 · 04；产品映射沿用参考稿，ISS 实际接入范围另行确认。</span><span class="en">Source: product_general_investor_v4.3 · 04. Product mapping follows the reference; ISS integration scope requires confirmation.</span></span><span>01 / 04</span></footer></div></div></body></html>

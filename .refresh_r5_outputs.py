@@ -92,6 +92,15 @@ def replace_strings(value, old, new):
 
 def merge_detailed_manifest():
     manifest = git_json("source/detailed_manifest.json")
+    current_workshop_markers = {
+        "r5_platform_architecture",
+        "r5_product_panorama",
+        "r5_knowledge_foundation",
+        "r5_delivery_boundaries",
+        "r5_implementation_overview",
+    }
+    if current_workshop_markers & {page["id"] for page in manifest["pages"]}:
+        return manifest
     pages = []
     hiring = None
     assurance = None
@@ -424,7 +433,10 @@ def rebuild_scenes(text, manifest):
     blocks = []
     for page in manifest["pages"]:
         source = (deck / f'{page["id"]}.html').read_text(encoding="utf-8")
-        slide_start = source.find('<div class="slide-container"')
+        container = re.search(r'''<div\b[^>]*\bclass\s*=\s*["'][^"']*\bslide-container\b[^"']*["'][^>]*>''', source)
+        if container is None:
+            raise ValueError("Missing slide container: " + page["id"])
+        slide_start = container.start()
         slide_end = matching_div_end(source, slide_start)
         slide = source[slide_start:slide_end]
         if page["id"] == "r5_agent_assurance":

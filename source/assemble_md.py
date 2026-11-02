@@ -61,7 +61,7 @@ intro='''# ISS AI Native 转型工作坊
 **ITEM × COO AI Team × ISS Biz (team)｜主持人：Tom｜两天**  
 **Hollis：企业 AI 实践、方法框架与能力演进输入**
 
-通过 ITEM、COO AI Team 和 ISS Biz 的真实实践与共同研讨，明确 ISS 未来两到三年的运营状态，识别当前流程、能力与组织协作的差距，形成分阶段实施路线及自主能力与商业化方向。不是以 Agent 数量证明成功，而是把知识、决策、行动和反馈连接到业务结果。
+通过 ITEM、COO AI Team 和 ISS Biz 的真实实践与共同研讨，明确 ISS 未来两到三年的运营状态，识别当前流程、能力与组织协作的差距，形成分阶段实施路线及自主能力与商业化方向。不是以 Agent 数量证明成功，也不是寻找一个 Hero，而是把知识、决策、行动和反馈连接到业务结果。
 
 共同目标是减少重复开发及重复工作，让已有数据、软件、算力、模型、Agent 与 Skill 在同一业务流程中协作，并通过经过验证的能力复用，触发新的服务、流程和产品创新。
 
@@ -180,9 +180,13 @@ for f in [S/'case_outputs'/(item['id']+'.md') for item in case_items]+[S/'day2_f
     if not f.is_file():raise SystemExit('Missing content: '+str(f))
 first=between('### D1.1.','### D1.2.')
 first=re.sub(r'^> 第一天先看.*$', '> 第一天从八组实践与失败经验看业务结果、改造前后、实施过程、组织和价值证据，并请ISS对标。第二天结合Hollis企业实践形成目标蓝图、差距、路线及产品化方案，最后明确执行与责任。',first,flags=re.M)
-rest=between('### D1.3.','## Day 2.')
-pos=rest.index('### D1.4.')
-rest=rest[:pos]+platform+'\n\n---\n\n'+rest[pos:]
+revision=S/'day1_platform_revision.md'
+if revision.is_file():
+    rest=revision.read_text().strip()
+else:
+    rest=between('### D1.3.','## Day 2.')
+    pos=rest.index('### D1.4.')
+    rest=rest[:pos]+platform+'\n\n---\n\n'+rest[pos:]
 rest=remap_text(rest)
 cases=[]
 for item in case_items:
