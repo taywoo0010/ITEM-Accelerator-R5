@@ -468,32 +468,32 @@
 <tr>
 <td>业务对象</td>
 <td>核心对象、流程和规则是否成文，Agent 能否读懂并判断一个需求用到哪些对象？</td>
-<td>ISS Biz（team）业务 Owner：<strong><em>_；本体维护人：</em></strong>_</td>
+<td>ISS Biz（team）业务 Owner：<strong><strong>；本体维护人：</strong></strong></td>
 </tr>
 <tr>
 <td>接口</td>
 <td>常用读写操作是否都有接口、能否按操作检索？不能默认可读或可改；缺写接口的先做只读看板。</td>
-<td>接口 Owner：<strong><em>_；COO AI Team 支撑人：</em></strong>_</td>
+<td>接口 Owner：<strong><strong>；COO AI Team 支撑人：</strong></strong></td>
 </tr>
 <tr>
 <td>组件</td>
 <td>表单、扫码、拍照、审批、派工、看板等是否可复用？反复出现的环节是否值得沉淀为新积木？</td>
-<td>FDE：<strong><em>_；组件清单：</em></strong>_</td>
+<td>FDE：<strong><strong>；组件清单：</strong></strong></td>
 </tr>
 <tr>
 <td>权限与审计</td>
 <td>能否以用户本人身份调用接口？角色、站点和任务归属能否由系统判定？写入能否追溯到人、来源页面与版本？</td>
-<td>权限 Owner：<strong><em>_；审计位置：</em></strong>_</td>
+<td>权限 Owner：<strong><strong>；审计位置：</strong></strong></td>
 </tr>
 <tr>
 <td>数据与样例</td>
 <td>是否有授权、脱敏、可复现的测试环境与样例数据？哪些字段不能离开目标环境？</td>
-<td>数据 Owner：<strong><em>_；批准记录：</em></strong>_</td>
+<td>数据 Owner：<strong><strong>；批准记录：</strong></strong></td>
 </tr>
 <tr>
 <td>发布治理</td>
 <td>测试/生产是否隔离？定制包导入、审批、发布、停用和回退由谁负责？</td>
-<td>发布人：<strong><em>_；回退授权人：</em></strong>_</td>
+<td>发布人：<strong><strong>；回退授权人：</strong></strong></td>
 </tr>
 </tbody>
 </table>
@@ -996,7 +996,7 @@
 <td>知识</td>
 <td>可将审核 SOP 放入 UKM、Ontology 或 Skill</td>
 <td>有版本、授权、审核人、失效日期与回滚</td>
-<td>首个承载位置：<strong><em>_；Owner：</em></strong>_</td>
+<td>首个承载位置：<strong><strong>；Owner：</strong></strong></td>
 </tr>
 <tr>
 <td>数据</td>
@@ -1646,7 +1646,7 @@
 <p><strong>本节结论：</strong>形成“该做、先缩小、暂不做、需要其他团队处理”的分类，并把相关条件回填首个共建场景的边界和验收要求。</p>
 <hr/>
 <h3 id="md-D1-3">D1.3. 平台架构、产品全景与能力底座｜讨论时段沿用原议程</h3>
-<p>本节以平台架构和产品全景为主线，不再逐页罗列零散工具。会中保留三页：参考演示 04 的七层架构、参考演示 05 的产品全景，以及一页知识挖掘与能力底座补充。<a href="https://tommyyula.github.io/item-ai-strategy/product_general_investor_v4.3">参考演示：product_general_investor_v4.3</a>。产品名称和原稿验证状态作为参考定位，不等于这些能力已经在 ISS 开通或集成。</p>
+<p>本节保留原有三页：参考演示 04 的七层架构、参考演示 05 的产品全景，以及知识挖掘与能力底座补充。在第三页之后增加六页，将前面案例中的业务结果、任务链、架构机制、执行控制、复用资产与验证边界连接起来，共九页，讨论时段沿用原议程。<a href="https://tommyyula.github.io/item-ai-strategy/product_general_investor_v4.3">参考演示：product_general_investor_v4.3</a>。产品名称和原稿验证状态作为参考定位，不等于这些能力已经在 ISS 开通或集成；新增内容区分 WMS 本地实现、其他案例呈现与 ISS 待验证事项。</p>
 <h4 id="md-D1-3-1">D1.3.1 七层平台架构：五层核心产品 + 两层开放集成</h4>
 <p>第 1 层和第 7 层是客户已有基础设施与终端系统，不是 ITEM 产品。ITEM 的核心产品集中在第 2–6 层；通过开放接口连接现有业务系统，不重复建设客户的系统和硬件。</p>
 <table>
@@ -1779,6 +1779,32 @@
 <p><strong>真实来源 → 提取 → 业务／专家审核 → 对象、关系、规则、Action → 场景样本验证 → 发布与反馈。</strong> 按任务复杂度选择规则、小本体或完整建模，不要求每个任务先建大型本体。</p>
 <h4 id="md-D1-3-5">D1.3.5 发布与持续演进的最低要求</h4>
 <p>原始记录、AI 草稿、审核知识和已发布规则分开；业务 Owner 确认定义、例外及有效期。变更经过正常、异常及独立样本回归，再授权发布；保留版本、日志、反馈和回滚。业务状态回写与知识／能力反馈分别管理，客户敏感资料及未审核推断不自动成为产品资产。</p>
+<h4 id="md-D1-3-6">D1.3.6 平台价值：把业务请求变成可验证的结果</h4>
+<p>平台介绍应从业务任务出发，而不是重复列举产品。以 D1.2.2.2 的破损库存案例为例：巡检员请求上报破损，Agent 生成 Dynamic Task，系统校验照片等必填信息；提交后创建 Inventory Issue，货况 Good → Damaged，库存不可拣。主管通过 Dynamic Page 汇总并确认派工，以本人权限创建 Move Damage 任务，Issue 由 Open 变为 In Progress。执行人复用 Move Inventory 标准步骤，扫码核对并按策略放入 DMG-01；两条 Issue 自动变为 Resolved。操作人、库存流水、来源页面和版本能够追溯。</p>
+<p>这条链的结果不是“表单已生成”，而是业务状态经过检查后发生变化并留有记录。上述机制在 ITEM WMS 本地环境实现；演示动画、人物和单据号为示意，不代表 ISS 已上线或完成基线测量。</p>
+<p>Rate &amp; Quote（D1.2.3.8）用数据语义和价格规则支持分析、模拟与报价，最终批准与计费关联按实际范围说明；AVL（D1.2.4.8）用同一供应商本体支撑查询分析与动态页面。两例作为平台能力路径的依据，不据此推断已完成任意生产系统集成或取得量化收益。</p>
+<h4 id="md-D1-3-7">D1.3.7 三类工作面，承接同一条任务链</h4>
+<p>Ontology Studio 面向业务 Owner、专家与共建者，定义对象、关系、规则、流程和 Action 边界，结合数据语义审核有效范围。Agent Factory 面向 FDE、Senior User 和 Developer，将本体、接口及规则组织为可测试、可调用的 Agent、Workflow 和工具能力，承接测试、审核和发布。ITEMGPT Runtime / ItemGPT 面向业务用户与一线人员，让用户用自然语言提出需求，使用 Agent 与动态页面，并在自己的权限内试用、确认和执行。</p>
+<p>共同任务链是：明确问题、角色与完成条件 → 取得对象、规则及授权数据 → 调用或生成能力，按需试运行和发布 → 系统校验、执行、状态与反馈。不是每次查询都要重新生成并发布应用，也不是所有任务都必须经过同一种开发方式。</p>
+<p>WMS 的实际分工是 Agent 理解与生成，WMS 执行权限、库存和业务规则，有权限的人决定发布和关键动作。三类工作面沿用 D1.1.2；执行机制依据 D1.2.2.3，语义到能力的路径依据 D1.2.3.4–7。不能把用户代理写成拥有全权的自动执行者。</p>
+<h4 id="md-D1-3-8">D1.3.8 业务语义、执行能力与系统接口如何连接</h4>
+<p>承接 D1.3.1 的七层架构，用前面案例说明各层责任，而不新增另一套产品目录。业务含义由 Item Ontology、Ontology Studio 及 Object Database / Data Hub 组织，包含对象、关系、规则、数据语义与上下文；Rate Sheet 和 AVL 为语义到应用的案例依据。</p>
+<p>能力建设由 Agent Factory、Agent / Workflow 及 Dynamic Task / Dynamic Page 等承接，使用本体、接口目录和标准动作。WMS 生成巡检任务和派工页面，不另写一套库存逻辑，也不绕过既有接口。运行与交互映射到 ITEMGPT Runtime、Item AIP / Harness、Model Hub、Connector / Tools，承接模型与工具调用和运行管理；具体模型、托管、计量及治理范围以目标环境能力对齐为准。</p>
+<p>WMS、BNP、AVL 等客户既有系统保留权威业务事实、权限校验与 Action 执行。客户已有云、本地和现场终端通过接口集成；不要求重建系统或迁移全部 Agent。这是依据 D1.3.1 / D1.3.3 与案例组织的责任映射，不代表 ISS 已开通全部产品或接口。</p>
+<h4 id="md-D1-3-9">D1.3.9 生成可以灵活，权限与发布必须受控</h4>
+<p>以下控制依据 D1.2.2.3 的 ITEM WMS 本地实现，不能直接外推为 ISS 已通过安全认证或所有平台环境已采用同一沙箱。</p>
+<p>用户委托令牌不是超级用户令牌。接口检查角色权限、仓库范围与任务归属，用户不能做的，Agent 也不能做。Dynamic View 的只读取数代码按内容哈希不可变保存，在 WebAssembly 沙箱运行；无文件系统、无环境变量、不能访问其他网络，只拿当前用户的只读令牌。</p>
+<p>生成与上线分开：草稿仅作者可见，经过试运行和迭代，再由有权限的人发布。发布时预览接口所需权限；测试环境导出的定制包，导入生产后仍为草稿，不自动生效。变更记录关联操作人、来源页面、版本和库存流水；版本可以停用或回退。版本回退不等于自动撤销已经发生的库存或业务动作，业务补偿须按实际系统规则处理。</p>
+<p>ISS 接入时需要重新验证身份与权限映射、只读沙箱适配、生产发布职责以及日志追踪范围，不能只用 Prompt 中的安全要求代替系统控制。</p>
+<h4 id="md-D1-3-10">D1.3.10 复用业务语义、标准动作和发布资产</h4>
+<p>复用对象不仅是一整个 Agent。业务语义层可以复用本体、对象与规则结构、接口目录；标准动作层可以复用 Task Context / Lines / Records 三层存储与 Composable Step；应用层可以复用 Task Type、Dynamic Page 及定制包；验证与治理层可以复用版本机制、样本与回归方法以及异常记录。</p>
+<p>具体例子是 Move Inventory 的 Take / Place，可用于组装、补货、库位优化和坏货处理。业务事实仍留在所属业务对象中，任务数据按三层结构引用，不因每个需求新增一张业务表。以上机制依据 D1.2.2.3；同一套本体支撑 Agent、分析页面与表单的案例依据 D1.2.3.7。</p>
+<p>换场景仍须重验业务术语与客户规则、货况和库位映射、接口副作用、角色和任务权限、目标环境依赖、样本分布、风险等级和完成标准，并明确维护 Owner。第一场景通过不能推断第二场景必然通过。</p>
+<p>D1.3.3 中 Marketplace 是技术能力登记、发现和治理的定位，Dashboard 观察采用、质量、成本与业务结果。不能仅因有目录，就声称已实现跨团队订阅、完整版本兼容或规模化复用；实际共享范围和授权机制应以验证记录为准。</p>
+<h4 id="md-D1-3-11">D1.3.11 已有实现与 ISS 验证，分开说明</h4>
+<p>WMS 本地已实现动态任务与页面、用户权限、只读沙箱、标准步骤、版本发布及变更留痕。Rate &amp; Quote / AVL 案例呈现数据语义 → 本体 → 可调用 Agent → 分析与动态页面的路径；演示不能替代生产规模和收益证据。其实现范围分别依据 D1.2.2.1 / D1.2.2.3、D1.2.3.10 和 D1.2.4.8。</p>
+<p>ISS 尚需确认数据、代码和 API 的可用范围，身份权限映射、测试与生产环境、真实执行／模拟／人工确认边界；同时需要正常、异常和权限样本、业务完成标准、Owner 与人工接管、基线和单位成本，以及跨场景复验记录。不给未确认事项标注 Production，也不移植其他平台的能力数量或规划阶段。</p>
+<p>本轮建议以一个范围明确的任务通过四个验证门：①明确授权材料、场景范围与业务 Owner；②验证正常、异常及权限拒绝；③授权试运行并确认发布责任；④验收业务结果，复测质量和成本。这是待共同确认的验证方案，衔接 D1.4 的落地与验收边界，不增加原议程时长，不替代 D1.5 的完整七阶段路径。</p>
 <hr/>
 <h3 id="md-D1-4">D1.4. 落地与验收边界｜讨论时段沿用原议程</h3>
 <p>旧风险与平台融合内容浓缩为一张补充页，不再为未定义的内部产品名词单独展开。</p>
@@ -1969,22 +1995,22 @@
 <tbody>
 <tr>
 <td><strong>① 首个共建场景与验收指标</strong></td>
-<td>场景：<strong><em>_；问题/用户：</em></strong>_；范围/排除项：<strong><em>_；业务基线与指标：</em></strong>_；测试与验收：____。</td>
+<td>场景：<strong><strong>；问题/用户：</strong></strong>；范围/排除项：<strong><strong>；业务基线与指标：</strong></strong>；测试与验收：____。</td>
 <td>待会议确认</td>
 </tr>
 <tr>
 <td><strong>② 联合团队与 Owner</strong></td>
-<td>ISS Biz：<strong><em>_；COO AI：</em></strong>_；ITEM：<strong><em>_；FDE/专家：</em></strong>_；数据/系统/审批/运营：<strong><em>_；COO AI Team 按需事项：</em></strong>_。</td>
+<td>ISS Biz：<strong><strong>；COO AI：</strong></strong>；ITEM：<strong><strong>；FDE/专家：</strong></strong>；数据/系统/审批/运营：<strong><strong>；COO AI Team 按需事项：</strong></strong>。</td>
 <td>待会议确认</td>
 </tr>
 <tr>
 <td><strong>③ 能力输入与执行边界</strong></td>
-<td>已有材料/能力：<strong><em>_；缺口：</em></strong>_；权限/部署/留存：<strong><em>_；真实执行/模拟/人工确认：</em></strong>_。</td>
+<td>已有材料/能力：<strong><strong>；缺口：</strong></strong>；权限/部署/留存：<strong><strong>；真实执行/模拟/人工确认：</strong></strong>。</td>
 <td>待会议确认</td>
 </tr>
 <tr>
 <td><strong>④ 推进方式与下一决策门</strong></td>
-<td>首轮阶段及交付：<strong><em>_；Owner/投入：</em></strong>_；计划时间：<strong><em>_；继续/调整/停止门：</em></strong>_；后续阶段：____。</td>
+<td>首轮阶段及交付：<strong><strong>；Owner/投入：</strong></strong>；计划时间：<strong><strong>；继续/调整/停止门：</strong></strong>；后续阶段：____。</td>
 <td>待会议确认</td>
 </tr>
 </tbody>
