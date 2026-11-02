@@ -112,6 +112,25 @@ class PlatformExecutionSupplementTests(unittest.TestCase):
                 match = FORBIDDEN_MIGRATION_PATTERN.search(scene_text)
                 self.assertIsNone(match, f"obsolete vendor/product label migrated: {match.group(0) if match else ''}")
 
+    def test_client_revision_uses_v2_source_without_wms_dependencies(self):
+        forbidden = re.compile(r"\b(?:WMS|SKU|WebAssembly|DMG-01)\b|Move\s+Inventory|Inventory\s+Issue", re.I)
+        statistics = re.compile(r"70\s*%|<\s*10\s*%|10\s*[×x]|55\s*(?:个|separate)?\s*WMS", re.I)
+        for page_id in PLATFORM_EXECUTION_IDS:
+            with self.subTest(page_id=page_id):
+                scene = self.meeting.get_element_by_id(page_id)
+                text = scene.text_content()
+                self.assertIsNone(forbidden.search(text))
+                self.assertIsNone(statistics.search(text))
+                self.assertTrue(scene.xpath('.//a[@href="https://tommyyula.github.io/item-ai-plateform-v2/"]'))
+
+    def test_bilingual_titles_match_updated_manifest(self):
+        for page_id in PLATFORM_EXECUTION_IDS:
+            with self.subTest(page_id=page_id):
+                scene = self.meeting.get_element_by_id(page_id)
+                for lang, field in (("zh", "title"), ("en", "en")):
+                    heading = scene.xpath(f'.//h1/span[@class="{lang}"]')[0].text_content()
+                    self.assertEqual(heading, self.pages_by_id[page_id][field])
+
 
 if __name__ == "__main__":
     unittest.main()

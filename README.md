@@ -103,6 +103,6 @@ python -m unittest discover -s source -p 'test*.py'
 
 ### D1.3 六页平台机制补充
 
-六页位于会中第72–77页，顺序为业务结果、任务链、架构机制、执行控制、复用资产和验证边界，对应正文 D1.3.6–D1.3.11。原三页、D1.4、其他案例、媒体和两天议程时长均保留；内容明确区分 WMS 本地实现、Rate & Quote / AVL 案例呈现与 ISS 待验证事项。
+六页位于会中第72–77页，对应正文 D1.3.6–D1.3.11。新版采用 [ITEM Enterprise AI Platform v2](https://tommyyula.github.io/item-ai-plateform-v2/)：企业问题与共用底座、Knowledge Fabric、本体生命周期、共用架构、Agent Factory、Marketplace / ItemGPT，以及客户配置集成和角色培训。工单、SOP、知识服务和资料分析为通用示意；平台介绍不再以WMS为主要依据，也不照搬无统计口径的营销数字。原三页、D1.4、其他案例、媒体和两天议程时长均保留；产品材料描述与 ISS 实际接入、权限、部署和验收分开说明。
 
-六页原生 HTML 由 Manus Slides 制作，再通过既有重建流程组装。新增 `source/test_platform_execution_supplement.py` 检查插入顺序、正文锚点、双语、133/16页数、日程及manifest一致性。针对当前修订的7项测试及新增5项测试可分别运行：`python source/test_workshop_revision.py`、`python source/test_platform_execution_supplement.py`。新增页在重建程序中显式登记，提交后再次重建也会保留样式。
+六页原生 HTML 由 Manus Slides 制作，再通过既有重建流程组装。`source/test_platform_execution_supplement.py` 检查插入顺序、正文锚点、双语、133/16页数、日程、manifest一致性，及新版来源、标题同步、无WMS专属依赖和无依据数字。相关测试可分别运行：`python source/test_workshop_revision.py`、`python source/test_platform_execution_supplement.py`。新增页在重建程序中显式登记，提交后再次重建也会保留样式。

@@ -1258,9 +1258,9 @@
     },
     {
       "id": "r5_task_outcomes",
-      "title": "平台价值：把业务请求变成可验证的结果",
-      "en": "Platform value: turn a request into a verifiable outcome",
-      "summary": "平台价值：把业务请求变成可验证的结果",
+      "title": "企业 AI：贯通知识、能力与业务执行",
+      "en": "Enterprise AI: connect knowledge, capabilities and action",
+      "summary": "平台不只是接入大模型：让企业团队能理解业务、构建能力、共享复用，并持续运营。",
       "md": "D1.3.6",
       "refs": [
         "D1.3.6"
@@ -1275,9 +1275,9 @@
     },
     {
       "id": "r5_task_execution",
-      "title": "三类工作面，承接同一条任务链",
-      "en": "Three work surfaces, one task lifecycle",
-      "summary": "三类工作面，承接同一条任务链",
+      "title": "Knowledge Fabric：把业务材料变成可执行知识",
+      "en": "Knowledge Fabric: from business evidence to usable knowledge",
+      "summary": "不只是把文档塞进检索库，而是形成可查询、可验证、可交付给 Agent 的业务语义。",
       "md": "D1.3.7",
       "refs": [
         "D1.3.7"
@@ -1292,9 +1292,9 @@
     },
     {
       "id": "r5_platform_mechanisms",
-      "title": "业务语义、执行能力与系统接口如何连接",
-      "en": "How business meaning, capabilities and systems connect",
-      "summary": "业务语义、执行能力与系统接口如何连接",
+      "title": "一套共用架构：入口、能力、语义与执行分工",
+      "en": "One shared architecture: entry, capabilities, meaning and execution",
+      "summary": "这里展示产品如何协同运行，与前页七层产品全景互补；不把业务理解和系统写操作混在一个 Prompt 里。",
       "md": "D1.3.8",
       "refs": [
         "D1.3.8"
@@ -1309,9 +1309,9 @@
     },
     {
       "id": "r5_execution_controls",
-      "title": "生成可以灵活，权限与发布必须受控",
-      "en": "Flexible generation, controlled access and release",
-      "summary": "生成可以灵活，权限与发布必须受控",
+      "title": "Agent Factory：从业务需求到受控发布",
+      "en": "Agent Factory: from business intent to governed release",
+      "summary": "用自然语言建设 Agent，但将测试、权限、审批与运行治理落实到独立的平台机制。",
       "md": "D1.3.9",
       "refs": [
         "D1.3.9"
@@ -1326,9 +1326,9 @@
     },
     {
       "id": "r5_reusable_assets",
-      "title": "复用业务语义、标准动作和发布资产",
-      "en": "Reuse business meaning, standard actions and release assets",
-      "summary": "复用业务语义、标准动作和发布资产",
+      "title": "Marketplace + ItemGPT：发现、组合与复用能力",
+      "en": "Marketplace + ItemGPT: discover, combine and reuse",
+      "summary": "Agents、Skills、MCP Servers、APIs、Tools 形成可授权资产；用户从业务意图出发，不必重接每个系统。",
       "md": "D1.3.10",
       "refs": [
         "D1.3.10"
@@ -1343,9 +1343,9 @@
     },
     {
       "id": "r5_validation_scope",
-      "title": "已有实现与 ISS 验证，分开说明",
-      "en": "Separate existing implementation from ISS validation",
-      "summary": "已有实现与 ISS 验证，分开说明",
+      "title": "客户接入：复用产品、配置集成、按角色推广",
+      "en": "Customer adoption: reuse, configure, integrate and train",
+      "summary": "不从零研发一个平台：复用已有知识、Agent、Skill 和运行能力，差异通过配置、集成与必要扩展承接。",
       "md": "D1.3.11",
       "refs": [
         "D1.3.11"
