@@ -33,18 +33,26 @@
 .content{
   flex:1;
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-  padding-top:14px;
-  align-items:start;
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  grid-template-rows:auto 1fr;
+  gap:18px 24px;
+  padding-top:18px;
+  align-items:stretch;
 }
-.block{border-top:3px solid #007f86;padding-top:8px}
+.block{border:1px solid #d8e1ea;border-radius:16px;padding:16px 18px;background:#fff;box-shadow:0 10px 24px rgba(29,55,76,.06)}
 .block h2{font-size:22px;line-height:1.3;margin-bottom:8px}
 .block p,.block li{font-size:18px;line-height:1.45}
 .block ul{padding-left:18px;margin-top:6px}
 .block li{margin-bottom:5px}
 .tag{font-size:13px;color:#007f86;font-weight:700;letter-spacing:.04em;margin-bottom:6px}
-.video-slot{border:2px dashed #007f86;min-height:180px;padding:12px;display:flex;flex-direction:column;justify-content:center}
+.video-slot{grid-column:2;grid-row:1 / span 2;min-height:0;padding:12px;display:flex;flex-direction:column;justify-content:center;gap:10px;background:linear-gradient(145deg,#10152a 0%,#171d3d 100%);border:1px solid #343b62;border-radius:18px;box-shadow:0 16px 30px rgba(18,24,52,.18);overflow:hidden}
+.video-head,.video-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#a8b0d3;font-size:12px;line-height:1.2}
+.video-head{padding:2px 4px 4px;letter-spacing:.08em;text-transform:uppercase}
+.video-head .video-label{display:inline-flex;align-items:center;gap:7px;color:#d7dcff;font-weight:700}
+.video-head .video-label::before{content:"";width:7px;height:7px;border-radius:50%;background:#55d5c4;box-shadow:0 0 0 4px rgba(85,213,196,.14)}
+.video-foot{padding:2px 4px 0;color:#8d96bc}
+.video-foot span:last-child{color:#c5caff;text-align:right}
+.video-slot video{display:block;width:100%;max-width:100%;height:auto;background:#07101c;border-radius:11px;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
 .video-slot h2{margin-bottom:8px;font-size:22px;line-height:1.3}
 .video-slot p{font-size:18px;line-height:1.45;margin-top:8px}
 .note{font-size:18px!important;line-height:1.4!important;color:#52647b;margin-top:12px}
@@ -66,19 +74,20 @@ html[data-lang=en] .video-slot { padding:12px 14px 0!important; min-height:250px
 html[data-lang=en] .callout, html[data-lang=en] .discussion { margin-top:10px!important; padding-top:8px!important; font-size:18px!important; line-height:1.25!important; }
 html[data-lang=en] .foot { padding-top:8px!important; line-height:18px!important; font-size:14px!important; }
 html[data-lang=en] td, html[data-lang=en] th { padding:4px 6px 0!important; }
+@media(max-width:700px){.content{grid-template-columns:1fr;grid-template-rows:auto}.video-slot{grid-column:auto;grid-row:auto}}
 </style>
 </head>
 <body>
 <div class="slide-container"><div class="page-inner">
-<header class="title-zone"><div class="kicker"><span class="zh">DAY 1 · MD §D1.2.1.1</span><span class="en">DAY 1 · MD §D1.2.1.1</span></div><h1><span class="zh">先从业务结果与改造前流程入手</span><span class="en">Start with the outcome and current flow</span></h1></header>
+<header class="title-zone"><div class="kicker"><span class="zh">DAY 1 · MD §D1.2.1.1</span><span class="en">DAY 1 · MD §D1.2.1.1</span></div><h1><span class="zh">从适合的任务切入：减少人工重复，让调度有据可依</span><span class="en">Start with suitable tasks: less manual work, better-informed dispatch</span></h1></header>
 <div class="rule"></div>
-<p class="lead"><span class="zh">不要先假设“需要一个 Agent”：先把重复问题、交接和可验收结果说清楚，再选择可控切入点。</span><span class="en">Do not assume “we need an Agent” first: clarify repeated work, handoffs and acceptance before choosing a controlled entry point.</span></p>
+<p class="lead"><span class="zh">不只看发生次数，优先选择耗人力、规则清楚、容易验证的任务；对依赖经验的决策，先用数据与计算辅助判断。</span><span class="en">Prioritise suitability, not just frequency: labour-intensive tasks with clear rules and verifiable results. Support experience-led decisions with data and computation.</span></p>
 <main class="content">
-<section class="block"><div class="tag">01 · OUTCOME</div><h2><span class="zh">痛点与期望结果</span><span class="en">Pain and intended outcome</span></h2><ul class="zh"><li>重复工作多，但优先级、责任和触发条件不清。</li><li>建议结果：用经授权的 CSR ticket 找到可审核的问题分类。</li><li>再形成一个有输入、输出、Action、升级和 Owner 的候选 Agent。</li><li>不预先承诺节省、排名、模型能力或运营收益。</li></ul><ul class="en"><li>Repetition is high, but priority, ownership and triggers are unclear.</li><li>Intended outcome: build a reviewable issue taxonomy from authorised CSR tickets.</li><li>Then define an Agent candidate with inputs, outputs, Actions, escalation and Owner.</li><li>No pre-commitment to savings, rankings, model capability or operating gains.</li></ul></section>
-<section class="block"><div class="tag">02 · CURRENT FLOW</div><h2><span class="zh">改造前流程（待用真实流程核对）</span><span class="en">Current flow (to verify with reality)</span></h2><ul class="zh"><li>CSR 提交或状态变化</li><li>人员查找订单、监控、派车、状态、结算信息</li><li>多角色交接、补问并人工更新状态</li><li>异常继续追踪或升级，结果留在工单与业务记录</li></ul><ul class="en"><li>CSR submission or status change</li><li>People look up order, monitoring, dispatch, status and settlement data</li><li>Handoffs, follow-up questions and manual status updates</li><li>Exceptions are tracked or escalated; results stay in tickets and records</li></ul><p class="note"><span class="zh">建议用一张真实流程图逐项确认系统边界、交接和状态真值。</span><span class="en">Use one real process map to verify system boundaries, handoffs and the source of truth.</span></p></section>
-<section class="block video-slot" data-case-id="c01"><h2><span class="zh">预录视频｜待Tom放置</span><span class="en">Pre-recorded video | Tom to place</span></h2><p><span class="zh">建议录制：一组已脱敏 CSR ticket → 问题合并 → 一条运输任务的触发、交接、异常接管与回放。</span><span class="en">Suggested recording: redacted CSR tickets → issue merging → one transport task through trigger, handoff, exception takeover and replay.</span></p><p><span class="zh">请明确标注：真实 / 脱敏 / 模拟；不写假 src，不嵌外链播放器。</span><span class="en">Label clearly: real / redacted / simulated. No fake src and no external player.</span></p></section>
+<section class="block"><div class="tag">01 · OUTCOME</div><h2><span class="zh">痛点与期望结果</span><span class="en">Pain and intended outcome</span></h2><ul class="zh"><li>邮件、PDF 录入和码头查询依赖人工，重复耗时。</li><li>查询频次因人而异；派车主要靠直觉与经验，难以稳定比较方案。</li><li>用 Agent 承接重复操作、辅助调度，目标是以更少人力更准确、稳定地完成工作。</li><li>经验让计划可执行，计算让方案更优，实时变化驱动动态调整。</li></ul><ul class="en"><li>Reading emails and PDFs, entering data and checking terminals are repetitive manual work.</li><li>Checking frequency varies by person; intuition-led dispatch makes consistent comparison difficult.</li><li>Agents handle repetitive work and assist dispatch, aiming for less manual effort, greater accuracy and consistency.</li><li>Experience makes plans workable; computation improves choices; live changes drive adjustments.</li></ul></section>
+<section class="block"><div class="tag">02 · CURRENT FLOW</div><h2><span class="zh">改造前流程</span><span class="en">Current workflow</span></h2><ul class="zh"><li>客户邮件 / PDF → CSR 提取箱号、ETA、发送日期等，录入系统。</li><li>临近 ETA，人工逐个码头查询到港状态及免费期，每人每天约1–8轮。</li><li>每区域每天约30–50名司机，安排150个集装箱的送／挂／还。</li><li>任务顺序、到港时间、免费期、司机工时与空驶成本相互牵动，实时路况又不断打乱原计划，调度需要持续比较和调整。</li></ul><ul class="en"><li>Customer email / PDF → CSR enters container numbers, ETA, sent date and other details into the system.</li><li>Near ETA, staff check terminal websites for arrivals and free time, about 1–8 rounds per person daily.</li><li>Each region assigns roughly 30–50 drivers to delivery, drop and return work for 150 containers daily.</li><li>Task order, arrivals, free time, driver hours and empty-mile costs interact. Changing traffic disrupts plans, requiring continual comparison and adjustment.</li></ul><p class="note"><span class="zh">重复操作消耗人力，复杂调度依赖个人经验。</span><span class="en">Repetitive work consumes labour; complex dispatch depends on individual experience.</span></p></section>
+<section class="video-slot" data-video-id="port-drayage"><div class="video-head"><span class="video-label"><span class="zh">现场演示</span><span class="en">FIELD DEMO</span></span><span>07:43 · PORT DRAYAGE</span></div><video controls playsinline preload="metadata" poster="media/port-drayage/port-drayage-poster.jpg" aria-label="码头集装箱运输演示 / Port drayage demo"><source src="media/port-drayage/port-drayage.mp4" type="video/mp4"><span class="zh">当前浏览器无法播放此视频。</span><span class="en">This browser cannot play the video.</span></video><div class="video-foot"><span><span class="zh">真实系统演示 · 码头集装箱运输</span><span class="en">System demo · port drayage</span></span><span><span class="zh">数据驱动 → Agent 执行</span><span class="en">Data-led → Agent execution</span></span></div></section>
 </main>
-<div class="discussion"><b class="zh">讨论</b><b class="en">Discussion</b><span class="zh">哪一批 CSR ticket 可授权、可脱敏？这条原流程里，哪一步最适合作为首个小范围验证？</span><span class="en">Which CSR ticket batch can be authorised and redacted? Which step is the best narrow first validation?</span></div>
+<div class="discussion"><b class="zh">讨论</b><b class="en">Discussion</b><span class="zh">哪些步骤可以直接自动化？哪些决策应先由 Agent 计算比较、人工确认？</span><span class="en">Which steps can be automated directly? Which decisions should Agents compare first, with human confirmation?</span></div>
 <footer class="foot"><span>ITEM × COO AI Team × ISS Biz (team)</span><span>R5 · MD §D1.2.1.1</span></footer>
 </div></div>
 </body>

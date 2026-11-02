@@ -11,35 +11,55 @@
     .kicker{font-size:14px;letter-spacing:1.5px;color:#007f86;font-weight:700;margin-bottom:10px}
     h1{font-size:32px;line-height:1.15;font-weight:750;letter-spacing:-.3px}
     .lead{font-size:18px;line-height:1.45;color:#52647b;padding-top:16px;max-width:1110px}
-    .content{flex:1;display:grid;grid-template-columns:1.05fr .95fr;gap:24px;padding-top:20px}
-    .left{display:grid;grid-template-rows:1fr 1fr;gap:18px}
-    .block{border-top:2px solid #d5dce4;padding-top:12px}
-    h2{font-size:22px;line-height:1.3;color:#007f86;margin-bottom:8px}
-    p,li{font-size:18px;line-height:1.5;color:#152439}
-    ul{padding-left:22px}li{margin-bottom:5px}
+    .content{flex:1;display:grid;grid-template-columns:minmax(0,1.06fr) minmax(360px,.94fr);gap:28px;padding-top:22px;align-items:stretch}
+    .block{border:1px solid #d9e2e9;border-radius:16px;padding:18px 20px;background:#fff;box-shadow:0 10px 24px rgba(29,55,76,.06)}
+    h2{font-size:22px;line-height:1.3;color:#007f86;margin-bottom:6px}
+    p,li,td,th{font-size:18px;line-height:1.38;color:#152439}
+    table{width:100%;border-collapse:collapse}
+    th{font-size:13px;letter-spacing:.9px;color:#007f86;text-align:left;padding:0 10px 10px 0}
+    td{padding:10px 10px 10px 0;border-bottom:1px solid #e6edf1;vertical-align:top}
+    tr:last-child td{border-bottom:0}
+    td.pain{width:44%;color:#52647b}
     .note{color:#52647b}
-    .video-slot{border:2px dashed #007f86;min-height:318px;padding:24px;display:flex;flex-direction:column;justify-content:center;gap:14px;background:#eef7f7}
-    .video-slot .slot-title{font-size:24px;font-weight:750;color:#007f86}
-    .video-slot p{font-size:18px;line-height:1.5}
-    .tag{display:inline-block;font-size:14px;line-height:1.3;color:#007f86;font-weight:700;letter-spacing:.3px;margin-bottom:8px}
+    .video-slot{min-height:318px;padding:12px;display:flex;flex-direction:column;justify-content:center;gap:10px;background:linear-gradient(145deg,#10152a 0%,#171d3d 100%);border:1px solid #343b62;border-radius:18px;box-shadow:0 16px 30px rgba(18,24,52,.18);overflow:hidden}
+    .video-head,.video-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#a8b0d3;font-size:12px;line-height:1.2}
+    .video-head{padding:2px 4px 4px;letter-spacing:.08em;text-transform:uppercase}
+    .video-head .video-label{display:inline-flex;align-items:center;gap:7px;color:#d7dcff;font-weight:700}
+    .video-head .video-label::before{content:"";width:7px;height:7px;border-radius:50%;background:#55d5c4;box-shadow:0 0 0 4px rgba(85,213,196,.14)}
+    .video-foot{padding:2px 4px 0;color:#8d96bc}
+    .video-foot span:last-child{color:#c5caff;text-align:right}
+    .video-slot video{display:block;width:100%;max-width:100%;height:auto;background:#07101c;border-radius:11px;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
     .discussion{border-top:1px solid #c9d2dc;padding-top:11px;margin-top:18px;font-size:18px;line-height:1.45;color:#152439}
     .discussion b{color:#007f86;margin-right:8px}
-    .foot{display:flex;justify-content:space-between;font-size:14px;color:#52647b;padding-top:16px}
+    .foot{display:flex;justify-content:space-between;font-size:14px;color:#52647b;padding-top:14px}
   </style>
 </head>
 <body>
 <div class="slide-container"><div class="page-inner">
-  <header><div class="kicker"><span class="zh">DAY 1 · MD §D1.2.5.1</span><span class="en">DAY 1 · MD §D1.2.5.1</span></div><h1><span class="zh">从“做得出来”开始采集知识</span><span class="en">Capture Knowledge from Work People Can Demonstrate</span></h1></header>
-  <p class="lead"><span class="zh">先把真实操作变成可审核的 SOP 草稿，再决定哪些步骤适合 Agent、Tool 或 Workflow；不是先假设自动化已经成功。</span><span class="en">Turn demonstrated work into a reviewable SOP draft before deciding what belongs in an Agent, Tool, or Workflow. Do not assume automation success.</span></p>
+  <header><div class="kicker"><span class="zh">DAY 1 · MD §D1.2.6.1</span><span class="en">DAY 1 · MD §D1.2.6.1</span></div><h1><span class="zh">为什么：做得出来、说不清楚</span><span class="en">Why: Work People Can Do but Cannot Easily Write Down</span></h1></header>
+  <p class="lead"><span class="zh">业务人员演示一遍，ItemGPT 学成可复用的技能，并整理成 SOP；适合 backlog 处理、物流数据采集、线下资料整理和跨系统操作。</span><span class="en">A business user demonstrates once; ItemGPT learns a reusable skill and writes the SOP. It fits backlog work, logistics data collection, offline paperwork and cross-system tasks.</span></p>
   <main class="content">
-    <section class="left">
-      <div class="block"><span class="tag"><span class="zh">业务痛点 · 已知</span><span class="en">BUSINESS PAIN · KNOWN</span></span><h2><span class="zh">文字 SOP 先行，容易漏掉真实动作</span><span class="en">Text-first SOPs miss real actions</span></h2><p><span class="zh">页面切换、口头判断、手工步骤和未记录经验难以仅靠访谈还原。候选适用流程包括 backlog、物流数据、线下资料与跨系统操作。</span><span class="en">Screen changes, verbal judgement, manual steps, and tacit experience are easy to miss in interviews. Candidate flows include backlog, logistics data, offline materials, and cross-system work.</span></p></div>
-      <div class="block"><span class="tag"><span class="zh">期望结果 · 建议</span><span class="en">EXPECTED OUTCOME · PROPOSED</span></span><h2><span class="zh">有证据的草稿 + 清晰的接管边界</span><span class="en">Evidence-backed draft + clear takeover boundaries</span></h2><p><span class="zh">输出步骤、输入、判断、系统切换、例外、结果和不确定性；由实际操作人员及 ISS Biz (team) 业务 Owner 审核。耗时、遗漏、修正量和维护成本待实测。</span><span class="en">Output steps, inputs, decisions, system changes, exceptions, results, and uncertainty. The operator and ISS Biz (team) Owner review it. Time, omissions, corrections, and maintenance cost are unmeasured.</span></p></div>
+    <section class="block">
+      <table>
+        <tr><th><span class="zh">痛点</span><span class="en">PAIN POINT</span></th><th><span class="zh">我们的做法</span><span class="en">OUR APPROACH</span></th></tr>
+        <tr><td class="pain"><span class="zh">写 SOP 门槛高，还常漏掉步骤和例外</span><span class="en">Writing SOPs is costly and misses steps</span></td><td><span class="zh">照常做一遍，ItemGPT 整理成 SOP</span><span class="en">Work as usual once; ItemGPT writes the SOP</span></td></tr>
+        <tr><td class="pain"><span class="zh">经验靠访谈和回忆，判断说不清</span><span class="en">Judgement is lost in interviews and recall</span></td><td><span class="zh">从真实操作提取判断，标出不确定处</span><span class="en">Extract decisions from real work and flag doubts</span></td></tr>
+        <tr><td class="pain"><span class="zh">写好了 SOP，仍要人每天照着做</span><span class="en">Even with an SOP, people repeat the work daily</span></td><td><span class="zh">学成技能，一句话交给 ItemGPT</span><span class="en">Learn a skill; hand it to ItemGPT in one sentence</span></td></tr>
+        <tr><td class="pain"><span class="zh">想自动化要等开发做接口</span><span class="en">Automation waits for API work</span></td><td><span class="zh">扩展操作网页，Companion 操作桌面软件</span><span class="en">The extension runs web apps; Companion runs desktop apps</span></td></tr>
+        <tr><td class="pain"><span class="zh">流程变了，没人更新文档</span><span class="en">Processes change; documents do not</span></td><td><span class="zh">再演示一遍，技能和 SOP 一起更新</span><span class="en">Demonstrate again; skill and SOP update together</span></td></tr>
+      </table>
     </section>
-    <aside class="video-slot" data-case-id="c05"><div class="slot-title"><span class="zh">预录视频｜待 Tom 放置</span><span class="en">Pre-recorded video | Tom to place</span></div><p><span class="zh">建议录制：一个低风险、可复现的真实操作，保留必要背景、角色、页面切换、判断和至少一个异常；明确标注“真实 / 脱敏 / 模拟”。此处不写假 src，用户后续替换为播放器。</span><span class="en">Suggested recording: one low-risk, reproducible operation with context, role, screen changes, decisions, and at least one exception. Label it “real / de-identified / simulated.” No fake src is included; the user can replace this slot with a player.</span></p><p class="note"><span class="zh">改造前：业务示范或回忆 → 文字/访谈 → 专家澄清 → 技术判断 → 交接 → 验收。</span><span class="en">Before: demonstration or recall → notes/interview → expert clarification → automation judgement → handoff → acceptance.</span></p></aside>
+    <aside class="video-slot" data-video-id="record-reply">
+      <div class="video-head"><span class="video-label"><span class="zh">现场演示</span><span class="en">FIELD DEMO</span></span><span>06:01 · FMS</span></div>
+      <video controls playsinline preload="metadata" poster="media/record-reply/fms-service-ticket-poster.jpg" aria-label="FMS 客服工单演示 / FMS service ticket demo">
+        <source src="media/record-reply/fms-service-ticket.mp4" type="video/mp4">
+        <span class="zh">当前浏览器无法播放此视频。</span><span class="en">This browser cannot play the video.</span>
+      </video>
+      <div class="video-foot"><span><span class="zh">真实系统录屏 · 已脱敏</span><span class="en">Real system · anonymized</span></span><span><span class="zh">录制 → 学习 → 回放</span><span class="en">Record → learn → replay</span></span></div>
+    </aside>
   </main>
-  <div class="discussion"><b><span class="zh">讨论</span><span class="en">Discussion</span></b><span class="zh">哪个流程最适合作为首个可复现样本？谁提供并审核演示？</span><span class="en">Which flow is the first reproducible sample? Who provides and reviews the demonstration?</span></div>
-  <footer class="foot"><span><span class="zh">ITEM × COO AI Team × ISS Biz (team)</span><span class="en">ITEM × COO AI Team × ISS Biz (team)</span></span><span>R5 · MD §D1.2.5.1</span></footer>
+  <div class="discussion"><b><span class="zh">讨论</span><span class="en">Discussion</span></b><span class="zh">ISS 哪些流程每天在做，却很难写清楚？</span><span class="en">Which ISS flows are done every day but are hard to write down?</span></div>
+  <footer class="foot"><span><span class="zh">ITEM × COO AI Team × ISS Biz (team)</span><span class="en">ITEM × COO AI Team × ISS Biz (team)</span></span><span>R5 · MD §D1.2.6.1</span></footer>
 </div></div>
 </body>
 </html>

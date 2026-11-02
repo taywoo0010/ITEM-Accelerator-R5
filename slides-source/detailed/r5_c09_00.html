@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}.zh{display:inline}.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+.slide-container{width:1280px;min-height:720px;background:var(--bg,#f6f7f9)!important;color:var(--ink,#152439)!important;font-family:Inter,"Noto Sans SC",Arial,sans-serif;display:flex;flex-direction:column}.page-inner{margin:34px 52px 24px;min-height:662px;display:flex;flex-direction:column}.title-zone{border-top:4px solid var(--accent,#007f86);padding-top:13px}.kicker{font-size:13px;line-height:17px;letter-spacing:1.2px;color:var(--accent,#007f86)!important;font-weight:700}.title-zone h1{font-size:42px;line-height:1.12;margin-top:8px;font-weight:760;letter-spacing:-.6px;color:var(--ink,#152439)!important}.title-zone h1 .title-note{font-size:25px;font-weight:600;color:var(--muted,#52647b)!important;margin-left:14px}.lead{font-size:18px;line-height:1.45;color:var(--muted,#52647b)!important;margin-top:10px;max-width:1030px}.content{flex:1;display:grid;grid-template-columns:1.13fr .87fr;gap:36px;padding-top:22px;min-height:0}.case-column{min-width:0}.case-heading,.root-heading{font-size:20px;line-height:1.3;color:var(--ink,#152439)!important;border-top:2px solid var(--ink,#152439);padding-top:10px;margin-bottom:12px}.case-list{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}.case-item{display:grid;grid-template-columns:31px 1fr;gap:10px;align-items:start;padding:8px 0 10px;border-bottom:1px solid var(--line,#d9e1e8)!important}.case-no{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:var(--soft,#eaf0f4)!important;color:var(--accent,#007f86)!important;border:1px solid var(--accent,#007f86)!important;font-size:13px;font-weight:800}.case-item h3{font-size:18px;line-height:1.25;color:var(--ink,#152439)!important}.case-item p{font-size:13px;line-height:1.4;color:var(--muted,#52647b)!important;margin-top:3px}.root-column{min-width:0;display:flex;flex-direction:column}.root-heading{margin-bottom:12px}.root-panel{border:1px solid var(--accent,#007f86)!important;background:var(--soft,#eaf0f4)!important;padding:15px 17px;border-radius:2px}.root-panel h2{font-size:20px;line-height:1.25;color:var(--accent,#007f86)!important;margin-bottom:9px}.root-panel p{font-size:15px;line-height:1.45;color:var(--ink,#152439)!important}.root-chain{display:grid;grid-template-columns:1fr;gap:7px;margin-top:13px}.root-step{display:grid;grid-template-columns:24px 1fr;gap:9px;align-items:center}.root-step b{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--accent,#007f86)!important;color:#fff!important;font-size:11px}.root-step span{font-size:15px;line-height:1.3;color:var(--ink,#152439)!important}.route{margin-top:auto;padding-top:13px;border-top:1px solid var(--line,#d9e1e8)!important}.route-label{font-size:12px;line-height:1.2;letter-spacing:.8px;color:var(--accent,#007f86)!important;font-weight:800}.route p{font-size:15px;line-height:1.45;color:var(--muted,#52647b)!important;margin-top:5px}.discussion{margin-top:15px;background:var(--soft,#eaf0f4)!important;border-top:1px solid var(--line,#d9e1e8)!important;padding:11px 15px;font-size:17px;line-height:1.35;color:var(--ink,#152439)!important}.discussion b{color:var(--accent,#007f86)!important;margin-right:13px}.foot{border-top:1px solid var(--line,#d9e1e8)!important;margin-top:14px;padding-top:10px;display:flex;justify-content:space-between;color:var(--muted,#52647b)!important;font-size:12px;letter-spacing:1.2px}.foot span{color:var(--muted,#52647b)!important}.foot span:last-child{letter-spacing:.2px}
+.content{display:grid!important;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr)!important;gap:30px!important}
+.case-list{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px 16px!important}
+.case-item{padding:10px 0 11px}
+.case-item h3{font-size:17px}
+.case-item p{font-size:14px!important;line-height:1.4!important}
+.lead{font-size:17px!important;line-height:1.45!important}
+@media(max-width:520px){.content{grid-template-columns:1fr!important}.case-list{grid-template-columns:1fr!important}.title-zone h1{font-size:30px}.title-zone h1 .title-note{display:block;margin:7px 0 0;font-size:21px}.lead{font-size:16px}.case-item h3{font-size:17px}}
+</style>
+</head>
+<body>
+<div class="slide-container"><div class="page-inner">
+  <header class="title-zone">
+    <div class="kicker">DAY 1 · MD §D1.2.9.0 · <span class="zh">其他踩过的坑 / 总览</span><span class="en">OTHER FAILURE PATTERNS / OVERVIEW</span></div>
+    <h1><span class="zh">其他踩过的坑：</span><span class="en">Other failure patterns:</span><span class="title-note zh">先定义可验收的业务结果</span><span class="title-note en">define the business result before choosing the model</span></h1>
+    <p class="lead"><span class="zh">先看知识、业务执行、模型与本地化的教训，再回答：如何验证 Agent 在真实业务中可靠工作？</span><span class="en">Review lessons in knowledge, execution, models and localisation, then ask how to verify reliability in real business tasks.</span></p>
+  </header>
+  <main class="content">
+    <section class="case-column">
+      <h2 class="case-heading"><span class="zh">下面展开的具体案例</span><span class="en">Cases covered next</span></h2>
+      <div class="case-list">
+        <article class="case-item"><div class="case-no">01</div><div><h3><span class="zh">知识抽取与知识生成</span><span class="en">Knowledge extraction and generation</span></h3><p><span class="zh">从复杂资料识别信息、过滤噪音，再形成可检索、可复用的知识结构。</span><span class="en">Identify information in complex materials, filter noise, and form reusable knowledge structures.</span></p></div></article>
+        <article class="case-item"><div class="case-no">02</div><div><h3><span class="zh">WMS Agent：业务本体连接规则与动作</span><span class="en">WMS Agent: ontology connects rules to actions</span></h3><p><span class="zh">从“找得到 API”走到理解业务规则、页面、对象和执行路径。</span><span class="en">Move from finding APIs to understanding rules, screens, objects and execution paths.</span></p></div></article>
+        <article class="case-item"><div class="case-no">03</div><div><h3><span class="zh">自建模型实验复盘</span><span class="en">Self-built model experiment review</span></h3><p><span class="zh">用验证结果、14 个技术限制和路线差异，判断何时自建、何时采用 LLM。</span><span class="en">Use validation results, 14 technical limits and route differences to choose between building and adopting an LLM.</span></p></div></article>
+        <article class="case-item"><div class="case-no">04</div><div><h3><span class="zh">小模型训练复盘</span><span class="en">Small-model training review</span></h3><p><span class="zh">BOL 与退货质检的教训：样本、规则与可解释性的边界，以及大小模型如何分工。</span><span class="en">Lessons from BOLs and returns: limits of samples, rules and explainability, and how to divide model tasks.</span></p></div></article>
+        <article class="case-item"><div class="case-no">05</div><div><h3><span class="zh">AI 招聘的跨国本地化</span><span class="en">AI recruitment localisation</span></h3><p><span class="zh">系统出海需重新审核招聘问法、当地法规、文化习惯与数据使用。</span><span class="en">Review interview questions, local rules, cultural practices and data use for each market.</span></p></div></article>
+        <article class="case-item"><div class="case-no">06</div><div><h3><span class="zh">可信 Agent：一套标准，三重保障</span><span class="en">Agent assurance: one standard, three safeguards</span></h3><p><span class="zh">以知识审核、任务测试和第三方评估，回答如何证明可靠。</span><span class="en">Verify reliability through reviewed knowledge, task tests and third-party evaluation.</span></p></div></article>
+      </div>
+    </section>
+    <section class="root-column">
+      <h2 class="root-heading"><span class="zh">共同根因</span><span class="en">Common root cause</span></h2>
+      <div class="root-panel">
+        <h2><span class="zh">先把业务结果定义清楚</span><span class="en">Define the business result first</span></h2>
+        <p><span class="zh">每个案例都回到同一条验收链：输入是否明确、证据是否足够、谁能批准、谁来接管、结果如何回写。</span><span class="en">Every case returns to one acceptance chain: clear inputs, sufficient evidence, approval, takeover and write-back.</span></p>
+        <div class="root-chain">
+          <div class="root-step"><b>1</b><span><span class="zh">任务：先选一个可验证的小范围问题</span><span class="en">Task: choose one bounded problem to validate</span></span></div>
+          <div class="root-step"><b>2</b><span><span class="zh">证据：补齐来源、权限、样本和分母</span><span class="en">Evidence: source, access, samples and denominator</span></span></div>
+          <div class="root-step"><b>3</b><span><span class="zh">责任：明确 Owner、人工接管与停止条件</span><span class="en">Ownership: owner, human takeover and stop conditions</span></span></div>
+          <div class="root-step"><b>4</b><span><span class="zh">结果：回写业务状态，再决定是否扩展</span><span class="en">Result: write back the business state before scaling</span></span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="discussion"><b><span class="zh">讨论</span><span class="en">Discussion</span></b><span class="zh">先选一个可验收任务：什么输入、谁负责、什么证据才算完成？</span><span class="en">Choose one acceptance-ready task: what is the input, who owns it and what evidence proves completion?</span></div>
+  <footer class="foot"><span>ITEM × COO AI Team × ISS Biz (team)</span><span>R5 · MD §D1.2.9.0</span></footer>
+</div></div>
+</body>
+</html>

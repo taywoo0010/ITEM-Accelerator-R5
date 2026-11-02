@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html lang="zh-CN" data-lang="zh">
 <head>
-<meta charset="utf-8">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
-.slide-container{width:1280px;min-height:720px;background:#f6f7f9;color:#152439;display:flex;flex-direction:column;font-family:Arial,"Noto Sans SC",sans-serif}.page-inner{margin:52px 60px;min-height:616px;display:flex;flex-direction:column}header{border-left:5px solid #007f86;padding-left:18px}.kicker{font-size:14px;letter-spacing:1.5px;color:#007f86;font-weight:700;margin-bottom:10px}h1{font-size:32px;line-height:1.15;font-weight:750}.lead{font-size:18px;line-height:1.45;color:#52647b;padding-top:16px}.content{flex:1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;padding-top:20px}.step{border-top:3px solid #007f86;padding-top:12px;display:flex;flex-direction:column;gap:8px}.num{font-size:30px;color:#007f86;font-weight:800}.step h2{font-size:22px;line-height:1.3}.step p,.step li{font-size:18px;line-height:1.45}.step ul{padding-left:21px}.step li{margin-bottom:6px}.state{font-size:14px;line-height:1.3;font-weight:700;color:#007f86}.discussion{border-top:1px solid #c9d2dc;padding-top:11px;margin-top:18px;font-size:18px;line-height:1.45}.discussion b{color:#007f86;margin-right:8px}.foot{display:flex;justify-content:space-between;font-size:14px;color:#52647b;padding-top:16px}
-</style>
+  <meta charset="utf-8">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    .en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+    .slide-container{width:1280px;min-height:720px;background:#f6f7f9;color:#152439;display:flex;flex-direction:column;font-family:Arial,"Noto Sans SC",sans-serif}
+    .page-inner{margin:52px 60px;min-height:616px;display:flex;flex-direction:column}
+    header{border-left:5px solid #007f86;padding-left:18px}
+    .kicker{font-size:14px;letter-spacing:1.5px;color:#007f86;font-weight:700;margin-bottom:10px}
+    h1{font-size:32px;line-height:1.15;font-weight:750;letter-spacing:-.3px}
+    .lead{font-size:18px;line-height:1.45;color:#52647b;padding-top:16px;max-width:1110px}
+    .content{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:18px 28px;padding-top:18px;align-content:start}
+    .block{border-top:2px solid #d5dce4;padding-top:10px}
+    h2{font-size:22px;line-height:1.3;color:#007f86;margin-bottom:6px}
+    p,li{font-size:18px;line-height:1.45;color:#152439}
+    ul{padding-left:22px}li{margin-bottom:4px}
+    .mode{font-weight:700;color:#007f86}
+    .note{color:#52647b}
+    .discussion{border-top:1px solid #c9d2dc;padding-top:11px;margin-top:16px;font-size:18px;line-height:1.45;color:#152439}
+    .discussion b{color:#007f86;margin-right:8px}
+    .foot{display:flex;justify-content:space-between;font-size:14px;color:#52647b;padding-top:14px}
+  </style>
 </head>
-<body><div class="slide-container"><div class="page-inner">
-<header><div class="kicker"><span class="zh">DAY 1 · MD §D1.2.5.2</span><span class="en">DAY 1 · MD §D1.2.5.2</span></div><h1><span class="zh">闭环不是“自动完成”：它必须可暂停、可回写</span><span class="en">A Closed Loop Must Pause and Write Back</span></h1></header>
-<p class="lead"><span class="zh">从视频到 SOP，再到受控执行；任何证据不足、权限不明或不可逆动作都触发人工确认。</span><span class="en">From video to SOP to controlled execution; insufficient evidence, unclear permission, or irreversible actions trigger human confirmation.</span></p>
-<main class="content">
-<section class="step"><div class="num">01</div><div class="state"><span class="zh">已知路径 + 建议输入</span><span class="en">KNOWN PATH + PROPOSED INPUT</span></div><h2><span class="zh">采集与提取</span><span class="en">Capture and extract</span></h2><ul><li><span class="zh">授权录制或导入可共享视频。</span><span class="en">Record with authorization or import a shareable video.</span></li><li><span class="zh">提取顺序、输入、判断、切换、人工动作、例外、结果。</span><span class="en">Extract order, inputs, decisions, changes, manual actions, exceptions, and results.</span></li><li><span class="zh">无法证明的条件保留为“不确定”，不猜补。</span><span class="en">Keep unproven conditions as “uncertain”; do not guess.</span></li></ul></section>
-<section class="step"><div class="num">02</div><div class="state"><span class="zh">建议闭环</span><span class="en">PROPOSED LOOP</span></div><h2><span class="zh">问清楚与接管</span><span class="en">Clarify and take over</span></h2><ul><li><span class="zh">缺字段、画面不可读、权限不明或异常时，生成问题清单并暂停。</span><span class="en">Pause and create a question list when fields are missing, screens unreadable, permissions unclear, or exceptions appear.</span></li><li><span class="zh">实际操作人员与 ISS Biz (team) Owner 审核步骤。</span><span class="en">The operator and ISS Biz (team) Owner review each step.</span></li><li><span class="zh">跨系统提交、敏感数据和不可逆动作要求人确认。</span><span class="en">Human confirmation is required for cross-system submission, sensitive data, and irreversible actions.</span></li></ul></section>
-<section class="step"><div class="num">03</div><div class="state"><span class="zh">验证边界 · 待补结果</span><span class="en">VALIDATION BOUNDARY · RESULTS PENDING</span></div><h2><span class="zh">受控执行与回写</span><span class="en">Controlled run and write-back</span></h2><ul><li><span class="zh">先在沙盒跑正常与异常路径，再按最小权限执行。</span><span class="en">Run normal and exception paths in a sandbox, then execute with least privilege.</span></li><li><span class="zh">回写状态、规则版本、人工修正、失败原因和最终结果。</span><span class="en">Write back status, rule version, corrections, failure reason, and final result.</span></li><li><span class="zh">当前没有成功率、自动化比例或收益数据；不得补造。</span><span class="en">No success rate, automation ratio, or benefit data is provided; do not fabricate it.</span></li></ul></section>
-</main>
-<div class="discussion"><b><span class="zh">讨论</span><span class="en">Discussion</span></b><span class="zh">哪些条件必须暂停？谁能接管？回写哪些状态才足以验收？</span><span class="en">What must pause the run? Who takes over? Which write-back states are sufficient for acceptance?</span></div>
-<footer class="foot"><span>ITEM × COO AI Team × ISS Biz (team)</span><span>R5 · MD §D1.2.5.2</span></footer>
-</div></div></body></html>
+<body>
+<div class="slide-container"><div class="page-inner">
+  <header><div class="kicker"><span class="zh">DAY 1 · MD §D1.2.6.2</span><span class="en">DAY 1 · MD §D1.2.6.2</span></div><h1><span class="zh">怎么实现（一）：采集与理解</span><span class="en">How It Works (1): Capture and Understand</span></h1></header>
+  <p class="lead"><span class="zh">录制由用户在对话里发起和结束；ItemGPT 以操作时间线为准、视频为补充，弄清每一步在做什么。</span><span class="en">The user starts and finishes the recording from the chat; ItemGPT reads the action timeline first and the video second to understand each step.</span></p>
+  <main class="content">
+    <section class="block"><h2><span class="zh">三种录制方式</span><span class="en">Three capture modes</span></h2><ul>
+      <li><span class="zh"><span class="mode">浏览器：</span>扩展录标签页画面，并记录点击、输入和页面跳转。</span><span class="en"><span class="mode">Browser:</span> the extension records the tab plus clicks, typing and navigation.</span></li>
+      <li><span class="zh"><span class="mode">桌面：</span>Companion 录屏幕，并记录桌面应用里的操作。</span><span class="en"><span class="mode">Desktop:</span> Companion records the screen plus actions in desktop apps.</span></li>
+      <li><span class="zh"><span class="mode">混合：</span>两者同时，适合在网页和桌面软件之间来回切换的流程。</span><span class="en"><span class="mode">Mixed:</span> both at once, for flows that move between web and desktop apps.</span></li>
+    </ul></section>
+    <section class="block"><h2><span class="zh">理解流程</span><span class="en">Understand the flow</span></h2><ul>
+      <li><span class="zh">以操作时间线为准，视频补充画面信息。</span><span class="en">The action timeline leads; the video fills in what was on screen.</span></li>
+      <li><span class="zh">区分演示用的具体值（单号、收件人）和可复用的步骤，回放时不照搬旧值。</span><span class="en">Demo values such as order numbers and recipients are kept apart from reusable steps, so replays never reuse old values.</span></li>
+    </ul></section>
+    <section class="block"><h2><span class="zh">由用户发起和结束</span><span class="en">Started and finished by the user</span></h2><p><span class="zh">在对话里说明要演示的任务 → 点开始 → 照常操作 → 点完成，录像和操作时间线上传到当前对话。</span><span class="en">Describe the task in chat → Start → work as usual → Finish; the video and the action timeline upload to the chat.</span></p></section>
+    <section class="block"><h2><span class="zh">标出不确定，不靠猜</span><span class="en">Flag uncertainty instead of guessing</span></h2><p><span class="zh">FMS 案例中，ItemGPT 指出演示时提交的是内部备注而不是客户回复，还录进了无关窗口；这些都写进技能，作为回放时的注意事项。</span><span class="en">In the FMS case, ItemGPT noticed that the demo posted an internal note rather than a customer reply, and that an unrelated window was recorded; both became cautions in the skill.</span></p></section>
+  </main>
+  <div class="discussion"><b><span class="zh">讨论</span><span class="en">Discussion</span></b><span class="zh">ISS 的流程主要在网页里，还是也要用到 Excel、邮件等桌面软件？</span><span class="en">Do ISS flows stay in the browser, or also use desktop apps such as Excel and email?</span></div>
+  <footer class="foot"><span><span class="zh">ITEM × COO AI Team × ISS Biz (team)</span><span class="en">ITEM × COO AI Team × ISS Biz (team)</span></span><span>R5 · MD §D1.2.6.2</span></footer>
+</div></div>
+</body>
+</html>

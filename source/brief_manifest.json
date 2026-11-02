@@ -205,8 +205,8 @@
     },
     {
       "id": "b5_07_observe_act",
-      "title": "从观察到执行：Record、CEC、CFS",
-      "en": "From observation to execution: Record, CEC and CFS",
+      "title": "从观察到执行：Record、CEC",
+      "en": "From observation to execution: Record, CEC",
       "md": "D1.2.0",
       "refs": [
         "D1.2.0"
@@ -221,8 +221,8 @@
     },
     {
       "id": "b5_08_failures",
-      "title": "失败与边界：知道何时缩小、停止或转交",
-      "en": "Failures and boundaries: when to narrow, stop or hand off",
+      "title": "iCEO 与其他实践：成功条件和失败教训",
+      "en": "iCEO and other practices: success conditions and lessons",
       "md": "D1.2.0",
       "refs": [
         "D1.2.0"
@@ -349,9 +349,9 @@
     }
   ],
   "schedule": {
-    "day1": 485,
+    "day1": 465,
     "day2": 450,
-    "cases": 240,
+    "cases": 220,
     "day2_blocks": [
       120,
       90,

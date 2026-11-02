@@ -176,8 +176,8 @@
     },
     {
       "id": "r5_c01_01",
-      "title": "先从业务结果与改造前流程入手",
-      "en": "Start with the outcome and current flow",
+      "title": "从适合的任务切入：减少人工重复，让调度有据可依",
+      "en": "Start with suitable tasks: less manual work, better-informed dispatch",
       "md": "D1.2.1.1",
       "refs": [
         "D1.2.1.1"
@@ -192,8 +192,8 @@
     },
     {
       "id": "r5_c01_02",
-      "title": "改造后闭环：正常运行，异常接管",
-      "en": "The target loop: run normally, take over safely",
+      "title": "正常任务自动处理，异常交给人，派单保留人工选择",
+      "en": "Automate routine work, hand off exceptions, keep dispatch choices human",
       "md": "D1.2.1.2",
       "refs": [
         "D1.2.1.2"
@@ -208,8 +208,8 @@
     },
     {
       "id": "r5_c01_03",
-      "title": "实施不是先接接口，而是先形成可审核的能力卡",
-      "en": "Implementation starts with a reviewable capability card",
+      "title": "先选适合的任务，再把规则、异常和人工反馈跑通",
+      "en": "Choose suitable tasks, then validate rules, exceptions and human feedback",
       "md": "D1.2.1.3",
       "refs": [
         "D1.2.1.3"
@@ -240,8 +240,8 @@
     },
     {
       "id": "r5_c01_05",
-      "title": "ISS 对标：先找事实差距，再谈迁移",
-      "en": "ISS benchmark: map factual gaps before migration",
+      "title": "ISS 的哪些工作，可以交给无头 Agent？",
+      "en": "Which ISS tasks can a headless Agent handle?",
       "md": "D1.2.1.5",
       "refs": [
         "D1.2.1.5"
@@ -255,44 +255,44 @@
       "total": 149
     },
     {
-      "id": "r5_c01_06",
-      "title": "业务规则变更，要经过审核、回归与回滚",
-      "en": "Business rule changes need review, regression and rollback",
-      "md": "D1.2.1.6",
+      "id": "r5_c02_01",
+      "title": "WMS 动态表单：现场需求不再排队，和 Agent 一起从开发到上线",
+      "en": "WMS Dynamic Forms: floor needs stop queuing—build and release together with the Agent",
+      "md": "D1.2.2.1",
       "refs": [
-        "D1.2.1.6"
+        "D1.2.2.1"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c01",
+      "case": "c02",
       "notes": true,
       "index": 10,
       "number": 11,
       "total": 149
     },
     {
-      "id": "r5_c01_07",
-      "title": "可重复交付，但不强行产品化",
-      "en": "Repeatable delivery without forced productization",
-      "md": "D1.2.1.7",
+      "id": "r5_c02_02",
+      "title": "演示：一箱破损电池，三个应用串起发现 → 派工 → 入坏货区",
+      "en": "Demo: one damaged battery carton, three apps from discovery to dispatch to the damage zone",
+      "md": "D1.2.2.2",
       "refs": [
-        "D1.2.1.7"
+        "D1.2.2.2"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c01",
+      "case": "c02",
       "notes": true,
       "index": 11,
       "number": 12,
       "total": 149
     },
     {
-      "id": "r5_c02_01",
-      "title": "WMS 动态表单：先证明业务结果，再谈生成速度",
-      "en": "WMS Dynamic Form: prove the business result before speed",
-      "md": "D1.2.2.1",
+      "id": "r5_c02_03",
+      "title": "背后的机制：懂业务、守权限、用积木、先试后发",
+      "en": "What makes it work: knows the business, keeps access, builds from blocks, tries before release",
+      "md": "D1.2.2.3",
       "refs": [
-        "D1.2.2.1"
+        "D1.2.2.3"
       ],
       "chapter": 2,
       "day": 1,
@@ -303,12 +303,12 @@
       "total": 149
     },
     {
-      "id": "r5_c02_02",
-      "title": "改造后闭环：正常任务、接管与状态回写",
-      "en": "After: normal task, takeover and state write-back",
-      "md": "D1.2.2.2",
+      "id": "r5_c02_04",
+      "title": "ISS 对标：在现有底座上，哪些需求能用积木组合出来",
+      "en": "ISS benchmark: which needs can be composed from blocks on the existing platform",
+      "md": "D1.2.2.4",
       "refs": [
-        "D1.2.2.2"
+        "D1.2.2.4"
       ],
       "chapter": 2,
       "day": 1,
@@ -319,92 +319,92 @@
       "total": 149
     },
     {
-      "id": "r5_c02_03",
-      "title": "实施过程：把生成嵌入工程与采用反馈",
-      "en": "Implementation: embed generation in engineering and adoption feedback",
-      "md": "D1.2.2.3",
+      "id": "r5_c03_01",
+      "title": "先看一段演示",
+      "en": "Start with a demo",
+      "md": "D1.2.3.1",
       "refs": [
-        "D1.2.2.3"
+        "D1.2.3.1"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c02",
+      "case": "c03",
       "notes": true,
       "index": 14,
       "number": 15,
       "total": 149
     },
     {
-      "id": "r5_c02_04",
-      "title": "组织与价值证据：没有基线，就没有收益结论",
-      "en": "Organisation and value evidence: no baseline, no value claim",
-      "md": "D1.2.2.4",
+      "id": "r5_c03_02",
+      "title": "BNP & Rate Sheet",
+      "en": "BNP & Rate Sheet",
+      "md": "D1.2.3.2",
       "refs": [
-        "D1.2.2.4"
+        "D1.2.3.2"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c02",
+      "case": "c03",
       "notes": true,
       "index": 15,
       "number": 16,
       "total": 149
     },
     {
-      "id": "r5_c02_05",
-      "title": "ISS 对标：先填差距，再决定迁移",
-      "en": "ISS benchmark: map gaps before deciding migration",
-      "md": "D1.2.2.5",
+      "id": "r5_c03_03",
+      "title": "Rate Sheet 当前业务痛点",
+      "en": "Rate Sheet: current business pain points",
+      "md": "D1.2.3.3",
       "refs": [
-        "D1.2.2.5"
+        "D1.2.3.3"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c02",
+      "case": "c03",
       "notes": true,
       "index": 16,
       "number": 17,
       "total": 149
     },
     {
-      "id": "r5_c02_06",
-      "title": "思考：业务规则变更，要留下可复用的证据链",
-      "en": "Reflection: business-rule change needs a reusable evidence chain",
-      "md": "D1.2.2.6",
+      "id": "r5_c03_04",
+      "title": "从数据语义到动态应用",
+      "en": "From data semantics to dynamic applications",
+      "md": "D1.2.3.4",
       "refs": [
-        "D1.2.2.6"
+        "D1.2.3.4"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c02",
+      "case": "c03",
       "notes": true,
       "index": 17,
       "number": 18,
       "total": 149
     },
     {
-      "id": "r5_c02_07",
-      "title": "可重复交付＋动手：小范围草稿也要可验收",
-      "en": "Repeatable delivery + hands-on: even a small draft needs acceptance",
-      "md": "D1.2.2.7",
+      "id": "r5_c03_05",
+      "title": "Object Database｜数据语义",
+      "en": "Object Database | Data semantics",
+      "md": "D1.2.3.5",
       "refs": [
-        "D1.2.2.7"
+        "D1.2.3.5"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c02",
+      "case": "c03",
       "notes": true,
       "index": 18,
       "number": 19,
       "total": 149
     },
     {
-      "id": "r5_c03_01",
-      "title": "先把业务痛点拍清，再定义要验证的结果",
-      "en": "Make the pain visible before defining the result to validate",
-      "md": "D1.2.3.1",
+      "id": "r5_c03_06",
+      "title": "Ontology Studio｜业务本体",
+      "en": "Ontology Studio | Business ontology",
+      "md": "D1.2.3.6",
       "refs": [
-        "D1.2.3.1"
+        "D1.2.3.6"
       ],
       "chapter": 2,
       "day": 1,
@@ -415,12 +415,12 @@
       "total": 149
     },
     {
-      "id": "r5_c03_02",
-      "title": "同一本体贯穿建议、接管与状态回写",
-      "en": "One ontology links recommendation, takeover and state write-back",
-      "md": "D1.2.3.2",
+      "id": "r5_c03_07",
+      "title": "Agent Factory｜ItemGPT",
+      "en": "Agent Factory | ItemGPT",
+      "md": "D1.2.3.7",
       "refs": [
-        "D1.2.3.2"
+        "D1.2.3.7"
       ],
       "chapter": 2,
       "day": 1,
@@ -431,12 +431,12 @@
       "total": 149
     },
     {
-      "id": "r5_c03_03",
-      "title": "从授权数据到可回放的小范围验证",
-      "en": "From authorised data to a replayable bounded validation",
-      "md": "D1.2.3.3",
+      "id": "r5_c03_08",
+      "title": "方案复盘",
+      "en": "Solution review",
+      "md": "D1.2.3.8",
       "refs": [
-        "D1.2.3.3"
+        "D1.2.3.8"
       ],
       "chapter": 2,
       "day": 1,
@@ -447,12 +447,12 @@
       "total": 149
     },
     {
-      "id": "r5_c03_04",
-      "title": "把职责和证据先写清，不虚构 KPI",
-      "en": "Write ownership and evidence first; do not invent KPIs",
-      "md": "D1.2.3.4",
+      "id": "r5_c03_09",
+      "title": "Rate Sheet 转型 AI Native 商业价值",
+      "en": "Business value of taking Rate Sheet AI Native",
+      "md": "D1.2.3.9",
       "refs": [
-        "D1.2.3.4"
+        "D1.2.3.9"
       ],
       "chapter": 2,
       "day": 1,
@@ -463,12 +463,12 @@
       "total": 149
     },
     {
-      "id": "r5_c03_05",
-      "title": "对标差距要落到具体问题与 Owner",
-      "en": "Benchmark gaps must land on questions and Owners",
-      "md": "D1.2.3.5",
+      "id": "r5_c03_10",
+      "title": "与 ISS 对齐：是否存在类似场景？",
+      "en": "ISS alignment: is there a similar scenario?",
+      "md": "D1.2.3.10",
       "refs": [
-        "D1.2.3.5"
+        "D1.2.3.10"
       ],
       "chapter": 2,
       "day": 1,
@@ -479,140 +479,140 @@
       "total": 149
     },
     {
-      "id": "r5_c03_06",
-      "title": "规则变化必须走审核、回归、发布与回滚",
-      "en": "Rule changes need review, regression, release and rollback",
-      "md": "D1.2.3.6",
-      "refs": [
-        "D1.2.3.6"
-      ],
-      "chapter": 2,
-      "day": 1,
-      "case": "c03",
-      "notes": true,
-      "index": 24,
-      "number": 25,
-      "total": 149
-    },
-    {
-      "id": "r5_c03_07",
-      "title": "现场把一条规则改完，并留下可验收草稿",
-      "en": "Change one rule live and leave an acceptance-ready draft",
-      "md": "D1.2.3.7",
-      "refs": [
-        "D1.2.3.7"
-      ],
-      "chapter": 2,
-      "day": 1,
-      "case": "c03",
-      "notes": true,
-      "index": 25,
-      "number": 26,
-      "total": 149
-    },
-    {
-      "id": "r5_c04_01",
-      "title": "ISS BO：从“订单在哪里”到“下一步怎么做”",
-      "en": "ISS BO: From “where is the order?” to “what happens next?”",
+      "id": "r5_avl_01",
       "md": "D1.2.4.1",
       "refs": [
         "D1.2.4.1"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c04",
+      "case": "avl",
       "notes": true,
-      "index": 26,
-      "number": 27,
+      "title": "先看一段演示",
+      "en": "Start with a demo",
+      "index": 24,
+      "number": 25,
       "total": 149
     },
     {
-      "id": "r5_c04_02",
-      "title": "改造后闭环：回答、判断、接管、回写",
-      "en": "Future loop: answer, decide, hand over, write back",
+      "id": "r5_avl_02",
       "md": "D1.2.4.2",
       "refs": [
         "D1.2.4.2"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c04",
+      "case": "avl",
       "notes": true,
-      "index": 27,
-      "number": 28,
+      "title": "AVL 是什么",
+      "en": "What is AVL",
+      "index": 25,
+      "number": 26,
       "total": 149
     },
     {
-      "id": "r5_c04_03",
-      "title": "实施不是“接一个模型”：FDE 把知识变成可运行闭环",
-      "en": "Implementation is more than calling a model: FDE makes knowledge runnable",
+      "id": "r5_avl_03",
       "md": "D1.2.4.3",
       "refs": [
         "D1.2.4.3"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c04",
+      "case": "avl",
       "notes": true,
-      "index": 28,
-      "number": 29,
+      "title": "当前困境",
+      "en": "The current pain",
+      "index": 26,
+      "number": 27,
       "total": 149
     },
     {
-      "id": "r5_c04_04",
-      "title": "组织与价值证据：把 90% 放回正确分母",
-      "en": "Organization and value evidence: put 90% on the right denominator",
+      "id": "r5_avl_04",
       "md": "D1.2.4.4",
       "refs": [
         "D1.2.4.4"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c04",
+      "case": "avl",
       "notes": true,
-      "index": 29,
-      "number": 30,
+      "title": "方向 · 三层",
+      "en": "Direction: three layers",
+      "index": 27,
+      "number": 28,
       "total": 149
     },
     {
-      "id": "r5_c04_05",
-      "title": "ISS 对标：把未知差距变成会中可填的问题",
-      "en": "ISS benchmark: turn unknown gaps into questions to fill live",
+      "id": "r5_avl_05",
       "md": "D1.2.4.5",
       "refs": [
         "D1.2.4.5"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c04",
+      "case": "avl",
       "notes": true,
-      "index": 30,
-      "number": 31,
+      "title": "Ontology｜业务本体",
+      "en": "Ontology | business ontology",
+      "index": 28,
+      "number": 29,
       "total": 149
     },
     {
-      "id": "r5_c04_06",
-      "title": "思考：业务变更链，才是可持续泛化的边界",
-      "en": "Reflection: the change chain defines sustainable generalization",
+      "id": "r5_avl_06",
       "md": "D1.2.4.6",
       "refs": [
         "D1.2.4.6"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c04",
+      "case": "avl",
       "notes": true,
+      "title": "Agent Factory｜可调用 Agent",
+      "en": "Agent Factory | callable agents",
+      "index": 29,
+      "number": 30,
+      "total": 149
+    },
+    {
+      "id": "r5_avl_07",
+      "md": "D1.2.4.7",
+      "refs": [
+        "D1.2.4.7"
+      ],
+      "chapter": 2,
+      "day": 1,
+      "case": "avl",
+      "notes": true,
+      "title": "ItemGPT｜动态生成页面",
+      "en": "ItemGPT | pages generated on demand",
+      "index": 30,
+      "number": 31,
+      "total": 149
+    },
+    {
+      "id": "r5_avl_08",
+      "md": "D1.2.4.8",
+      "refs": [
+        "D1.2.4.8"
+      ],
+      "chapter": 2,
+      "day": 1,
+      "case": "avl",
+      "notes": true,
+      "title": "实现路径",
+      "en": "The implementation path",
       "index": 31,
       "number": 32,
       "total": 149
     },
     {
-      "id": "r5_c04_07",
-      "title": "可重复交付＋动手：从一条规则产出能力卡",
-      "en": "Repeatable delivery + hands-on: turn one rule into a capability card",
-      "md": "D1.2.4.7",
+      "id": "r5_c04_01",
+      "title": "ISS BO：从“订单在哪里”到“下一步怎么做”",
+      "en": "ISS BO: From “where is the order?” to “what happens next?”",
+      "md": "D1.2.5.1",
       "refs": [
-        "D1.2.4.7"
+        "D1.2.5.1"
       ],
       "chapter": 2,
       "day": 1,
@@ -623,108 +623,108 @@
       "total": 149
     },
     {
-      "id": "r5_c05_01",
-      "title": "从“做得出来”开始采集知识",
-      "en": "Capture Knowledge from Work People Can Demonstrate",
-      "md": "D1.2.5.1",
-      "refs": [
-        "D1.2.5.1"
-      ],
-      "chapter": 2,
-      "day": 1,
-      "case": "c05",
-      "notes": true,
-      "index": 33,
-      "number": 34,
-      "total": 149
-    },
-    {
-      "id": "r5_c05_02",
-      "title": "闭环不是“自动完成”：它必须可暂停、可回写",
-      "en": "A Closed Loop Must Pause and Write Back",
+      "id": "r5_c04_02",
+      "title": "FDE 介入后的提升",
+      "en": "Improvement after FDE intervention",
       "md": "D1.2.5.2",
       "refs": [
         "D1.2.5.2"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c05",
+      "case": "c04",
       "notes": true,
-      "index": 34,
-      "number": 35,
+      "index": 33,
+      "number": 34,
       "total": 149
     },
     {
-      "id": "r5_c05_03",
-      "title": "先做小样本，再把知识变成可维护资产",
-      "en": "Start Small, Then Make Knowledge Maintainable",
+      "id": "r5_c04_03",
+      "title": "FDE 现场实施：从业务需求到可运行能力",
+      "en": "FDE in the field: from business requirements to runnable capability",
       "md": "D1.2.5.3",
       "refs": [
         "D1.2.5.3"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c05",
+      "case": "c04",
       "notes": true,
-      "index": 35,
-      "number": 36,
+      "index": 34,
+      "number": 35,
       "total": 149
     },
     {
-      "id": "r5_c05_04",
-      "title": "把价值说清楚：职责、基线、分母和错误等级",
-      "en": "Make Value Explicit: Roles, Baseline, Denominator, Error Level",
+      "id": "r5_c04_04",
+      "title": "从交付到信任：共同验收，证据说话",
+      "en": "From delivery to trust: shared acceptance, evidence first",
       "md": "D1.2.5.4",
       "refs": [
         "D1.2.5.4"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c05",
+      "case": "c04",
       "notes": true,
-      "index": 36,
-      "number": 37,
+      "index": 35,
+      "number": 36,
       "total": 149
     },
     {
-      "id": "r5_c05_05",
-      "title": "对标不靠猜：把 ISS 的差距现场填出来",
-      "en": "Benchmark Without Guessing: Fill ISS Gaps Live",
+      "id": "r5_c04_05",
+      "title": "进入新场景前：先确认能否复用",
+      "en": "Before entering a new scenario: confirm what can be reused",
       "md": "D1.2.5.5",
       "refs": [
         "D1.2.5.5"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c05",
+      "case": "c04",
       "notes": true,
-      "index": 37,
-      "number": 38,
+      "index": 36,
+      "number": 37,
       "total": 149
     },
     {
-      "id": "r5_c05_06",
-      "title": "让规则可变更、可回归、可回滚",
-      "en": "Make Rules Changeable, Regression-Tested, and Reversible",
+      "id": "r5_c04_06",
+      "title": "从自由探索到稳定可靠，再到智能平衡",
+      "en": "From free exploration to reliable stability, then intelligent balance",
       "md": "D1.2.5.6",
       "refs": [
         "D1.2.5.6"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c05",
+      "case": "c04",
+      "notes": true,
+      "index": 37,
+      "number": 38,
+      "total": 149
+    },
+    {
+      "id": "r5_c04_07",
+      "title": "从任务自动化走向自主智能运营",
+      "en": "From task automation to autonomous intelligent operations",
+      "md": "D1.2.5.7",
+      "refs": [
+        "D1.2.5.7"
+      ],
+      "chapter": 2,
+      "day": 1,
+      "case": "c04",
       "notes": true,
       "index": 38,
       "number": 39,
       "total": 149
     },
     {
-      "id": "r5_c05_07",
-      "title": "可重复交付，先从一次安全动手开始",
-      "en": "Repeatable Delivery Starts with One Safe Hands-on Test",
-      "md": "D1.2.5.7",
+      "id": "r5_c05_01",
+      "title": "为什么：做得出来、说不清楚",
+      "en": "Why: Work People Can Do but Cannot Easily Write Down",
+      "md": "D1.2.6.1",
       "refs": [
-        "D1.2.5.7"
+        "D1.2.6.1"
       ],
       "chapter": 2,
       "day": 1,
@@ -735,92 +735,92 @@
       "total": 149
     },
     {
-      "id": "r5_c06_01",
-      "title": "从真实坐席流程到可审核的 Genesys 闭环",
-      "en": "From real agent work to an auditable Genesys loop",
-      "md": "D1.2.6.1",
-      "refs": [
-        "D1.2.6.1"
-      ],
-      "chapter": 2,
-      "day": 1,
-      "case": "c06",
-      "notes": true,
-      "index": 40,
-      "number": 41,
-      "total": 149
-    },
-    {
-      "id": "r5_c06_02",
-      "title": "正常任务、异常与人工接管：闭环先于自动化",
-      "en": "Normal work, exceptions and takeover: close the loop first",
+      "id": "r5_c05_02",
+      "title": "怎么实现（一）：采集与理解",
+      "en": "How It Works (1): Capture and Understand",
       "md": "D1.2.6.2",
       "refs": [
         "D1.2.6.2"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c06",
+      "case": "c05",
       "notes": true,
-      "index": 41,
-      "number": 42,
+      "index": 40,
+      "number": 41,
       "total": 149
     },
     {
-      "id": "r5_c06_03",
-      "title": "从被动观察到受控采用：建议的实施路径",
-      "en": "From passive observation to controlled adoption",
+      "id": "r5_c05_03",
+      "title": "怎么实现（二）：沉淀与执行",
+      "en": "How It Works (2): Learn and Run",
       "md": "D1.2.6.3",
       "refs": [
         "D1.2.6.3"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c06",
+      "case": "c05",
       "notes": true,
-      "index": 42,
-      "number": 43,
+      "index": 41,
+      "number": 42,
       "total": 149
     },
     {
-      "id": "r5_c06_04",
-      "title": "价值证据从哪里来：职责、验收与度量口径",
-      "en": "Where value evidence comes from: roles, acceptance and measures",
+      "id": "r5_c05_04",
+      "title": "人工确认、接管与合规",
+      "en": "Human Confirmation, Takeover and Compliance",
       "md": "D1.2.6.4",
       "refs": [
         "D1.2.6.4"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c06",
+      "case": "c05",
       "notes": true,
-      "index": 43,
-      "number": 44,
+      "index": 42,
+      "number": 43,
       "total": 149
     },
     {
-      "id": "r5_c06_05",
-      "title": "ISS 对标：把知识、接口与责任差距问清楚",
-      "en": "ISS benchmark: make knowledge, interface and ownership gaps explicit",
+      "id": "r5_c05_05",
+      "title": "变更与复用",
+      "en": "Change and Reuse",
       "md": "D1.2.6.5",
       "refs": [
         "D1.2.6.5"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c06",
+      "case": "c05",
+      "notes": true,
+      "index": 43,
+      "number": 44,
+      "total": 149
+    },
+    {
+      "id": "r5_c05_06",
+      "title": "现场演示（可选）与讨论",
+      "en": "Live Demo (Optional) and Discussion",
+      "md": "D1.2.6.6",
+      "refs": [
+        "D1.2.6.6"
+      ],
+      "chapter": 2,
+      "day": 1,
+      "case": "c05",
       "notes": true,
       "index": 44,
       "number": 45,
       "total": 149
     },
     {
-      "id": "r5_c06_06",
-      "title": "把一次改动变成可审计、可复用的业务能力",
-      "en": "Turn one change into auditable, reusable business capability",
-      "md": "D1.2.6.6",
+      "id": "r5_c06_01",
+      "title": "CEC / Genesys：从企业知识到客服流程",
+      "en": "CEC / Genesys: from enterprise knowledge to service workflows",
+      "md": "D1.2.7.1",
       "refs": [
-        "D1.2.6.6"
+        "D1.2.7.1"
       ],
       "chapter": 2,
       "day": 1,
@@ -831,12 +831,12 @@
       "total": 149
     },
     {
-      "id": "r5_c06_07",
-      "title": "可重复交付＋现场动手：小范围、可验收、可停止",
-      "en": "Repeatable delivery and hands-on: small, testable and stoppable",
-      "md": "D1.2.6.7",
+      "id": "r5_c06_01_detail",
+      "title": "Item CCS：把企业知识接入 Genesys 客服流程",
+      "en": "Item CCS: connecting enterprise knowledge to Genesys service",
+      "md": "D1.2.7.1",
       "refs": [
-        "D1.2.6.7"
+        "D1.2.7.1"
       ],
       "chapter": 2,
       "day": 1,
@@ -847,124 +847,124 @@
       "total": 149
     },
     {
-      "id": "r5_c07_01",
-      "title": "ISS CFS＋Depot：先把小流程跑通，再谈快速变更",
-      "en": "ISS CFS + Depot: Prove one small flow before scaling change",
-      "md": "D1.2.7.1",
-      "refs": [
-        "D1.2.7.1"
-      ],
-      "chapter": 2,
-      "day": 1,
-      "case": "c07",
-      "notes": true,
-      "index": 47,
-      "number": 48,
-      "total": 149
-    },
-    {
-      "id": "r5_c07_02",
-      "title": "改造后闭环：每个状态都有证据与接管人",
-      "en": "After: every state has evidence and an owner",
+      "id": "r5_c06_02",
+      "title": "从客户问题变化，到服务流程更新的闭环",
+      "en": "From changing demand to updated service flows",
       "md": "D1.2.7.2",
       "refs": [
         "D1.2.7.2"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c07",
+      "case": "c06",
       "notes": true,
-      "index": 48,
-      "number": 49,
+      "index": 47,
+      "number": 48,
       "total": 149
     },
     {
-      "id": "r5_c07_03",
-      "title": "实施：先用授权样本做小步闭环",
-      "en": "Implementation: close a small loop with authorized samples",
+      "id": "r5_c06_03",
+      "title": "SOP 如何从真实操作中沉淀出来",
+      "en": "How SOPs emerge from real-world operations",
       "md": "D1.2.7.3",
       "refs": [
         "D1.2.7.3"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c07",
+      "case": "c06",
       "notes": true,
-      "index": 49,
-      "number": 50,
+      "index": 48,
+      "number": 49,
       "total": 149
     },
     {
-      "id": "r5_c07_04",
-      "title": "价值证据：先定义分母，再谈效率与质量",
-      "en": "Value evidence: define the denominator before efficiency",
+      "id": "r5_c06_04",
+      "title": "从真实操作到可使用知识：视频脱敏与安全处理",
+      "en": "From real work to usable knowledge: video redaction and safety",
       "md": "D1.2.7.4",
       "refs": [
         "D1.2.7.4"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c07",
+      "case": "c06",
       "notes": true,
-      "index": 50,
-      "number": 51,
+      "index": 49,
+      "number": 50,
       "total": 149
     },
     {
-      "id": "r5_c07_05",
-      "title": "ISS 对标：把未知差距变成会中可填写的问题",
-      "en": "ISS benchmark: turn unknown gaps into answerable questions",
+      "id": "r5_c06_05",
+      "title": "从真实操作到本体：把专家经验变成系统知识",
+      "en": "From real work to ontology: turning expertise into system knowledge",
       "md": "D1.2.7.5",
       "refs": [
         "D1.2.7.5"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c07",
+      "case": "c06",
       "notes": true,
-      "index": 51,
-      "number": 52,
+      "index": 50,
+      "number": 51,
       "total": 149
     },
     {
-      "id": "r5_c07_06",
-      "title": "思考：自然语言是入口，不是授权替代品",
-      "en": "Reflection: natural language is an entry point, not authorization",
+      "id": "r5_c06_06",
+      "title": "建议ISS CEC应用：动态 IVA 与流程智能辅助",
+      "en": "Proposed for ISS CEC: dynamic IVA and process intelligence assistance",
       "md": "D1.2.7.6",
       "refs": [
         "D1.2.7.6"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c07",
+      "case": "c06",
       "notes": true,
-      "index": 52,
-      "number": 53,
+      "index": 51,
+      "number": 52,
       "total": 149
     },
     {
-      "id": "r5_c07_07",
-      "title": "可重复交付＋动手：现场产出一条可审计小流程",
-      "en": "Repeatable delivery + hands-on: leave with one auditable small flow",
+      "id": "r5_c06_07",
+      "title": "ISS CEC项目：我们建议怎样开始",
+      "en": "ISS CEC project: how we recommend starting",
       "md": "D1.2.7.7",
       "refs": [
         "D1.2.7.7"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c07",
+      "case": "c06",
+      "notes": true,
+      "index": 52,
+      "number": 53,
+      "total": 149
+    },
+    {
+      "id": "r5_c08_01",
+      "title": "iCEO：功能、成功案例与失败教训",
+      "en": "iCEO: capabilities, success cases and failure lessons",
+      "md": "D1.2.8.1",
+      "refs": [
+        "D1.2.8.1"
+      ],
+      "chapter": 2,
+      "day": 1,
+      "case": "c08",
       "notes": true,
       "index": 53,
       "number": 54,
       "total": 149
     },
     {
-      "id": "r5_c08_01",
-      "title": "iCEO：先把业务边界说清",
-      "en": "iCEO: make the business boundary explicit first",
-      "md": "D1.2.8.1",
+      "id": "r5_c08_02",
+      "title": "跨平台使用：在熟悉的入口调用 ItemBot",
+      "en": "Across platforms: use ItemBot in familiar tools",
+      "md": "D1.2.8.2",
       "refs": [
-        "D1.2.8.1"
+        "D1.2.8.2"
       ],
       "chapter": 2,
       "day": 1,
@@ -975,12 +975,12 @@
       "total": 149
     },
     {
-      "id": "r5_c08_02",
-      "title": "受控闭环：答复、拒答、接管、回写",
-      "en": "A controlled loop: answer, refuse, hand off, write back",
-      "md": "D1.2.8.2",
+      "id": "r5_c08_06",
+      "title": "回答有依据，信息不足有边界",
+      "en": "Answers with evidence, boundaries when information is insufficient",
+      "md": "D1.2.8.3",
       "refs": [
-        "D1.2.8.2"
+        "D1.2.8.3"
       ],
       "chapter": 2,
       "day": 1,
@@ -991,12 +991,12 @@
       "total": 149
     },
     {
-      "id": "r5_c08_03",
-      "title": "实施：把失败条件变成可回归机制",
-      "en": "Implementation: turn failure conditions into regression mechanisms",
-      "md": "D1.2.8.3",
+      "id": "r5_c08_11",
+      "title": "先验证，再交付可复用能力",
+      "en": "Validate first, then deliver reusable capabilities",
+      "md": "D1.2.8.4",
       "refs": [
-        "D1.2.8.3"
+        "D1.2.8.4"
       ],
       "chapter": 2,
       "day": 1,
@@ -1007,73 +1007,25 @@
       "total": 149
     },
     {
-      "id": "r5_c08_04",
-      "title": "组织与价值：先定义证据，再谈验收",
-      "en": "Organization and value: define evidence before acceptance",
-      "md": "D1.2.8.4",
+      "id": "r5_c09_00",
+      "title": "其他踩过的坑：",
+      "en": "Other failure patterns:",
+      "md": "D1.2.9.0",
       "refs": [
-        "D1.2.8.4"
+        "D1.2.9.0"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c08",
+      "case": "c09",
       "notes": true,
       "index": 57,
       "number": 58,
       "total": 149
     },
     {
-      "id": "r5_c08_05",
-      "title": "ISS 对标：把未知项带进会中",
-      "en": "ISS benchmark: bring unknowns into the room",
-      "md": "D1.2.8.5",
-      "refs": [
-        "D1.2.8.5"
-      ],
-      "chapter": 2,
-      "day": 1,
-      "case": "c08",
-      "notes": true,
-      "index": 58,
-      "number": 59,
-      "total": 149
-    },
-    {
-      "id": "r5_c08_06",
-      "title": "思考：把业务变更做成可审计链",
-      "en": "Reflection: make business change an auditable chain",
-      "md": "D1.2.8.6",
-      "refs": [
-        "D1.2.8.6"
-      ],
-      "chapter": 2,
-      "day": 1,
-      "case": "c08",
-      "notes": true,
-      "index": 59,
-      "number": 60,
-      "total": 149
-    },
-    {
-      "id": "r5_c08_07",
-      "title": "可重复交付：小范围能力卡与停止机制",
-      "en": "Repeatable delivery: a small capability card and stop rule",
-      "md": "D1.2.8.7",
-      "refs": [
-        "D1.2.8.7"
-      ],
-      "chapter": 2,
-      "day": 1,
-      "case": "c08",
-      "notes": true,
-      "index": 60,
-      "number": 61,
-      "total": 149
-    },
-    {
       "id": "r5_c09_01",
-      "title": "其他踩过的坑：先定义可验收的业务结果",
-      "en": "Pitfalls: Define an Acceptable Business Result First",
+      "title": "复杂资料的知识抽取",
+      "en": "Knowledge extraction from complex materials",
       "md": "D1.2.9.1",
       "refs": [
         "D1.2.9.1"
@@ -1082,14 +1034,52 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 61,
-      "number": 62,
-      "total": 149
+      "index": 58,
+      "number": 59,
+      "total": 149,
+      "topic": "知识抽取与知识生成",
+      "topic_en": "Knowledge extraction and generation"
     },
     {
       "id": "r5_c09_02",
-      "title": "改造后闭环：正常任务与异常接管并行",
-      "en": "Target Loop: Normal Work and Exception Takeover",
+      "title": "多模态资料统一汇聚",
+      "en": "Multi-source knowledge intake",
+      "md": "D1.2.9.1",
+      "refs": [
+        "D1.2.9.1"
+      ],
+      "chapter": 2,
+      "day": 1,
+      "case": "c09",
+      "notes": true,
+      "index": 59,
+      "number": 60,
+      "total": 149,
+      "topic": "知识抽取与知识生成",
+      "topic_en": "Knowledge extraction and generation"
+    },
+    {
+      "id": "r5_c09_02b",
+      "title": "知识生成流程",
+      "en": "Knowledge generation workflow",
+      "md": "D1.2.9.1",
+      "refs": [
+        "D1.2.9.1"
+      ],
+      "chapter": 2,
+      "day": 1,
+      "case": "c09",
+      "notes": true,
+      "index": 60,
+      "number": 61,
+      "total": 149,
+      "topic": "知识抽取与知识生成",
+      "topic_en": "Knowledge extraction and generation"
+    },
+    {
+      "id": "r5_c09_wms",
+      "title": "业务理解和执行动作，必须连在一起",
+      "en": "Business Understanding and Actions Must Be Connected",
       "md": "D1.2.9.2",
       "refs": [
         "D1.2.9.2"
@@ -1098,14 +1088,34 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 62,
-      "number": 63,
-      "total": 149
+      "index": 61,
+      "number": 62,
+      "total": 149,
+      "topic": "WMS Agent：业务本体连接规则与动作",
+      "topic_en": "WMS Agent: ontology connects rules to actions"
     },
     {
-      "id": "r5_c09_03",
-      "title": "实施过程：先缩小验证，再持续改进",
-      "en": "Implementation: Narrow Validation, Then Improve",
+      "id": "r5_c09_08",
+      "title": "我们自己先踩过的坑",
+      "en": "The problems we encountered ourselves",
+      "md": "D1.2.9.3",
+      "refs": [
+        "D1.2.9.3"
+      ],
+      "chapter": 2,
+      "day": 1,
+      "case": "c09",
+      "notes": true,
+      "index": 62,
+      "number": 63,
+      "total": 149,
+      "topic": "自建模型实验复盘",
+      "topic_en": "Self-built model experiment review"
+    },
+    {
+      "id": "r5_c09_09",
+      "title": "从模型识别到业务知识架构",
+      "en": "From model recognition to business knowledge architecture",
       "md": "D1.2.9.3",
       "refs": [
         "D1.2.9.3"
@@ -1116,12 +1126,14 @@
       "notes": true,
       "index": 63,
       "number": 64,
-      "total": 149
+      "total": 149,
+      "topic": "自建模型实验复盘",
+      "topic_en": "Self-built model experiment review"
     },
     {
-      "id": "r5_c09_04",
-      "title": "组织与价值证据：先定职责、分母与错误级别",
-      "en": "Organization and Value Evidence: Owners, Denominators, Error Levels",
+      "id": "r5_c09_small_models",
+      "title": "BOL 识别与退货质检：样本不足，标签不够用",
+      "en": "BOL recognition and returns inspection: beyond samples and labels",
       "md": "D1.2.9.4",
       "refs": [
         "D1.2.9.4"
@@ -1132,12 +1144,32 @@
       "notes": true,
       "index": 64,
       "number": 65,
-      "total": 149
+      "total": 149,
+      "topic": "小模型训练复盘：样本、规则与可解释性的边界",
+      "topic_en": "Small-model training review: limits of samples, rules and explainability"
     },
     {
-      "id": "r5_c09_05",
-      "title": "ISS 对标：把差距变成会中可回答的问题",
-      "en": "ISS Benchmark: Turn Gaps into Questions We Can Answer",
+      "id": "r5_c09_model_selection",
+      "title": "如何选型：小模型、大模型，还是两者配合",
+      "en": "Choosing small models, large models or both",
+      "md": "D1.2.9.4",
+      "refs": [
+        "D1.2.9.4"
+      ],
+      "chapter": 2,
+      "day": 1,
+      "case": "c09",
+      "notes": true,
+      "index": 65,
+      "number": 66,
+      "total": 149,
+      "topic": "小模型训练复盘：样本、规则与可解释性的边界",
+      "topic_en": "Small-model training review: limits of samples, rules and explainability"
+    },
+    {
+      "id": "r5_c09_hiring",
+      "title": "AI 招聘踩过的坑：系统出海，规则不能照搬",
+      "en": "AI recruitment lesson: localisation goes beyond language",
       "md": "D1.2.9.5",
       "refs": [
         "D1.2.9.5"
@@ -1146,41 +1178,30 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 65,
-      "number": 66,
-      "total": 149
+      "index": 66,
+      "number": 67,
+      "total": 149,
+      "topic": "AI 招聘的跨国本地化",
+      "topic_en": "AI recruitment localisation"
     },
     {
-      "id": "r5_c09_06",
-      "title": "思考：业务规则变更要穿过完整链路",
-      "en": "Reflection: Business Rule Changes Need a Full Chain",
+      "id": "r5_agent_assurance",
+      "title": "可信 Agent：一套标准，三重保障",
+      "en": "Trustworthy agents: one set of standards, three safeguards",
+      "summary": "四个横向画面按统一标准、严谨测试、精准知识、可靠验收展开：以脚本与 LLM 对照 Gold Set 自动核对、人工审核的知识基础和第三方交叉评估形成验收证据。测试页展示 PDF A1、A5、A12 参考门槛，评估页标记 K4、K5、A7 核验门槛，均不作为实测结果。",
       "md": "D1.2.9.6",
       "refs": [
         "D1.2.9.6"
       ],
       "chapter": 2,
       "day": 1,
-      "case": "c09",
       "notes": true,
-      "index": 66,
-      "number": 67,
-      "total": 149
-    },
-    {
-      "id": "r5_c09_07",
-      "title": "可重复交付＋动手：用一张能力卡收口",
-      "en": "Repeatable Delivery + Hands-on: Close with One Capability Card",
-      "md": "D1.2.9.7",
-      "refs": [
-        "D1.2.9.7"
-      ],
-      "chapter": 2,
-      "day": 1,
       "case": "c09",
-      "notes": true,
       "index": 67,
       "number": 68,
-      "total": 149
+      "total": 149,
+      "topic": "可信 Agent：一套标准，三重保障",
+      "topic_en": "Trustworthy agents: one set of standards, three safeguards"
     },
     {
       "id": "d33_architecture",
@@ -1321,7 +1342,7 @@
     {
       "id": "d41_factory",
       "title": "Factory：让专业人员构建、评测和治理",
-      "summary": "3.3；FDE SeniorDev COOAI DT按需，草案GroupAgent接能力测试发布版本日志。",
+      "summary": "3.3；FDE SeniorDev COOAI COO AI Team按需，草案GroupAgent接能力测试发布版本日志。",
       "md": "D1.3.3",
       "refs": [
         "D1.3.3"
@@ -1406,7 +1427,7 @@
     {
       "id": "d46_ontology_cycle",
       "title": "Ontology 共建：按任务复杂度选择规模",
-      "summary": "3.4；采集审核对象关系规则行动验证发布反馈，OwnerFDE COOITEM DT按需。",
+      "summary": "3.4；采集审核对象关系规则行动验证发布反馈，OwnerFDE COOITEM COO AI Team按需。",
       "md": "D1.3.4",
       "refs": [
         "D1.3.4"
@@ -1658,7 +1679,7 @@
     },
     {
       "id": "d51_joint_roles",
-      "title": "三部门共建，DT 按需支撑",
+      "title": "三部门共建，COO AI Team 按需支撑",
       "summary": "4.1D；ISS业务Owner COOAI直接能力团队ITEM工程FDE专家审批运营，不绕权。",
       "md": "D1.5.1",
       "refs": [
@@ -1670,7 +1691,7 @@
       "total": 149,
       "notes": false,
       "case": null,
-      "en": "Three-Way Build, DT as Needed",
+      "en": "Three-Way Build, COO AI Team as Needed",
       "index": 96
     },
     {
@@ -1979,7 +2000,7 @@
       "day": 2,
       "refs": [
         "D2.2.3",
-        "D1.2.6"
+        "D1.2.7"
       ],
       "md": "D2.2.3",
       "number": 116,
@@ -1996,7 +2017,7 @@
       "day": 2,
       "refs": [
         "D2.2.3",
-        "D1.2.7"
+        "D1.2.8"
       ],
       "md": "D2.2.3",
       "number": 117,
@@ -2013,7 +2034,7 @@
       "day": 2,
       "refs": [
         "D2.2.3",
-        "D1.2.4"
+        "D1.2.5"
       ],
       "md": "D2.2.3",
       "number": 118,
@@ -2531,9 +2552,9 @@
     }
   ],
   "schedule": {
-    "day1": 485,
+    "day1": 465,
     "day2": 450,
-    "cases": 240,
+    "cases": 220,
     "day2_blocks": [
       120,
       90,

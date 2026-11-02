@@ -1,4 +1,5 @@
 from pathlib import Path
+from urllib.parse import urlsplit
 import json,re,html,shutil,zipfile,argparse
 from bs4 import BeautifulSoup
 import markdown,tinycss2
@@ -77,24 +78,82 @@ def form_markup(kind):
     return '<div class="collection-shell">'+str(form)+'</div>'
 
 
+def normalize_kicker(doc,slide,page,reader,case_titles):
+    kicker=slide.select_one('.kicker')
+    if not kicker:raise ValueError('Missing page kicker: '+page['id'])
+    reference=r'(?:D\d+(?:\.\d+)*|overview|decisions|day\d+|appendix-[a-z])'
+    topics={}
+    for lang,other in [('zh','en'),('en','zh')]:
+        visible=BeautifulSoup(str(kicker),'html.parser')
+        for node in visible.select('.'+other):node.decompose()
+        text=visible.get_text(' ',strip=True)
+        text=re.sub(r'^.*?MD\s*§\s*'+reference+r'(?:\s*[–—+/]\s*'+reference+r')*','',text,flags=re.I)
+        text=re.sub(r'^DAY\s*\d+\s*[·/|｜]*','',text,flags=re.I)
+        parts=[x.strip(' /｜:：') for x in re.split(r'[·|]',text)]
+        parts=[x for x in parts if x and not re.fullmatch(r'(?:Day\s*\d+|R5|\d+\s*(?:min|分钟).*|末\s*\d+\s*分钟)',x,flags=re.I)]
+        topic=re.sub(r'^R5\s*','', ' · '.join(parts)).strip()
+        if not topic:
+            heading=reader.find(id='md-'+page['md'].replace('.','-'))
+            topic=re.sub(r'^'+re.escape(page['md'])+r'\s*','',heading.get_text(' ',strip=True)) if lang=='zh' and heading else page['en' if lang=='en' else 'title']
+        topics[lang]=topic
+    case=re.fullmatch(r'D1\.2\.([1-9])\.\d+',page['md'])
+    if case and case_titles:
+        names=case_titles[int(case[1])]
+        heading=reader.find(id='md-'+page['md'].replace('.','-'))
+        summary=re.sub(r'^'+re.escape(page['md'])+r'\s*','',heading.get_text(' ',strip=True))
+        for lang in ['zh','en']:
+            topic=summary if lang=='zh' else page['en']
+            if re.sub(r'[^\w]','',topic)==re.sub(r'[^\w]','',names[lang]):
+                topic='概览' if lang=='zh' else 'Overview'
+            topics[lang]=names[lang]+' · '+topic
+    elif page['md']=='D1.2.0':
+        topics={'zh':'九案例总览','en':'Nine-case overview'}
+    prefix=('DAY '+str(page['day']) if page['day'] else 'R5')+' · MD §'+' / '.join(page['refs'])+' · '
+    kicker.clear()
+    kicker.append(prefix)
+    for lang in ['zh','en']:
+        topic=doc.new_tag('span');topic['class']=[lang];topic.string=topics[lang];kicker.append(topic)
+
+
 def build(kind):
     meta=json.loads((SOURCE/(kind+'_manifest.json')).read_text())
     deck=ROOT/'slides-source'/kind
     if not deck.is_dir():deck=Path(meta['project_dir'])
     md=(ROOT/MD_NAME).read_text();reader,anchors=render_md(md)
+    reader_doc=BeautifulSoup(reader,'html.parser')
+    case_titles={}
+    if kind=='detailed':
+        overview=BeautifulSoup((deck/'r5_case_overview.html').read_text(),'html.parser')
+        for heading in overview.select('h2'):
+            number=heading.select_one('.num')
+            if number:
+                case_titles[int(number.get_text(strip=True))]={lang:heading.select_one('.'+lang).get_text(' ',strip=True) for lang in ['zh','en']}
+        if set(case_titles)!=set(range(1,10)):raise ValueError('Expected nine case titles in overview')
     scenes=[];styles=[];titles=[]
     actual_form={'brief':'prework','detailed':'convergence'}[kind]
     for i,p in enumerate(meta['pages']):
         f=deck/(p['id']+'.html')
         if not f.is_file():raise ValueError('Missing native page: '+str(f))
         doc=BeautifulSoup(f.read_text(),'html.parser');slide=doc.select_one('.slide-container')
-        if not slide or slide.select('script,iframe'):raise ValueError('Invalid native slide: '+p['id'])
+        for link in doc.select('link[rel=stylesheet][href="rate_quote.css"]'):
+            stylesheet=(f.parent/link['href']).resolve()
+            if not stylesheet.is_relative_to(deck.resolve()) or stylesheet.suffix!='.css':raise ValueError('Invalid native stylesheet: '+str(stylesheet))
+            embedded=BeautifulSoup('<style>'+stylesheet.read_text()+'</style>','html.parser').style;link.replace_with(embedded)
+        if not slide or slide.select('script'):raise ValueError('Invalid native slide: '+p['id'])
+        for frame in slide.select('iframe'):
+            url=urlsplit(frame.get('src',''))
+            if (url.scheme!='https' or url.netloc not in {'www.youtube.com','www.youtube-nocookie.com'}
+                    or not re.fullmatch(r'/embed/[A-Za-z0-9_-]{11}',url.path)):
+                raise ValueError('Invalid native iframe: '+p['id'])
+        for link in slide.select('a[data-trust-attachment]'):
+            link['href']=link['href'].removeprefix('../../')
         zh=doc.select_one('h1 .zh');en=doc.select_one('h1 .en')
         if not zh or not en:raise ValueError('Missing bilingual title: '+p['id'])
         p['title']=zh.get_text(' ',strip=True);p['en']=en.get_text(' ',strip=True);p['index']=i
         p['number']=i+1;p['total']=len(meta['pages'])
         for ref in p['refs']:
             if 'md-'+ref.replace('.','-') not in anchors:raise ValueError('Missing MD ref '+p['id']+' '+ref)
+        normalize_kicker(doc,slide,p,reader_doc,case_titles)
         host=slide.select_one('[data-workshop-form]')
         if host:
             # 互动表单是网页组件；原生页的登记标题与内容保留。
@@ -113,10 +172,15 @@ def build(kind):
         tools=f'<div class="scene-tools"><span class="tag">{tag} · <span class="zh">{html.escape(ch["zh"])}</span><span class="en">{html.escape(ch["en"])}</span></span><span class="read-links">{links}</span></div>'
         scenes.append(f'<section class="scene" id="{p["id"]}" data-index="{i}" data-day="{p["day"]}" data-chapter="{p["chapter"]}" data-md="{p["md"]}">{tools}{slide}</section>')
         styles.append(scope_css('\n'.join(x.get_text() for x in doc.select('style')),p['id']))
+        styles.append('#'+p['id']+'.scene .slide-container .kicker,#'+p['id']+'.scene .slide-container .kicker *{color:var(--accent,#007f86)!important;font:600 11px/1.5 monospace!important;letter-spacing:.08em!important}')
     css=collection_embed_css((SITE/'assets'/'collection.css').read_text())+'\n'+(SITE/'assets'/'workshop.css').read_text()
+    scripts=['collection.js','workshop.js']
+    if any(p['id']=='r5_agent_assurance' for p in meta['pages']):
+        css+='\n'+(SITE/'assets'/'assurance.css').read_text()
+        scripts.append('assurance.js')
     # 配置作为独立文件便于部署后编辑；离线单文件有空配置fallback，能使用本机记录与视频。
     head='<script src="assets/site-config.js"></script><script>if(!window.ISS_CONFIG)window.ISS_CONFIG={version:"R5.0",formsEndpoint:"",siteBase:new URL("./",document.baseURI).href,media:{}};</script><style>'+css+'</style>'
-    js='\n'.join((SITE/'assets'/f).read_text() for f in ['collection.js','workshop.js']).replace('</script','<\\/script')
+    js='\n'.join((SITE/'assets'/f).read_text() for f in scripts).replace('</script','<\\/script')
     buttons=''.join(f'<button class="chapter-button" data-chapter="{c["id"]}" data-day="{c["day"]}"><span class="num">{c["label"]}</span><span><span class="zh">{c["zh"]}</span><span class="en">{c["en"]}</span></span></button>' for c in meta['chapters'])
     other='detailed' if kind=='brief' else 'brief'
     repl={'__SCOPED_STYLES__':'<style>'+ '\n'.join(styles)+'</style>','__INTERACTION_HEAD__':head,'__INTERACTION_SCRIPTS__':'<script>'+js+'</script>','__CHAPTER_BUTTONS__':buttons,'__SCENES__':'\n'.join(scenes),'__READER_CONTENT__':reader,'__PAGE_DATA__':json.dumps(meta,ensure_ascii=False).replace('</','<\\/'),'__MD_SOURCE__':json.dumps(md,ensure_ascii=False).replace('</','<\\/'),'__EDITION_ZH__':'会前共享版' if kind=='brief' else '会中讨论版','__EDITION_EN__':'Pre-work sharing' if kind=='brief' else 'Workshop presentation','__OTHER_EDITION__':'打开会中版 / Meeting' if kind=='brief' else '打开会前版 / Pre-work','__OTHER_HTML__':NAMES[other],'__MD_NAME__':MD_NAME,'__HTML_NAME__':NAMES[kind],'__ZIP_NAME__':'Item_ISS_R5_Git_Installation.zip','__VISIBILITY_NAME__':'ISS_R5_'+kind+'_Visibility.json','__PAGE_COUNT__':str(len(meta['pages'])),'__VERSION__':meta['version'],'__STORE_PREFIX__':'iss-r5-'+kind+'-'}
@@ -164,6 +228,7 @@ def package():
         deck=ROOT/'slides-source'/kind
         if not deck.is_dir():deck=Path(m['project_dir'])
         for p in m['pages']:shutil.copy2(deck/(p['id']+'.html'),dest/(p['id']+'.html'))
+        for stylesheet in deck.glob('*.css'):shutil.copy2(stylesheet,dest/stylesheet.name)
     for f in ['README.md','requirements.txt','.gitignore']:
         if (ROOT/f).is_file():shutil.copy2(ROOT/f,out/f)
     if (DELIVERY/'Delivery_Readme_R5.md').is_file():shutil.copy2(DELIVERY/'Delivery_Readme_R5.md',out/'Delivery_Readme_R5.md')
@@ -180,6 +245,9 @@ def package():
 def bootstrap():
     # 可在解压目录中重建，不依赖sandbox绝对路径或本机后台。
     if (ROOT/'slides-source').is_dir() and (ROOT/'assets').is_dir():
+        SITE.mkdir(exist_ok=True)
+        for name in ['index.html','.nojekyll','manus-routes.json']:
+            if (ROOT/name).is_file():shutil.copy2(ROOT/name,SITE/name)
         shutil.copytree(ROOT/'assets',SITE/'assets',dirs_exist_ok=True)
         shutil.copytree(ROOT/'forms',SITE/'forms',dirs_exist_ok=True)
         if (ROOT/'media').is_dir():shutil.copytree(ROOT/'media',SITE/'media',dirs_exist_ok=True)

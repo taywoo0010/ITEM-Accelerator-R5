@@ -1,6 +1,6 @@
 # R5 案例作者契约
 
-先读Slides技能与html-syntax；只用native write/edit逐页写登记HTML，禁止用脚本生成/修改幻灯、禁止修改project.json、禁止调用Slides工具或浏览器。每个case独立7页，不能改其他案例文件。只依据给定原MD，不查外部，不假设已有实测收益或实际组织改造；可以补建议流程、待补证据、审核/运营机制。Tom主持；ITEM直接对接COO AI Team/Hollis紧密共同开发并依托现有成果扩展；ISS Biz业务Owner与验收；DT数据/代码/软件/接口/跨部门按需支撑。术语ISS Biz (team)，不提德国或Steven。
+先读Slides技能与html-syntax；只用native write/edit逐页写登记HTML，禁止用脚本生成/修改幻灯、禁止修改project.json、禁止调用Slides工具或浏览器。每个case原则上独立7页；D1.2.9.2因引入两页Knowledge Fabric源材料拆成02与02b，其余页序不变。不能改其他案例文件。只依据给定原MD，不查外部，不假设已有实测收益或实际组织改造；可以补建议流程、待补证据、审核/运营机制。Tom主持；ITEM直接对接COO AI Team/Hollis紧密共同开发并依托现有成果扩展；ISS Biz业务Owner与验收；COO AI Team在数据/代码/软件/接口/跨部门需求时按需支撑。术语ISS Biz (team)，不提德国或Steven。
 
 ## 输出
 

@@ -1,16 +1,61 @@
 <!DOCTYPE html>
 <html lang="zh-CN" data-lang="zh">
-<head><meta charset="utf-8"><style>
-*{margin:0;padding:0;box-sizing:border-box}.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
-.slide-container{width:1280px;min-height:720px;background:#f6f7f9;color:#152439;display:flex;flex-direction:column;font-family:Arial,"Noto Sans SC",sans-serif}.page-inner{margin:52px 60px;min-height:616px;display:flex;flex-direction:column}header{border-left:5px solid #007f86;padding-left:18px}.kicker{font-size:14px;letter-spacing:1.5px;color:#007f86;font-weight:700;margin-bottom:10px}h1{font-size:32px;line-height:1.15;font-weight:750}.lead{font-size:18px;line-height:1.45;color:#52647b;padding-top:16px}.content{flex:1;display:grid;grid-template-columns:1fr 1.15fr;gap:26px;padding-top:20px}.roles{border-top:2px solid #d5dce4;padding-top:13px}.roles h2,.measure h2{font-size:22px;line-height:1.3;color:#007f86;margin-bottom:10px}.roles p,.roles li,.measure td,.measure th{font-size:18px;line-height:1.45}.roles ul{padding-left:21px}.roles li{margin-bottom:8px}.measure{border-top:2px solid #d5dce4;padding-top:13px}.measure table{border-collapse:collapse;width:100%}.measure th,.measure td{text-align:left;vertical-align:top;border-bottom:1px solid #c9d2dc;padding:8px 9px}.measure th{color:#007f86;font-weight:750}.pending{color:#52647b}.discussion{border-top:1px solid #c9d2dc;padding-top:11px;margin-top:18px;font-size:18px;line-height:1.45}.discussion b{color:#007f86;margin-right:8px}.foot{display:flex;justify-content:space-between;font-size:14px;color:#52647b;padding-top:16px}
-</style></head>
-<body><div class="slide-container"><div class="page-inner">
-<header><div class="kicker"><span class="zh">DAY 1 · MD §D1.2.5.4</span><span class="en">DAY 1 · MD §D1.2.5.4</span></div><h1><span class="zh">把价值说清楚：职责、基线、分母和错误等级</span><span class="en">Make Value Explicit: Roles, Baseline, Denominator, Error Level</span></h1></header>
-<p class="lead"><span class="zh">职责模型是建议，不是已完成的组织转型；目前没有任何实测 KPI 或运营结果。</span><span class="en">The role model is proposed, not a completed organizational transformation; no measured KPI or operating result is provided.</span></p>
-<main class="content">
-<section class="roles"><h2><span class="zh">建议职责分工</span><span class="en">Proposed responsibilities</span></h2><ul><li><span class="zh">业务人员：演示、解释、逐步纠正。</span><span class="en">Operator: demonstrate, explain, and correct step by step.</span></li><li><span class="zh">ISS Biz (team)：范围、业务验收与风险取舍。</span><span class="en">ISS Biz (team): scope, business acceptance, and risk trade-offs.</span></li><li><span class="zh">ITEM × COO AI Team/Hollis：共同开发并依托现有成果扩展。</span><span class="en">ITEM × COO AI Team/Hollis: co-develop and extend existing results.</span></li><li><span class="zh">DT：按需支撑数据、代码、软件、接口、跨部门事项。</span><span class="en">DT: support data, code, software, interfaces, and cross-functional work as needed.</span></li><li><span class="zh">运营人：版本、例外、回滚和运行记录。</span><span class="en">Operator: versions, exceptions, rollback, and run records.</span></li></ul></section>
-<section class="measure"><h2><span class="zh">验收框架 · 待补实测值</span><span class="en">Acceptance frame · measured values pending</span></h2><table><tr><th><span class="zh">维度</span><span class="en">Dimension</span></th><th><span class="zh">固定口径</span><span class="en">Fixed definition</span></th><th><span class="zh">现值</span><span class="en">Current value</span></th></tr><tr><td><span class="zh">知识质量</span><span class="en">Knowledge quality</span></td><td><span class="zh">漏项、误解、专家修正量</span><span class="en">Omissions, misunderstandings, expert corrections</span></td><td class="pending"><span class="zh">待补</span><span class="en">Pending</span></td></tr><tr><td><span class="zh">流程质量</span><span class="en">Process quality</span></td><td><span class="zh">完成、阻断、回滚；正常/异常样本分母</span><span class="en">Complete, blocked, rollback; normal/exception denominator</span></td><td class="pending"><span class="zh">待补</span><span class="en">Pending</span></td></tr><tr><td><span class="zh">运行与业务</span><span class="en">Run and business</span></td><td><span class="zh">人工时长、失败原因、错误严重度、最终结果</span><span class="en">Manual time, failure reason, severity, final result</span></td><td class="pending"><span class="zh">待补，不能写提升</span><span class="en">Pending; no uplift claim</span></td></tr></table><p class="pending" style="padding-top:10px"><span class="zh">还需固定：样本量、观察周期、成本口径、维护周期、敏感数据事件口径。</span><span class="en">Also fix sample size, observation period, cost definition, maintenance cycle, and sensitive-data incident definition.</span></p></section>
-</main>
-<div class="discussion"><b><span class="zh">讨论</span><span class="en">Discussion</span></b><span class="zh">业务 Owner 认可的最小验收证据是什么？错误如何分级？</span><span class="en">What is the minimum evidence accepted by the business Owner? How are errors graded?</span></div>
-<footer class="foot"><span>ITEM × COO AI Team × ISS Biz (team)</span><span>R5 · MD §D1.2.5.4</span></footer>
-</div></div></body></html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    .en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+    .slide-container{width:1280px;min-height:720px;background:#f6f7f9;color:#152439;display:flex;flex-direction:column;font-family:Arial,"Noto Sans SC",sans-serif}
+    .page-inner{margin:52px 60px;min-height:616px;display:flex;flex-direction:column}
+    header{border-left:5px solid #007f86;padding-left:18px}
+    .kicker{font-size:14px;letter-spacing:1.5px;color:#007f86;font-weight:700;margin-bottom:10px}
+    h1{font-size:32px;line-height:1.15;font-weight:750;letter-spacing:-.3px}
+    .lead{font-size:18px;line-height:1.45;color:#52647b;padding-top:16px;max-width:1110px}
+    .content{flex:1;display:grid;grid-template-columns:.92fr 1.08fr;gap:28px;padding-top:18px}
+    .left{display:flex;flex-direction:column;gap:14px}
+    .block{border-top:2px solid #d5dce4;padding-top:10px}
+    h2{font-size:22px;line-height:1.3;color:#007f86;margin-bottom:6px}
+    p,li,td,th{font-size:18px;line-height:1.36;color:#152439}
+    ul{padding-left:22px}li{margin-bottom:4px}
+    table{width:100%;border-collapse:collapse}
+    th{font-size:15px;letter-spacing:.3px;color:#007f86;text-align:left;padding:2px 8px 6px 0;vertical-align:bottom}
+    td{padding:6px 8px 6px 0;border-bottom:1px solid #dfe5ea;vertical-align:top}
+    td.k{width:20%;font-weight:700;color:#52647b}
+    td.own{background:#eef7f7}
+    .discussion{border-top:1px solid #c9d2dc;padding-top:11px;margin-top:16px;font-size:18px;line-height:1.45;color:#152439}
+    .discussion b{color:#007f86;margin-right:8px}
+    .foot{display:flex;justify-content:space-between;font-size:14px;color:#52647b;padding-top:14px}
+  </style>
+</head>
+<body>
+<div class="slide-container"><div class="page-inner">
+  <header><div class="kicker"><span class="zh">DAY 1 · MD §D1.2.6.4</span><span class="en">DAY 1 · MD §D1.2.6.4</span></div><h1><span class="zh">人工确认、接管与合规</span><span class="en">Human Confirmation, Takeover and Compliance</span></h1></header>
+  <p class="lead"><span class="zh">ItemGPT 在用户自己的电脑上、以用户本人的权限运行；遇到登录或未授权的动作就交给人。</span><span class="en">ItemGPT runs on the user's own computer with the user's own permissions, and hands back to the user for sign-ins or unapproved actions.</span></p>
+  <main class="content">
+    <section class="left">
+      <div class="block"><h2><span class="zh">什么时候交给人</span><span class="en">When it hands back</span></h2><ul>
+        <li><span class="zh">需要登录或验证码：不代填密码，请用户在自己的浏览器里完成。</span><span class="en">Sign-in or CAPTCHA: it never enters passwords; the user completes it in their own browser.</span></li>
+        <li><span class="zh">只让查找或起草：只存草稿，不擅自发送；无法唯一定位时先问人。</span><span class="en">Asked only to look up or draft: it saves a draft and never sends; it asks when a record is ambiguous.</span></li>
+      </ul></div>
+      <div class="block"><h2><span class="zh">合规</span><span class="en">Compliance</span></h2><ul>
+        <li><span class="zh">录制由用户发起和结束；对外分享前脱敏。</span><span class="en">Users start and stop each recording; de-identify before sharing.</span></li>
+        <li><span class="zh">原始视频和元数据默认 1 天后删除，可按业务需求设定；保留技能和 SOP。</span><span class="en">Raw video and metadata are deleted after 1 day by default, configurable per business need; skills and SOPs are kept.</span></li>
+        <li><span class="zh">写入和发送按授权执行，每一步留在对话记录里。</span><span class="en">Writes and sends follow the user's authorization; every step stays in the chat record.</span></li>
+      </ul></div>
+    </section>
+    <section class="block"><h2><span class="zh">为什么在用户自己的电脑上运行</span><span class="en">Why run on the user's own computer</span></h2>
+      <table>
+        <tr><th></th><th><span class="zh">自己的电脑（扩展＋桌面端）</span><span class="en">OWN COMPUTER (EXTENSION + DESKTOP)</span></th><th><span class="zh">云端无头浏览器</span><span class="en">HOSTED HEADLESS BROWSER</span></th></tr>
+        <tr><td class="k"><span class="zh">登录</span><span class="en">Sign-in</span></td><td class="own"><span class="zh">沿用已有登录</span><span class="en">Reuses existing sign-ins</span></td><td><span class="zh">每个系统重新登录</span><span class="en">Signs in to every system again</span></td></tr>
+        <tr><td class="k"><span class="zh">凭证</span><span class="en">Credentials</span></td><td class="own"><span class="zh">密码不交给 ItemGPT</span><span class="en">Passwords stay with the user</span></td><td><span class="zh">密码交给云端保存</span><span class="en">Passwords stored in the cloud</span></td></tr>
+        <tr><td class="k"><span class="zh">访问</span><span class="en">Access</span></td><td class="own"><span class="zh">内网、VPN、白名单照常可用</span><span class="en">Intranet, VPN and allow-lists work</span></td><td><span class="zh">常被 MFA、验证码、白名单拦住</span><span class="en">Often blocked by MFA, CAPTCHA or allow-lists</span></td></tr>
+        <tr><td class="k"><span class="zh">本机应用</span><span class="en">Local apps</span></td><td class="own"><span class="zh">任意桌面应用和本地文件，读不到控件时按屏幕操作</span><span class="en">Any desktop app or file; screen control as fallback</span></td><td><span class="zh">接触不到</span><span class="en">Out of reach</span></td></tr>
+        <tr><td class="k"><span class="zh">权限</span><span class="en">Control</span></td><td class="own"><span class="zh">与本人一致，每步可见、随时可停</span><span class="en">Same as the user; every step visible and stoppable</span></td><td><span class="zh">另开服务账号，后台运行</span><span class="en">Separate service account; runs unseen</span></td></tr>
+      </table>
+    </section>
+  </main>
+  <div class="discussion"><b><span class="zh">讨论</span><span class="en">Discussion</span></b><span class="zh">ISS 对录屏、脱敏和留存期有哪些要求？</span><span class="en">What does ISS require for recording, de-identification and retention?</span></div>
+  <footer class="foot"><span><span class="zh">ITEM × COO AI Team × ISS Biz (team)</span><span class="en">ITEM × COO AI Team × ISS Biz (team)</span></span><span>R5 · MD §D1.2.6.4</span></footer>
+</div></div>
+</body>
+</html>

@@ -65,22 +65,22 @@ intro='''# ISS AI Native 转型工作坊
 
 共同目标是减少重复开发及重复工作，让已有数据、软件、算力、模型、Agent 与 Skill 在同一业务流程中协作，并通过经过验证的能力复用，触发新的服务、流程和产品创新。
 
-ITEM 直接对接 COO AI Team 紧密合作、共同开发，依托 Hollis 的 Accelerator 理论框架与已有 AI、预测、优化及数字化成果进一步扩展；ISS Biz 对业务目标、规则、采用及价值负责；DT 在数据、源码、现有软件、接口、基础设施或跨部门需要时按需支撑。
+ITEM 直接对接 COO AI Team 紧密合作、共同开发，依托 Hollis 的 Accelerator 理论框架与已有 AI、预测、优化及数字化成果进一步扩展；ISS Biz 对业务目标、规则、采用及价值负责；COO AI Team 在数据、源码、现有软件、接口、基础设施或跨部门需要时按需支撑。
 
 ## 两天议程总览
 
-### Day 1 · 九组实践：看实现过程、组织机制与 ISS 对标
+### Day 1 · 八组实践：看实现过程、组织机制与 ISS 对标
 
 | 顺序 | 正文 | 主题 | 时长 | 输出 |
 |---|---|---|---:|---|
 | 1 | D1.1 | ITEM 定位、合作与工作坊目的 | 5分钟 | 共同目标与讨论方式 |
-| 2 | D1.2 | 九案例总览及七段展开：含预录视频、异常与组织证据 | 240分钟 | 方法、证据、对标及待补信息 |
+| 2 | D1.2 | 八案例总览及七段展开：含预录视频、异常与组织证据 | 220分钟 | 方法、证据、对标及待补信息 |
 | 3 | D1.3 | 平台、工具、知识与持续演进 | 120分钟 | 复用资产与运行机制 |
 | 4 | D1.4 | 风险、失败、平台融合及业务价值 | 60分钟 | 验收与风险边界 |
 | 5 | D1.5 | ISS 实施输入、七阶段与初步四字段 | 60分钟 | 第二天输入与责任 |
-| 合计 | | | **485分钟／8小时5分钟** | 不含午休及休息 |
+| 合计 | | | **465分钟／7小时45分钟** | 不含午休及休息 |
 
-九案例原时长及顺序保留；多页展开支持讨论和后续隐藏，不表示增加时长。视频时长包含在对应案例时间内。
+八案例原时长及顺序保留；多页展开支持讨论和后续隐藏，不表示增加时长。视频时长包含在对应案例时间内。
 
 ### Day 2 · 形成 ISS AI Native 转型方案
 
@@ -93,14 +93,14 @@ ITEM 直接对接 COO AI Team 紧密合作、共同开发，依托 Hollis 的 Ac
 | 5 | D2.5 | 议题收敛与行动确认 | 30分钟 | 战略四成果、执行四字段及会末采集记录 |
 | 合计 | | | **450分钟／7小时30分钟** | 不含午休及休息 |
 
-两天净内容合计935分钟／15小时35分钟。开始时间、午休及休息另行安排。
+两天净内容合计915分钟／15小时15分钟。开始时间、午休及休息另行安排。
 
 ## 贯穿两天的四个决策字段
 
 | 执行字段 | 要明确什么 |
 |---|---|
 | ① 首个共建场景与验收指标 | 用户、问题、范围、基线、评测与验收，不只写 Agent 名称 |
-| ② 联合团队与 Owner | ISS Biz、COO AI、ITEM，以及发起人、参与者、决策人、FDE、专家与按需 DT |
+| ② 联合团队与 Owner | ISS Biz、COO AI、ITEM，以及发起人、参与者、决策人、FDE、专家与按需 COO AI Team 角色 |
 | ③ 能力输入与执行边界 | 数据、知识、代码、模型、接口、权限；真实执行／模拟／人工确认 |
 | ④ 推进方式与下一决策门 | 阶段、交付、Owner、日期、投入、继续／调整／停止与审批 |
 
@@ -113,9 +113,9 @@ ITEM 直接对接 COO AI Team 紧密合作、共同开发，依托 Hollis 的 Ac
 从业务问题与实际材料出发，不仅看技术是否能运行，还要看流程怎样变化、谁承担审核与运营、怎样推动采用及持续改进。实际案例结果、建议设计和待补证据分别标识。
 '''
 
-case_intro='''### D1.2. 典型案例实践、组织流程与痛点分析｜4小时
+case_intro='''### D1.2. 典型案例实践、组织流程与痛点分析｜3小时40分钟
 
-#### D1.2.0 九案例总览：针对方向与共同观察点
+#### D1.2.0 八案例总览：针对方向与共同观察点
 
 | 案例 | 时长 | 针对方向 | 要共同观察什么 |
 |---|---:|---|---|
@@ -125,9 +125,8 @@ case_intro='''### D1.2. 典型案例实践、组织流程与痛点分析｜4小�
 | ISS BO | 40分钟 | FDE落地多样规则 | WIKI、小本体、专家/样本、评测与泛化 |
 | General Record & Reply | 20分钟 | 线下流程知识采集 | 授权视频、SOP审核、Agent/执行与知识反馈 |
 | ISS CEC＋Genesys | 20分钟 | 被动知识收集与受控集成 | 坐席参与、流程分析、人工接管、系统回写 |
-| ISS CFS＋Depot | 20分钟 | 小而杂的动态流程 | SOP/Workflow、自然语言调整、回归与维修观察 |
-| iCEO失败案例 | 10分钟 | 问答与决策边界 | 维度和样本限制、访问权限、缩小/停止/转交 |
-| 其他踩过的坑 | 10分钟 | 知识、法规、幻觉与模型投资 | 适用性、证据、合规、评测及退出机制 |
+| iCEO功能与案例 | 10分钟 | 功能、成功案例与失败教训 | 查事办事、供应商选择、复杂决策证据与权限边界 |
+| 其他踩过的坑 | 10分钟 | 知识、法规、幻觉、模型投资与业务语义 | 适用性、证据、合规、评测及退出机制；WMS Agent 真实样例 |
 
 每例按七段展开：**业务结果与改造前 → 改造后闭环 → 实施过程 → 组织与价值证据 → ISS对标 → 变更与长期资产 → 重复交付与动手。**
 
@@ -176,21 +175,23 @@ HTML会前版包含可填写的采集表；提交前确认信息有权共享。�
 '''
 
 # 作者成果未到齐时失败，不生成不完整MD。
-for f in [S/'case_outputs'/f'c0{i}.md' for i in range(1,10)]+[S/'day2_front_new.md',S/'day2_back_new.md']:
+case_items=json.loads((S/'case_items.json').read_text())
+for f in [S/'case_outputs'/(item['id']+'.md') for item in case_items]+[S/'day2_front_new.md',S/'day2_back_new.md']:
     if not f.is_file():raise SystemExit('Missing content: '+str(f))
 first=between('### D1.1.','### D1.2.')
-first=re.sub(r'^> 第一天先看.*$', '> 第一天从九组实践与失败经验看业务结果、改造前后、实施过程、组织和价值证据，并请ISS对标。第二天结合Hollis企业实践形成目标蓝图、差距、路线及产品化方案，最后明确执行与责任。',first,flags=re.M)
+first=re.sub(r'^> 第一天先看.*$', '> 第一天从八组实践与失败经验看业务结果、改造前后、实施过程、组织和价值证据，并请ISS对标。第二天结合Hollis企业实践形成目标蓝图、差距、路线及产品化方案，最后明确执行与责任。',first,flags=re.M)
 rest=between('### D1.3.','## Day 2.')
 pos=rest.index('### D1.4.')
 rest=rest[:pos]+platform+'\n\n---\n\n'+rest[pos:]
 rest=remap_text(rest)
 cases=[]
-for i in range(1,10):
-    t=(S/'case_outputs'/f'c0{i}.md').read_text().strip()
+for item in case_items:
+    t=(S/'case_outputs'/(item['id']+'.md')).read_text().strip()
     t=re.sub(r'^#{1,6}\s+(D1\.2\.\d+)\s+',r'#### \1 ',t,flags=re.M)
     t=re.sub(r'^#{1,6}\s+(D1\.2\.\d+\.\d+)\s+',r'##### \1 ',t,flags=re.M)
     first_break=t.index('\n')
-    video=f'\n\n**预录视频留位：c0{i}。** 素材链接/文件、时长、录制日期、真实/脱敏/模拟状态及授权负责人由Tom补充；部署播放器配置对应 `assets/site-config.js` 的 `c0{i}`。当前不引用未提供的视频。演示应对应本例正常、异常/缺失信息、人工接管、状态回写与最终结果。\n'
+    video_id=item['id']
+    video=f'\n\n**预录视频留位：{video_id}。** 素材链接/文件、时长、录制日期、真实/脱敏/模拟状态及授权负责人由Tom补充；部署播放器配置对应 `assets/site-config.js` 的 `{video_id}`。当前不引用未提供的视频。演示应对应本例正常、异常/缺失信息、人工接管、状态回写与最终结果。\n'
     t=t[:first_break]+video+t[first_break:]
     cases.append(t)
 blocks=[intro,first,case_intro]+cases+[rest]
@@ -202,9 +203,13 @@ blocks+=['### D2.4 自主IP、产品与商业化｜90分钟',fragments('day2_bac
 blocks+=['### D2.5 议题收敛与行动确认｜30分钟',fragments('day2_back_new.md','D2.5.'),old_d2(5),old_d2(6)]
 app=between('## 附录 A.','## 附录 C.')
 app=remap_text(app).replace('D2.1、D2.3','D2.1、D2.3').replace('两日版位置','R5位置')
-blocks+=[app,'## 附录 C. 内容迁移与保留说明\n\n九案例原始细节保留在各例第8小节；平台、风险、三方职责及七阶段仍在Day1；原Hollis企业实践位于D2.1.10及后续小节，六业务域位于D2.2，资产生命周期位于D2.3.10，组织责任位于D2.3.20，原统一建议和决策门位于D2.5.10及D2.5.20。新增IP商业化独立位于D2.4。原始R4和原生页备份保留在工程源码供追溯，不作为当前会议的另一套议程。',appendix_e]
+app=app.replace('D1.2.8','__ICEO_CASE__').replace('D1.2.9','D1.2.8').replace('__ICEO_CASE__','D1.2.7')
+app=app.replace('CFS/Depot','').replace('CFS＋Depot','')
+blocks+=[app,'## 附录 C. 内容迁移与保留说明\n\n八案例原始细节保留在各例第8小节；平台、风险、三方职责及七阶段仍在Day1；原Hollis企业实践位于D2.1.10及后续小节，六业务域位于D2.2，资产生命周期位于D2.3.10，组织责任位于D2.3.20，原统一建议和决策门位于D2.5.10及D2.5.20。新增IP商业化独立位于D2.4。原始R4和原生页备份保留在工程源码供追溯，不作为当前会议的另一套议程。',appendix_e]
 text='\n\n---\n\n'.join(x.strip() for x in blocks if x.strip())+'\n'
+text=text.replace('九案例','八案例').replace('九组','八组').replace('九例','八例').replace('CFS/Depot','').replace('CFS＋Depot','')
 text=re.sub(r'\n---\n\s*---\n','\n---\n',text)
 (R/MD_NAME).write_text(text)
+(R/'delivery').mkdir(exist_ok=True)
 (R/'delivery'/MD_NAME).write_text(text)
 print(MD_NAME,len(text.encode()),'bytes')

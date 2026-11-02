@@ -1,16 +1,49 @@
 <!DOCTYPE html>
 <html lang="zh-CN" data-lang="zh">
-<head><meta charset="utf-8"><style>
-*{margin:0;padding:0;box-sizing:border-box}.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
-.slide-container{width:1280px;min-height:720px;background:#f6f7f9;color:#152439;display:flex;flex-direction:column;font-family:Arial,"Noto Sans SC",sans-serif}.page-inner{margin:52px 60px;min-height:616px;display:flex;flex-direction:column}header{border-left:5px solid #007f86;padding-left:18px}.kicker{font-size:14px;letter-spacing:1.5px;color:#007f86;font-weight:700;margin-bottom:10px}h1{font-size:32px;line-height:1.15;font-weight:750}.lead{font-size:18px;line-height:1.45;color:#52647b;padding-top:16px}.content{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-top:20px}.column{border-top:2px solid #d5dce4;padding-top:13px}.column h2{font-size:22px;line-height:1.3;color:#007f86;margin-bottom:10px}.column p,.column li{font-size:18px;line-height:1.48}.column ul{padding-left:22px}.column li{margin-bottom:9px}.label{font-size:14px;color:#007f86;font-weight:700;letter-spacing:.4px;margin-bottom:8px}.callout{margin-top:13px;padding-top:10px;border-top:1px solid #c9d2dc;color:#52647b}.discussion{border-top:1px solid #c9d2dc;padding-top:11px;margin-top:18px;font-size:18px;line-height:1.45}.discussion b{color:#007f86;margin-right:8px}.foot{display:flex;justify-content:space-between;font-size:14px;color:#52647b;padding-top:16px}
-</style></head>
-<body><div class="slide-container"><div class="page-inner">
-<header><div class="kicker"><span class="zh">DAY 1 · MD §D1.2.5.3</span><span class="en">DAY 1 · MD §D1.2.5.3</span></div><h1><span class="zh">先做小样本，再把知识变成可维护资产</span><span class="en">Start Small, Then Make Knowledge Maintainable</span></h1></header>
-<p class="lead"><span class="zh">实施重点是可复现、可审核和可停止；输入没有证明的阻力只作为待验证假设。</span><span class="en">Implementation should be reproducible, reviewable, and stoppable. Unproven resistance remains a hypothesis to validate.</span></p>
-<main class="content">
-<section class="column"><div class="label"><span class="zh">建设起点 · 建议</span><span class="en">BUILD START · PROPOSED</span></div><h2><span class="zh">一个边界清楚的沙盒样本</span><span class="en">One bounded sandbox sample</span></h2><ul><li><span class="zh">选择低风险、可复现流程；收集授权、视频/共享样本、角色与系统清单。</span><span class="en">Choose a low-risk reproducible flow; collect authorization, video/shareable sample, roles, and system list.</span></li><li><span class="zh">先产出带时间点证据和不确定性标签的 SOP 草稿。</span><span class="en">First produce an SOP draft with timestamped evidence and uncertainty labels.</span></li><li><span class="zh">让实际操作人员直接改步骤和规则，再拆出最小 Agent、Tool 或 Workflow 能力卡。</span><span class="en">Let the operator edit steps and rules, then define the smallest Agent, Tool, or Workflow capability card.</span></li></ul><div class="callout"><span class="zh">建议交付：草稿、正常样本、异常样本、审核记录。</span><span class="en">Proposed outputs: draft, normal sample, exception sample, review record.</span></div></section>
-<section class="column"><div class="label"><span class="zh">困难与采用 · 未证实假设</span><span class="en">RISKS & ADOPTION · UNVERIFIED</span></div><h2><span class="zh">把“可能困难”变成可记录的检查项</span><span class="en">Turn possible friction into checkable items</span></h2><ul><li><span class="zh">视频质量、敏感信息、跨系统上下文、未演示例外、权限和 Owner 不清。</span><span class="en">Video quality, sensitive data, cross-system context, unseen exceptions, unclear permissions, and unclear ownership.</span></li><li><span class="zh">使用脱敏、最小样本、双人审核、异常清单和沙盒回归逐项验证。</span><span class="en">Validate each item with de-identification, minimal samples, two-person review, exception lists, and sandbox regression.</span></li><li><span class="zh">原始视频是否缓存、抽检、回放或长期留存，须另行由业务、安全与审批方确认。</span><span class="en">Caching, sampling, replay, or long-term retention of raw video requires separate business, security, and approval decisions.</span></li></ul><div class="callout"><span class="zh">待补：已有采用者、培训、使用频率、持续运营人。</span><span class="en">Evidence pending: adopters, training, usage frequency, and ongoing operator.</span></div></section>
-</main>
-<div class="discussion"><b><span class="zh">讨论</span><span class="en">Discussion</span></b><span class="zh">哪一个样本能在一周内被复现、审核并安全停止？</span><span class="en">Which sample can be reproduced, reviewed, and safely stopped within one week?</span></div>
-<footer class="foot"><span>ITEM × COO AI Team × ISS Biz (team)</span><span>R5 · MD §D1.2.5.3</span></footer>
-</div></div></body></html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    .en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+    .slide-container{width:1280px;min-height:720px;background:#f6f7f9;color:#152439;display:flex;flex-direction:column;font-family:Arial,"Noto Sans SC",sans-serif}
+    .page-inner{margin:52px 60px;min-height:616px;display:flex;flex-direction:column}
+    header{border-left:5px solid #007f86;padding-left:18px}
+    .kicker{font-size:14px;letter-spacing:1.5px;color:#007f86;font-weight:700;margin-bottom:10px}
+    h1{font-size:32px;line-height:1.15;font-weight:750;letter-spacing:-.3px}
+    .lead{font-size:18px;line-height:1.45;color:#52647b;padding-top:16px;max-width:1110px}
+    .content{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-top:18px}
+    .block{border-top:2px solid #d5dce4;padding-top:10px}
+    h2{font-size:22px;line-height:1.3;color:#007f86;margin-bottom:6px}
+    p,li{font-size:18px;line-height:1.45;color:#152439}
+    ul{padding-left:22px}li{margin-bottom:6px}
+    a{color:#007f86;font-weight:700}
+    .discussion{border-top:1px solid #c9d2dc;padding-top:11px;margin-top:16px;font-size:18px;line-height:1.45;color:#152439}
+    .discussion b{color:#007f86;margin-right:8px}
+    .foot{display:flex;justify-content:space-between;font-size:14px;color:#52647b;padding-top:14px}
+  </style>
+</head>
+<body>
+<div class="slide-container"><div class="page-inner">
+  <header><div class="kicker"><span class="zh">DAY 1 · MD §D1.2.6.3</span><span class="en">DAY 1 · MD §D1.2.6.3</span></div><h1><span class="zh">怎么实现（二）：沉淀与执行</span><span class="en">How It Works (2): Learn and Run</span></h1></header>
+  <p class="lead"><span class="zh">一次演示得到两份产出：给 Agent 执行的技能和给人看的 SOP；回放时读当前页面再操作，不是机械重放。</span><span class="en">One demonstration yields two outputs: a skill the agent runs and an SOP people read. Replays read the current page instead of repeating clicks.</span></p>
+  <main class="content">
+    <section class="block"><h2><span class="zh">两份产出</span><span class="en">Two outputs</span></h2><ul>
+      <li><span class="zh">技能：给 Agent 执行；默认仅本人可用，确认好用后可发布给同一租户的同事。</span><span class="en">Skill: run by the agent; private by default, and can be published to colleagues in the same tenant.</span></li>
+      <li><span class="zh">SOP：一句话生成，格式由 SOP 规范技能统一约定。</span><span class="en">SOP: generated from one sentence, in the format set by an SOP standard skill.</span></li>
+      <li><span class="zh">UNIS 用 SOP 管理站点统一管理生成的 SOP：<a href="https://sop.item.pub/index.html" target="_blank" rel="noopener">sop.item.pub</a></span><span class="en">UNIS manages the generated SOPs on its SOP site: <a href="https://sop.item.pub/index.html" target="_blank" rel="noopener">sop.item.pub</a></span></li>
+    </ul></section>
+    <section class="block"><h2><span class="zh">回放执行</span><span class="en">Replay</span></h2><ul>
+      <li><span class="zh">新对话里用自然语言提需求，换新数据也能做，例如新的 Load No。</span><span class="en">Ask in plain language in a new chat; new inputs work, such as a new Load No.</span></li>
+      <li><span class="zh">网页步骤由扩展执行，桌面应用和本地文件由 Companion 执行，两边可以交接。</span><span class="en">The extension runs web steps; Companion runs desktop apps and local files, and they hand work to each other.</span></li>
+      <li><span class="zh">沿用用户自己的登录状态。</span><span class="en">It reuses the user's existing sign-ins.</span></li>
+    </ul></section>
+    <section class="block"><h2><span class="zh">核验与更新</span><span class="en">Verify and update</span></h2><ul>
+      <li><span class="zh">完成后核验结果，例如邮件发出后到“已发送”核对收件人、主题和附件。</span><span class="en">It checks the result, for example recipient, subject and attachments in Sent mail.</span></li>
+      <li><span class="zh">再演示同一个流程，会更新原来的技能，而不是新建一份。</span><span class="en">Demonstrating the same flow again updates the existing skill instead of adding a copy.</span></li>
+    </ul></section>
+  </main>
+  <div class="discussion"><b><span class="zh">讨论</span><span class="en">Discussion</span></b><span class="zh">一次执行要核验到什么程度，才算真正完成？</span><span class="en">What evidence shows that a run is really complete?</span></div>
+  <footer class="foot"><span><span class="zh">ITEM × COO AI Team × ISS Biz (team)</span><span class="en">ITEM × COO AI Team × ISS Biz (team)</span></span><span>R5 · MD §D1.2.6.3</span></footer>
+</div></div>
+</body>
+</html>

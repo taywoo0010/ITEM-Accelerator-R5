@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Item WMS Dynamic Form Demo</title>
+  <link rel="stylesheet" href="css/base.css">
+  <!-- R5 embed: the workshop page shows this player in a narrow iframe; keep the bar usable there. -->
+  <style>
+    @media (max-width: 860px) {
+      #bar { gap: 2px; padding: 0 10px 0 8px; }
+      #time { margin: 0 8px 0 4px; }
+      #track { margin: 0 8px 0 2px; }
+      #sceneButton { width: auto; }
+      #sceneName, #sceneTime { display: none; }
+      #rateButton { margin-left: 4px; }
+    }
+    @media (max-width: 560px) {
+      #prevScene, #nextScene, #time .sep, #timeTotal { display: none; }
+    }
+    @media (max-width: 420px) {
+      .menu-wrap { display: none; }
+    }
+  </style>
+  <script src="js/timing.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/scenes/s00-s03.js"></script>
+  <script src="js/scenes/s04-s06.js"></script>
+  <script src="js/scenes/s07-s09.js"></script>
+  <script src="js/scenes/s10-s12.js"></script>
+  <script src="js/scenes/s13-s15.js"></script>
+  <script src="js/scenes/s16-s17.js"></script>
+</head>
+<body>
+  <div id="viewport">
+    <div id="stage">
+      <div id="scenes"></div>
+      <div id="tag"></div>
+      <div id="caption"></div>
+    </div>
+  </div>
+  <div id="bar">
+    <button id="play" class="ctl play" title="播放 / 暂停（Space）" aria-label="Play"></button>
+    <button id="prevScene" class="ctl" title="上一场景（[）" aria-label="Previous scene"></button>
+    <button id="nextScene" class="ctl" title="下一场景（]）" aria-label="Next scene"></button>
+    <div id="time"><span id="timeNow">0:00</span><span class="sep">/</span><span id="timeTotal">0:00</span></div>
+    <div id="track" role="slider" tabindex="0" aria-label="Timeline" title="←/→ 2 秒，Shift 0.2 秒">
+      <div id="segments"></div>
+      <div id="thumb"></div>
+      <div id="hoverTip" hidden></div>
+    </div>
+    <div class="menu-wrap">
+      <button id="sceneButton" class="pick" aria-haspopup="listbox" aria-expanded="false" title="切换场景（[ / ]）">
+        <span id="sceneNo"></span><span id="sceneName"></span><span id="sceneTime"></span><span class="chev"></span>
+      </button>
+      <div id="sceneMenu" class="menu" role="listbox" hidden></div>
+    </div>
+    <div class="menu-wrap">
+      <button id="rateButton" class="pick" aria-haspopup="listbox" aria-expanded="false" title="播放速度（&lt; / &gt;）"><span id="rateText">1×</span><span class="chev"></span></button>
+      <div id="rateMenu" class="menu" role="listbox" hidden></div>
+    </div>
+    <!-- Plain-text state for the check tools (tools/*-check.mjs read it). -->
+    <div id="label" hidden></div>
+  </div>
+</body>
+</html>

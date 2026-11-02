@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+.slide-container{width:1280px;min-height:720px;background:var(--bg,#f6f7f9)!important;color:var(--ink,#152439)!important;font-family:Inter,"Noto Sans SC",Arial,sans-serif;display:flex;flex-direction:column}.page-inner{margin:34px 52px 24px;min-height:662px;display:flex;flex-direction:column}.title-zone{border-top:4px solid var(--accent,#007f86);padding-top:13px}.kicker{font-size:13px;line-height:17px;letter-spacing:1.2px;color:var(--accent,#007f86)!important}.title-zone h1{font-size:40px;line-height:1.12;margin-top:8px;font-weight:760;letter-spacing:-.6px;color:var(--ink,#152439)!important}.lead{font-size:18px;line-height:1.45;color:var(--muted,#52647b)!important;margin-top:10px;max-width:1080px}.content{flex:1;display:grid;grid-template-columns:minmax(0,1.65fr) minmax(370px,.85fr);gap:28px;padding-top:20px;align-items:stretch;min-height:0}.demo-frame{border:1px solid var(--line,#d9e1e8)!important;border-radius:16px;background:var(--paper,#fff)!important;padding:12px;display:flex;align-items:center;min-width:0}.demo-video{width:100%;display:block;max-height:408px;aspect-ratio:16/9;object-fit:contain;background:var(--soft,#eaf0f4)!important;border-radius:10px}.steps{min-width:0}.steps-heading{font-size:18px;line-height:1.35;color:var(--accent,#007f86)!important;margin:2px 0 10px}.step-list{display:grid;grid-template-columns:1fr;gap:5px}.step{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:start;padding:8px 0;position:relative}.step:not(:last-child):after{content:"";position:absolute;left:17px;top:42px;height:28px;width:1px;background:var(--line,#d9e1e8)!important}.step-no{width:36px;height:36px;border:1px solid var(--accent,#007f86)!important;border-radius:50%;display:grid;place-items:center;color:var(--accent,#007f86)!important;background:var(--soft,#eaf0f4)!important;font-size:16px;font-weight:700}.step h2{font-size:20px;line-height:1.25;color:var(--ink,#152439)!important}.step p{font-size:13px!important;line-height:1.35!important;color:var(--muted,#52647b)!important;margin-top:3px;white-space:nowrap;letter-spacing:-.15px}html[data-lang=en] .step p{font-size:10px!important;line-height:1.35!important;letter-spacing:-.2px}.outcome{margin-top:14px;border:1px solid var(--accent,#007f86)!important;background:var(--soft,#eaf0f4)!important;border-radius:10px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:18px}.outcome strong{font-size:19px;line-height:1.35;color:var(--accent,#007f86)!important}.ontology{display:flex;gap:18px;flex-wrap:wrap;color:var(--ink,#152439)!important;font-size:14px;white-space:nowrap}.ontology span{color:var(--ink,#152439)!important}.foot{border-top:1px solid var(--line,#d9e1e8)!important;margin-top:14px;padding-top:10px;display:flex;justify-content:space-between;color:var(--muted,#52647b)!important;font-size:12px;letter-spacing:1.3px}.foot span{color:var(--muted,#52647b)!important}.foot span:last-child{letter-spacing:.2px}
+</style>
+</head>
+<body>
+<div class="slide-container"><div class="page-inner">
+  <header class="title-zone">
+    <div class="kicker">DAY 1 / MD §D1.2.9.1 / <span class="zh">知识抽取与知识生成</span><span class="en">Knowledge extraction and generation</span></div>
+    <h1><span class="zh">知识生成流程</span><span class="en">Knowledge generation workflow</span></h1>
+    <p class="lead"><span class="zh">分析资料并生成草稿，用户确认后形成结构化 Ontology</span><span class="en">Knowledge Fabric analyzes the selected materials and generates a draft. User confirmation turns it into a structured Ontology.</span></p>
+  </header>
+  <main class="content">
+    <section class="demo-frame" aria-label="Knowledge Fabric 演示视频">
+      <video class="demo-video" controls playsinline preload="metadata" poster="media/knowledge-fabric-generation-poster.png">
+        <source src="media/knowledge-fabric-generation.mp4" type="video/mp4">
+        <span class="zh">当前浏览器无法播放此视频。</span><span class="en">This browser cannot play the video.</span>
+      </video>
+    </section>
+    <section class="steps">
+      <h2 class="steps-heading"><span class="zh">用户操作与系统处理</span><span class="en">User actions and system processing</span></h2>
+      <div class="step-list">
+        <article class="step"><div class="step-no">1</div><div><h2><span class="zh">发起整理</span><span class="en">Start</span></h2><p><span class="zh">用自然语言描述需要整理的业务知识</span><span class="en">Describe the business knowledge to organize in natural language</span></p></div></article>
+        <article class="step"><div class="step-no">2</div><div><h2><span class="zh">选择资料</span><span class="en">Select sources</span></h2><p><span class="zh">引用资源库中的文件、代码或视频</span><span class="en">Reference files, code or video from the resource library</span></p></div></article>
+        <article class="step"><div class="step-no">3</div><div><h2><span class="zh">审阅并确认</span><span class="en">Review and confirm</span></h2><p><span class="zh">检查系统生成的草稿，确认即可继续</span><span class="en">Check the generated draft and confirm it to continue</span></p></div></article>
+        <article class="step"><div class="step-no">4</div><div><h2><span class="zh">生成本体</span><span class="en">Create the Ontology</span></h2><p><span class="zh">形成可追溯、可持续维护的 Ontology</span><span class="en">Create a traceable Ontology that can be maintained over time</span></p></div></article>
+      </div>
+    </section>
+  </main>
+  <div class="outcome"><strong><span class="zh">知识梳理全托管，用户协助确认，本体自动生成</span><span class="en">After confirmation, the system saves the draft as an Ontology version</span></strong></div>
+  <footer class="foot"><span>KNOWLEDGE FABRIC</span><span>R5 · MD §D1.2.9.1 · 2 / 2</span></footer>
+</div></div>
+</body>
+</html>

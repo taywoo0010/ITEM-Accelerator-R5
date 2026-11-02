@@ -36,21 +36,15 @@
     "md": "D1.2.6"
   },
   {
-    "id": "c07",
-    "name": "D1.2.7 ISS CFS＋Depot｜20 分钟",
-    "input": "/home/ubuntu/iss_r5_package/source/case_inputs/c07.md",
+    "id": "c08",
+    "name": "D1.2.7 iCEO：功能、成功案例与失败教训｜10 分钟",
+    "input": "/home/ubuntu/iss_r5_package/source/case_inputs/c08.md",
     "md": "D1.2.7"
   },
   {
-    "id": "c08",
-    "name": "D1.2.8 失败案例：iCEO｜10 分钟",
-    "input": "/home/ubuntu/iss_r5_package/source/case_inputs/c08.md",
-    "md": "D1.2.8"
-  },
-  {
     "id": "c09",
-    "name": "D1.2.9 其他踩过的坑｜10 分钟",
+    "name": "D1.2.8 其他踩过的坑｜10 分钟",
     "input": "/home/ubuntu/iss_r5_package/source/case_inputs/c09.md",
-    "md": "D1.2.9"
+    "md": "D1.2.8"
   }
 ]

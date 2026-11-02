@@ -222,7 +222,7 @@
     {
       "id": "d09_wms_verify",
       "title": "WMS 验证的不只是代码生成速度",
-      "summary": "2.2；字段接口权限回写、修改测试、维护回滚；ISS代码与环境DT按需。",
+      "summary": "2.2；字段接口权限回写、修改测试、维护回滚；ISS代码与环境COO AI Team按需。",
       "md": "D1.2.2",
       "refs": [
         "D1.2.2"
@@ -638,7 +638,7 @@
     {
       "id": "d41_factory",
       "title": "Factory：让专业人员构建、评测和治理",
-      "summary": "3.3；FDE SeniorDev COOAI DT按需，草案GroupAgent接能力测试发布版本日志。",
+      "summary": "3.3；FDE SeniorDev COOAI COO AI Team按需，草案GroupAgent接能力测试发布版本日志。",
       "md": "D1.3.3",
       "refs": [
         "D1.3.3"
@@ -703,7 +703,7 @@
     {
       "id": "d46_ontology_cycle",
       "title": "Ontology 共建：按任务复杂度选择规模",
-      "summary": "3.4；采集审核对象关系规则行动验证发布反馈，OwnerFDE COOITEM DT按需。",
+      "summary": "3.4；采集审核对象关系规则行动验证发布反馈，OwnerFDE COOITEM COO AI Team按需。",
       "md": "D1.3.4",
       "refs": [
         "D1.3.4"
@@ -884,7 +884,7 @@
     },
     {
       "id": "d51_joint_roles",
-      "title": "三部门共建，DT 按需支撑",
+      "title": "三部门共建，COO AI Team 按需支撑",
       "summary": "4.1D；ISS业务Owner COOAI直接能力团队ITEM工程FDE专家审批运营，不绕权。",
       "md": "D1.5.1",
       "refs": [
