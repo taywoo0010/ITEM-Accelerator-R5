@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh"><head><meta charset="utf-8"><title>业务轴与功能轴实施总图</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+.en{display:none!important}
+html[data-lang=en] .zh{display:none!important}
+html[data-lang=en] .en{display:revert!important}
+
+/* Fixed slide size */
+.slide-container{
+  width:1280px;
+  height:720px;
+  background:var(--bg,#F4F6F8);
+  color:var(--ink,#1A2229);
+  font-family:Inter,"Noto Sans SC",Arial,sans-serif;
+  display:flex;
+  flex-direction:column;
+  padding:40px 64px; /* reduced outer spacing to fit 720px */
+}
+
+/* Inner content stretches to available area */
+.page-inner{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  flex:1;
+  overflow:hidden;
+}
+
+/* Brand motif and header */
+.motif{width:48px;height:4px;background:#2C5F6B}
+.kicker{font:11px/14px monospace;color:var(--accent,#2C5F6B);padding-top:6px}
+h1{font-size:28px;line-height:1.12;padding-top:6px}
+.lead{font-size:15px;line-height:1.35;color:var(--muted,#5C6D7E);padding-top:10px}
+
+/* Main layout */
+.content{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding-top:10px}
+.axis{display:flex;justify-content:space-between;gap:16px;font-size:16px;line-height:1.35}
+.axis strong{color:var(--accent,#2C5F6B)}
+
+/* Table scales to inner width */
+table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.35;margin-top:10px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line,#D1D8E0)}
+th{font-size:13px;color:var(--accent,#2C5F6B);background:var(--paper,#FFFFFF)}
+th:first-child{width:220px}
+td:first-child{font-weight:700}
+
+/* Sections and phases */
+h2{font-size:20px;line-height:1.3;padding-top:12px}
+.phases{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;padding-top:10px}
+.phase{border:1px solid var(--line,#D1D8E0);background:var(--paper,#FFFFFF);padding:10px;min-height:92px}
+.num{font-size:13px;color:var(--accent,#2C5F6B)}
+.phase h3{font-size:16px;line-height:1.3;padding-top:6px}
+.phase p{font-size:13px;line-height:1.35;color:var(--muted,#5C6D7E);padding-top:6px}
+
+/* Gate and footer */
+.gate{font-size:16px;line-height:1.35;padding-top:12px}
+.foot{font-size:12px;line-height:1.35;color:var(--muted,#5C6D7E);padding-top:12px;display:flex;justify-content:space-between;gap:12px}
+</style></head><body><div class="slide-container"><div class="page-inner"><div class="motif"></div><header><div class="kicker">DAY 1 · MD §D1.5.1 · BUSINESS × FUNCTION × DELIVERY</div><h1><span class="zh">实施总图：业务轴 × 功能轴，沿七阶段持续共建</span><span class="en">Implementation map: business × function, delivered in seven stages</span></h1></header><p class="lead"><span class="zh">业务轴回答“在哪条流程、为谁、改善什么结果”；功能轴回答“哪些能力跨流程重复出现、可以共用”。交点定义任务与 Owner，不是挑一个 Hero 案例。</span><span class="en">The business axis locates workflows, users and outcomes. The function axis finds reusable capabilities. Their intersection defines tasks and owners—not a single hero case.</span></p><main class="content"><div><div class="axis"><span><strong><span class="zh">↓ 业务轴</span><span class="en">↓ BUSINESS AXIS</span></strong> <span class="zh">流程 · 角色 · 价值 · Owner</span><span class="en">Workflow · role · value · owner</span></span><span><strong><span class="zh">功能轴 →</span><span class="en">FUNCTION AXIS →</span></strong> <span class="zh">跨场景能力复用</span><span class="en">Cross-scenario reuse</span></span></div><table><thead><tr><th><span class="zh">业务流程（示意）</span><span class="en">Workflow examples</span></th><th><span class="zh">知识与检索</span><span class="en">Knowledge &amp; retrieval</span></th><th><span class="zh">分析与决策</span><span class="en">Analysis &amp; decisions</span></th><th><span class="zh">编排与受控执行</span><span class="en">Orchestration &amp; actions</span></th></tr></thead><tbody><tr><td><span class="zh">客户服务 / CEC</span><span class="en">Customer service / CEC</span></td><td><span class="zh">工单、知识、上下文</span><span class="en">Tickets, knowledge, context</span></td><td><span class="zh">分类、路由、判断</span><span class="en">Classification, routing</span></td><td><span class="zh">派发、转人工、回写</span><span class="en">Dispatch, handoff, writeback</span></td></tr><tr><td>BO / <span class="zh">备件与服务承诺</span><span class="en">Parts &amp; service promises</span></td><td><span class="zh">库存、规则、客户承诺</span><span class="en">Inventory, rules, promises</span></td><td><span class="zh">替换、优先级、预测</span><span class="en">Substitution, priority, forecast</span></td><td><span class="zh">审批、订单与状态更新</span><span class="en">Approval, order/state updates</span></td></tr><tr><td><span class="zh">仓储 / 物流 / 现场服务</span><span class="en">Warehouse / logistics / field</span></td><td><span class="zh">SOP、数据、操作记录</span><span class="en">SOP, data, work records</span></td><td><span class="zh">异常诊断、资源优化</span><span class="en">Diagnosis, optimization</span></td><td><span class="zh">Workflow、通知与接管</span><span class="en">Workflow, alerts, takeover</span></td></tr></tbody></table></div><div><h2><span class="zh">共用底座承接任务；七阶段把能力变成可复用产品</span><span class="en">Shared foundations support tasks; seven stages create reusable products</span></h2><div class="phases"><section class="phase"><span class="num">01 →</span><h3><span class="zh">知识挖掘</span><span class="en">Discover knowledge</span></h3><p><span class="zh">材料、规则、流程断点</span><span class="en">Evidence, rules, gaps</span></p></section><section class="phase"><span class="num">02 →</span><h3><span class="zh">能力底座</span><span class="en">Prepare foundation</span></h3><p><span class="zh">数据、模型、接口、权限</span><span class="en">Data, models, interfaces</span></p></section><section class="phase"><span class="num">03 →</span><h3><span class="zh">共建流程</span><span class="en">Co-build workflows</span></h3><p><span class="zh">Agent、样本、真实验证</span><span class="en">Agents, samples, proof</span></p></section><section class="phase"><span class="num">04 →</span><h3><span class="zh">培训普及</span><span class="en">Train &amp; adopt</span></h3><p><span class="zh">业务采用、运营责任</span><span class="en">Adoption, operating roles</span></p></section><section class="phase"><span class="num">05 →</span><h3><span class="zh">垂直深耕</span><span class="en">Optimize &amp; deepen</span></h3><p><span class="zh">回归、质量、成本</span><span class="en">Regression, quality, cost</span></p></section><section class="phase"><span class="num">06 →</span><h3><span class="zh">沉淀产品</span><span class="en">Productize</span></h3><p><span class="zh">标准包、版本、维护</span><span class="en">Packages, versions, care</span></p></section><section class="phase"><span class="num">07</span><h3><span class="zh">复制推广</span><span class="en">Replicate &amp; expand</span></h3><p><span class="zh">跨场景、授权、交付</span><span class="en">Reuse, rights, delivery</span></p></section></div></div><p class="gate"><span class="zh"><strong>每阶段设门：</strong>有材料、有 Owner、有验收，再决定继续、调整或停止；七阶段不是本轮自动承诺全部完成。</span><span class="en"><strong>Gate every stage:</strong> evidence, owner and acceptance before continue/change/stop. The workshop does not automatically authorize all seven stages.</span></p></main><footer class="foot"><span><span class="zh">矩阵为分类示意，不表示场景已选定或完成集成；本页位于阶段一之前。</span><span class="en">Illustrative classification, not selected or integrated scenarios. This overview precedes Phase 1.</span></span><span>R5 · D1.5.1</span></footer></div></div></body></html>

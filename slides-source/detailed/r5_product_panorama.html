@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh"><head><meta charset="utf-8"><title>22 个命名产品全景</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+.en{display:none!important}
+html[data-lang=en] .zh{display:none!important}
+html[data-lang=en] .en{display:revert!important}
+
+/* Container fixed to fit exactly 1280x720 */
+.slide-container{
+  width:1280px;
+  height:720px;
+  background:var(--bg,#F4F6F8);
+  color:var(--ink,#1A2229);
+  font-family:Inter,"Noto Sans SC",Arial,sans-serif;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+/* Tighter inner margins and flexible layout */
+.page-inner{
+  margin:36px 64px;
+  display:flex;
+  flex-direction:column;
+  height:calc(100% - 72px); /* accounts for top/bottom margins */
+  gap:10px;
+}
+
+/* Small visual motif */
+.motif{width:60px;height:4px;background:#2C5F6B}
+.kicker{font:11px/14px monospace;color:var(--accent,#2C5F6B);padding-top:6px}
+h1{font-size:28px;line-height:1.08;padding-top:6px;margin-bottom:4px}
+.content{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding-top:12px}
+
+/* Groups grid compressed */
+.groups{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.group{border:1px solid var(--line,#D1D8E0);background:var(--paper,#FFFFFF);padding:14px 16px}
+.group h2{font-size:20px;line-height:1.2}
+.tagline{font-size:13px;color:var(--accent,#2C5F6B);padding-top:6px}
+.names{font-size:16px;line-height:1.5;padding-top:10px}
+.group p{font-size:13px;line-height:1.35;color:var(--muted,#5C6D7E);padding-top:8px}
+
+/* Table scaled to fit inner width */
+table{border-collapse:collapse;width:1120px;font-size:16px;line-height:1.3;margin-top:12px}
+th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line,#D1D8E0);padding:8px 10px}
+th{font-size:13px;color:var(--accent,#2C5F6B)}
+th:first-child{width:160px}
+td:first-child{font-size:13px;color:var(--muted,#5C6D7E)}
+
+/* Footer compact */
+.foot{font-size:11px;line-height:1.3;color:var(--muted,#5C6D7E);padding-top:10px;display:flex;justify-content:space-between;gap:20px}
+</style></head><body><div class="slide-container"><div class="page-inner"><div class="motif"></div><header><div class="kicker">DAY 1 · MD §D1.3.2 · 05 PRODUCT CATALOG</div><h1><span class="zh">22 个命名产品全景：12 个通用应用 × 10 个行业模板</span><span class="en">All 22 Named Products: 12 General Apps × 10 Industry Templates</span></h1></header><main class="content"><div class="groups"><section class="group"><h2><span class="zh">通用 AI 应用</span><span class="en">General AI Applications</span></h2><div class="tagline">LAYER 5 · 12 PRODUCTS · <span class="zh">跨行业复用</span><span class="en">REUSED ACROSS INDUSTRIES</span></div><div class="names">ItemGPT · ItemClaw · ItemFlow · ItemSense · ItemPredict · ItemOps AI · ItemAudit · ItemVision · ItemVoice · ItemSupport · ItemGrow · ItemDoc</div><p><span class="zh">每个行业都需要；通用能力一次构建，随平台交付。</span><span class="en">Needed in every industry; common capabilities are built once and ship with the platform.</span></p></section><section class="group"><h2><span class="zh">行业模板</span><span class="en">Industry Templates</span></h2><div class="tagline">LAYER 6 · 10 TEMPLATES · <span class="zh">可插拔垂直方案</span><span class="en">PLUGGABLE VERTICAL SOLUTIONS</span></div><div class="names">ItemChain · ItemDock · ItemTrade · ItemFin · ItemDine · ItemEstate · ItemBuild · ItemHealth · ItemAuto · ItemRetail</div><p><span class="zh">行业对象 + 流程 + 合规 + 智能体的打包；ItemChain 按原稿标为已验证。</span><span class="en">Packaged industry objects, workflows, compliance and agents; ItemChain is marked proven in the reference.</span></p></section></div><table><thead><tr><th><span class="zh">维度</span><span class="en">DIMENSION</span></th><th><span class="zh">通用应用（12）</span><span class="en">GENERAL APPS (12)</span></th><th><span class="zh">行业模板（10）</span><span class="en">INDUSTRY TEMPLATES (10)</span></th></tr></thead><tbody>
+<tr><td><span class="zh">回答的问题</span><span class="en">Question answered</span></td><td><span class="zh">企业运营需要哪些 AI 能力？</span><span class="en">What AI capabilities does enterprise operation need?</span></td><td><span class="zh">这些能力如何长成某个行业的样子？</span><span class="en">How do capabilities take an industry's shape?</span></td></tr>
+<tr><td><span class="zh">复用方式</span><span class="en">Reuse model</span></td><td><span class="zh">参考稿：跨行业 100% 复用，随平台交付</span><span class="en">Reference: 100% cross-industry reuse; ships with the platform</span></td><td><span class="zh">按行业加载，可组合、定制、由伙伴共建</span><span class="en">Loaded per industry; composable, customizable, partner-buildable</span></td></tr>
+<tr><td><span class="zh">研发经济学</span><span class="en">R&amp;D economics</span></td><td><span class="zh">一次构建，所有行业摊薄成本</span><span class="en">Built once; cost amortized across industries</span></td><td><span class="zh">首个模板成本最高，后续边际成本递减</span><span class="en">The first template costs most; subsequent marginal cost declines</span></td></tr>
+<tr><td><span class="zh">销售角色</span><span class="en">Sales role</span></td><td><span class="zh">平台订阅的核心价值构成</span><span class="en">Core value of the platform subscription</span></td><td><span class="zh">行业切入点与溢价来源</span><span class="en">Industry wedge and source of pricing premium</span></td></tr>
+<tr><td><span class="zh">验证状态</span><span class="en">Validation status</span></td><td><span class="zh">参考稿：已在供应链生产环境全量运行</span><span class="en">Reference: fully running in supply-chain production</span></td><td><span class="zh">ItemChain 已验证；其余按已验证机制复制</span><span class="en">ItemChain proven; other templates replicate the mechanism</span></td></tr>
+</tbody></table></main><footer class="foot"><span><span class="zh">来源：product_general_investor_v4.3 · 05；保留参考稿产品定位，不等于全部产品已在 ISS 开通或完成集成。</span><span class="en">Source: product_general_investor_v4.3 · 05. Reference positioning is not a claim that every product is enabled or integrated at ISS.</span></span><span>02 / 04</span></footer></div></div></body></html>

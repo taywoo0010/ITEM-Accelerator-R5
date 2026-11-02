@@ -1,6 +1,6 @@
 # ISS AI Native Workshop · R5 关联HTML安装包
 
-解压后从根目录的 `index.html` 进入。两套演示、完整MD、表单、资料和讨论记录的链接已经连好。主持人为Tom；会前版16页，会中版148页。九例展开，其中D1.2.6 Record & Reply按理念、实现、合规、复用和现场演示共六页；D1.2.2 WMS 动态表单压缩为四页；iCEO按数字分身、跨平台访问和案例分析共3页展开；其余按七段展开，其中D1.2.9.2根据Knowledge Fabric源材料拆为两页，D1.2.9另加一页WMS真实样例，并保留完整原细节。Day2按目标蓝图、差距、路线图、IP/商业化和最终收敛组织，原六业务域、能力资产、组织、风险与七阶段材料仍可取用。
+解压后从根目录的 `index.html` 进入。两套演示、完整MD、表单、资料和讨论记录的链接已经连好。主持人为Tom；会前版16页，会中版126页。九例展开，其中D1.2.6 Record & Reply按理念、实现、合规、复用和现场演示共六页；D1.2.2 WMS 动态表单压缩为四页；iCEO按数字分身、跨平台访问和案例分析共3页展开；其余按七段展开，其中D1.2.9.2根据Knowledge Fabric源材料拆为两页，D1.2.9另加一页WMS真实样例，并保留完整原细节。Day2按目标蓝图、差距、路线图、IP/商业化和最终收敛组织，原六业务域、能力资产、组织、风险与七阶段材料仍可取用。
 
 ## 1. 本机打开
 
@@ -66,7 +66,7 @@ formsEndpoint: 'https://你的收集服务/api/submissions'
 
 ```bash
 python3 -m pip install -r requirements.txt
-python3 source/build_site.py --kind all
+python3 source/rebuild_current_workshop.py
 ```
 
 该命令重新组装，更新根目录静态页面和MD阅读文件，不依赖本次sandbox路径。不会调用LLM，也不会创作/改写原生页面。新增页需在manifest中登记id、day、chapter、refs并提供原生HTML。构建会检查全部MD对应锚点，缺页面或缺锚点时失败，而不是发布不完整版本。
@@ -79,3 +79,24 @@ python3 source/build_site.py --kind all
 - [GitHub Pages自定义Actions工作流](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
 
 发布工作流采用官方示例当前列出的checkout v6、configure-pages v5、upload-pages-artifact v4、deploy-pages v4。版本验证于2026-10-26。
+
+## 平台与实施页精简修订
+
+D1.3/D1.4 原 25 页替换为参考 04/05 的架构及产品全景两页，加知识/能力底座与落地边界两页补充。D1.5 删除旧前两页、交换职责与能力对齐页，在七阶段前增加业务轴 × 功能轴总图。其余案例和媒体保留。当前会中版共 126 页。会议目的不是寻找单一 Hero 案例，而是形成 ISS 整体转型蓝图、共用能力和实施路线。
+
+参考来源：https://tommyyula.github.io/item-ai-strategy/product_general_investor_v4.3 。命名产品和验证状态沿用参考定位，不作 ISS 全量已开通承诺。
+
+原生页、manifest 或正文修改后，保留当前九案例与既有页面外壳的重建命令：
+
+```bash
+python source/rebuild_current_workshop.py
+python -m unittest discover -s source -p 'test*.py'
+```
+
+`source/day1_platform_revision.md` 保存本次 D1.3–D1.5 当前正文，Markdown 重新组装时优先使用，避免恢复历史长篇版本。
+
+### 本次修订的回归说明
+
+测试开发依赖：`pip install -r requirements-dev.txt`。本次针对章节精简、页序、22 个产品、四种知识输入、七阶段总图、内嵌正文以及未修改页面原样保留的 7 项检查通过：`python source/test_workshop_revision.py`。
+
+完整历史套件 `source/test_refresh_outputs.py` 在修改前已存在原生页与组装页 kicker 不一致、已删除的模型页和 WMS 历史七页期望等失配。本次与原 main 的基线比较没有新增失败；不将该历史套件标为全通过，也不通过删除旧断言掩盖问题。

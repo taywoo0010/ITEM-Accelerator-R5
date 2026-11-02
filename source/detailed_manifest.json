@@ -29,15 +29,15 @@
     {
       "id": 3,
       "label": "D1.3",
-      "zh": "平台与持续演进",
-      "en": "Platform and evolution",
+      "zh": "平台架构、产品全景与知识底座",
+      "en": "Architecture, product panorama and knowledge foundations",
       "day": 1
     },
     {
       "id": 4,
       "label": "D1.4",
-      "zh": "风险与原则",
-      "en": "Risks and principles",
+      "zh": "落地与验收边界",
+      "en": "Delivery and acceptance boundaries",
       "day": 1
     },
     {
@@ -102,7 +102,7 @@
       ],
       "md": "overview",
       "number": 1,
-      "total": 148,
+      "total": 126,
       "notes": false,
       "case": null,
       "index": 0
@@ -118,7 +118,7 @@
       ],
       "md": "day1",
       "number": 2,
-      "total": 148,
+      "total": 126,
       "notes": false,
       "case": null,
       "index": 1
@@ -135,7 +135,7 @@
       "chapter": 1,
       "number": 3,
       "day": 1,
-      "total": 148,
+      "total": 126,
       "notes": false,
       "case": null,
       "en": "ITEM: three working surfaces",
@@ -153,7 +153,7 @@
       ],
       "md": "D1.1.3",
       "number": 4,
-      "total": 148,
+      "total": 126,
       "notes": false,
       "case": null,
       "index": 3
@@ -172,7 +172,7 @@
       "notes": false,
       "index": 4,
       "number": 5,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c01_01",
@@ -188,7 +188,7 @@
       "notes": true,
       "index": 5,
       "number": 6,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c01_02",
@@ -204,7 +204,7 @@
       "notes": true,
       "index": 6,
       "number": 7,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c01_03",
@@ -220,7 +220,7 @@
       "notes": true,
       "index": 7,
       "number": 8,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c01_04",
@@ -236,7 +236,7 @@
       "notes": true,
       "index": 8,
       "number": 9,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c01_05",
@@ -252,7 +252,7 @@
       "notes": true,
       "index": 9,
       "number": 10,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c02_01",
@@ -268,7 +268,7 @@
       "notes": true,
       "index": 10,
       "number": 11,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c02_02",
@@ -284,7 +284,7 @@
       "notes": true,
       "index": 11,
       "number": 12,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c02_03",
@@ -300,7 +300,7 @@
       "notes": true,
       "index": 12,
       "number": 13,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c02_04",
@@ -316,7 +316,7 @@
       "notes": true,
       "index": 13,
       "number": 14,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c03_01",
@@ -332,7 +332,7 @@
       "notes": true,
       "index": 14,
       "number": 15,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c03_02",
@@ -348,7 +348,7 @@
       "notes": true,
       "index": 15,
       "number": 16,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c03_03",
@@ -364,7 +364,7 @@
       "notes": true,
       "index": 16,
       "number": 17,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c03_04",
@@ -380,7 +380,7 @@
       "notes": true,
       "index": 17,
       "number": 18,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c03_05",
@@ -396,7 +396,7 @@
       "notes": true,
       "index": 18,
       "number": 19,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c03_06",
@@ -412,7 +412,7 @@
       "notes": true,
       "index": 19,
       "number": 20,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c03_07",
@@ -428,7 +428,7 @@
       "notes": true,
       "index": 20,
       "number": 21,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c03_08",
@@ -444,7 +444,7 @@
       "notes": true,
       "index": 21,
       "number": 22,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c03_09",
@@ -460,7 +460,7 @@
       "notes": true,
       "index": 22,
       "number": 23,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c03_10",
@@ -476,7 +476,7 @@
       "notes": true,
       "index": 23,
       "number": 24,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_avl_01",
@@ -492,7 +492,7 @@
       "en": "Start with a demo",
       "index": 24,
       "number": 25,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_avl_02",
@@ -508,7 +508,7 @@
       "en": "What is AVL",
       "index": 25,
       "number": 26,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_avl_03",
@@ -524,7 +524,7 @@
       "en": "The current pain",
       "index": 26,
       "number": 27,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_avl_04",
@@ -540,7 +540,7 @@
       "en": "Direction: three layers",
       "index": 27,
       "number": 28,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_avl_05",
@@ -556,7 +556,7 @@
       "en": "Ontology | business ontology",
       "index": 28,
       "number": 29,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_avl_06",
@@ -572,7 +572,7 @@
       "en": "Agent Factory | callable agents",
       "index": 29,
       "number": 30,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_avl_07",
@@ -588,7 +588,7 @@
       "en": "ItemGPT | pages generated on demand",
       "index": 30,
       "number": 31,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_avl_08",
@@ -604,7 +604,7 @@
       "en": "The implementation path",
       "index": 31,
       "number": 32,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c04_01",
@@ -620,7 +620,7 @@
       "notes": true,
       "index": 32,
       "number": 33,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c04_02",
@@ -636,7 +636,7 @@
       "notes": true,
       "index": 33,
       "number": 34,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c04_03",
@@ -652,7 +652,7 @@
       "notes": true,
       "index": 34,
       "number": 35,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c04_04",
@@ -668,7 +668,7 @@
       "notes": true,
       "index": 35,
       "number": 36,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c04_05",
@@ -684,7 +684,7 @@
       "notes": true,
       "index": 36,
       "number": 37,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c04_06",
@@ -700,7 +700,7 @@
       "notes": true,
       "index": 37,
       "number": 38,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c04_07",
@@ -716,7 +716,7 @@
       "notes": true,
       "index": 38,
       "number": 39,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c05_01",
@@ -732,7 +732,7 @@
       "notes": true,
       "index": 39,
       "number": 40,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c05_02",
@@ -748,7 +748,7 @@
       "notes": true,
       "index": 40,
       "number": 41,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c05_03",
@@ -764,7 +764,7 @@
       "notes": true,
       "index": 41,
       "number": 42,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c05_04",
@@ -780,7 +780,7 @@
       "notes": true,
       "index": 42,
       "number": 43,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c05_05",
@@ -796,7 +796,7 @@
       "notes": true,
       "index": 43,
       "number": 44,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c05_06",
@@ -812,7 +812,7 @@
       "notes": true,
       "index": 44,
       "number": 45,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c06_01",
@@ -828,7 +828,7 @@
       "notes": true,
       "index": 45,
       "number": 46,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c06_01_detail",
@@ -844,7 +844,7 @@
       "notes": true,
       "index": 46,
       "number": 47,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c06_02",
@@ -860,7 +860,7 @@
       "notes": true,
       "index": 47,
       "number": 48,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c06_03",
@@ -876,7 +876,7 @@
       "notes": true,
       "index": 48,
       "number": 49,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c06_04",
@@ -892,7 +892,7 @@
       "notes": true,
       "index": 49,
       "number": 50,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c06_05",
@@ -908,7 +908,7 @@
       "notes": true,
       "index": 50,
       "number": 51,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c06_06",
@@ -924,7 +924,7 @@
       "notes": true,
       "index": 51,
       "number": 52,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c06_07",
@@ -940,7 +940,7 @@
       "notes": true,
       "index": 52,
       "number": 53,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c08_01",
@@ -956,7 +956,7 @@
       "notes": true,
       "index": 53,
       "number": 54,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c08_02",
@@ -972,7 +972,7 @@
       "notes": true,
       "index": 54,
       "number": 55,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c08_06",
@@ -988,7 +988,7 @@
       "notes": true,
       "index": 55,
       "number": 56,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c09_00",
@@ -1004,7 +1004,7 @@
       "notes": true,
       "index": 56,
       "number": 57,
-      "total": 148
+      "total": 126
     },
     {
       "id": "r5_c09_01",
@@ -1020,7 +1020,7 @@
       "notes": true,
       "index": 57,
       "number": 58,
-      "total": 148,
+      "total": 126,
       "topic": "知识抽取与知识生成",
       "topic_en": "Knowledge extraction and generation"
     },
@@ -1038,7 +1038,7 @@
       "notes": true,
       "index": 58,
       "number": 59,
-      "total": 148,
+      "total": 126,
       "topic": "知识抽取与知识生成",
       "topic_en": "Knowledge extraction and generation"
     },
@@ -1056,7 +1056,7 @@
       "notes": true,
       "index": 59,
       "number": 60,
-      "total": 148,
+      "total": 126,
       "topic": "知识抽取与知识生成",
       "topic_en": "Knowledge extraction and generation"
     },
@@ -1074,7 +1074,7 @@
       "notes": true,
       "index": 60,
       "number": 61,
-      "total": 148,
+      "total": 126,
       "topic": "WMS Agent：业务本体连接规则与动作",
       "topic_en": "WMS Agent: ontology connects rules to actions"
     },
@@ -1092,7 +1092,7 @@
       "notes": true,
       "index": 61,
       "number": 62,
-      "total": 148,
+      "total": 126,
       "topic": "自建模型实验复盘",
       "topic_en": "Self-built model experiment review"
     },
@@ -1110,7 +1110,7 @@
       "notes": true,
       "index": 62,
       "number": 63,
-      "total": 148,
+      "total": 126,
       "topic": "自建模型实验复盘",
       "topic_en": "Self-built model experiment review"
     },
@@ -1128,7 +1128,7 @@
       "notes": true,
       "index": 63,
       "number": 64,
-      "total": 148,
+      "total": 126,
       "topic": "小模型训练复盘：样本、规则与可解释性的边界",
       "topic_en": "Small-model training review: limits of samples, rules and explainability"
     },
@@ -1146,7 +1146,7 @@
       "notes": true,
       "index": 64,
       "number": 65,
-      "total": 148,
+      "total": 126,
       "topic": "小模型训练复盘：样本、规则与可解释性的边界",
       "topic_en": "Small-model training review: limits of samples, rules and explainability"
     },
@@ -1164,7 +1164,7 @@
       "notes": true,
       "index": 65,
       "number": 66,
-      "total": 148,
+      "total": 126,
       "topic": "AI 招聘的跨国本地化",
       "topic_en": "AI recruitment localisation"
     },
@@ -1183,483 +1183,79 @@
       "case": "c09",
       "index": 66,
       "number": 67,
-      "total": 148,
+      "total": 126,
       "topic": "可信 Agent：一套标准，三重保障",
       "topic_en": "Trustworthy agents: one set of standards, three safeguards"
     },
     {
-      "id": "d33_architecture",
-      "title": "案例之后看架构：单一入口不是单一聊天窗",
-      "summary": "3.1；业务输入语义数据模型Tools AgentWorkflow页面行动观测，现有系统仍工作面。",
+      "id": "r5_platform_architecture",
+      "title": "七层平台架构：五层核心产品 + 两层开放集成",
+      "en": "The 7-Layer Architecture: 5 Core Product Layers + 2 Open Integration Layers",
+      "summary": "七层平台架构：五层核心产品 + 两层开放集成",
       "md": "D1.3.1",
       "refs": [
         "D1.3.1"
       ],
       "chapter": 3,
+      "day": 1,
+      "notes": false,
+      "case": null,
+      "index": 67,
       "number": 68,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "After the cases: one entry is not one chat window",
-      "index": 67
+      "total": 126
     },
     {
-      "id": "d34_writeback",
-      "title": "两类回写：业务事实与知识能力",
-      "summary": "3.1；业务状态确认Action；日志失败人工修正SOP本体Skill治理；正式事实与推断分开。",
-      "md": "D1.3.1",
+      "id": "r5_product_panorama",
+      "title": "22 个命名产品全景：12 个通用应用 × 10 个行业模板",
+      "en": "All 22 Named Products: 12 General Apps × 10 Industry Templates",
+      "summary": "22 个命名产品全景：12 个通用应用 × 10 个行业模板",
+      "md": "D1.3.2",
       "refs": [
-        "D1.3.1"
+        "D1.3.2"
       ],
       "chapter": 3,
+      "day": 1,
+      "notes": false,
+      "case": null,
+      "index": 68,
       "number": 69,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Two writebacks: business facts and capability knowledge",
-      "index": 68
+      "total": 126
     },
     {
-      "id": "d35_action_control",
-      "title": "从建议到执行的责任边界",
-      "summary": "3.1；查询写入权限审批幂等重试冲突日志，工具返回不等于业务完成。",
-      "md": "D1.3.1",
-      "refs": [
-        "D1.3.1"
-      ],
-      "chapter": 3,
-      "number": 70,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "The accountability boundary from suggestion to action",
-      "index": 69
-    },
-    {
-      "id": "d36_data_hub",
-      "title": "Data Hub：可信事实与可追溯上下文",
-      "summary": "3.2；CRM维修库存物流UKM代码多模态，来源版本时间质量权限，互联不等于可训练。",
-      "md": "D1.3.2",
-      "refs": [
-        "D1.3.2"
-      ],
-      "chapter": 3,
-      "number": 71,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Data Hub: trusted facts and traceable context",
-      "index": 70
-    },
-    {
-      "id": "d37_model_hub",
-      "title": "Hybrid AI：理解、预测、优化各司其职",
-      "summary": "3.2；Hollis框架三层模型方向LeTSFM LeOPT图物流小模型路由，能力材料不等于已接入。",
-      "md": "D1.3.2",
-      "refs": [
-        "D1.3.2"
-      ],
-      "chapter": 3,
-      "number": 72,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Hybrid AI: understanding, prediction and optimization each have a role",
-      "index": 71
-    },
-    {
-      "id": "d38_marketplace",
-      "title": "Connector、Tools、Skill 与技术 Marketplace",
-      "summary": "3.2；连接封装标准能力发现权限质量Owner，Marketplace技术层，不是业务商城。",
-      "md": "D1.3.2",
-      "refs": [
-        "D1.3.2"
-      ],
-      "chapter": 3,
-      "number": 73,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Connector, Tools, Skill and the technical Marketplace",
-      "index": 72
-    },
-    {
-      "id": "d39_dashboard_cost",
-      "title": "Dashboard 连接采用、质量与成本",
-      "summary": "3.2；面向人，TokenGPU调用服务实例路由结算按场景能力计量，无价格承诺。",
-      "md": "D1.3.2",
-      "refs": [
-        "D1.3.2"
-      ],
-      "chapter": 3,
-      "number": 74,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Dashboard connects adoption, quality and cost",
-      "index": 73
-    },
-    {
-      "id": "d40_runtime",
-      "title": "Runtime：使用、标准化与后台执行",
-      "summary": "3.3；Citizen用户标准模板字段权限Action；Robotics人工接管TokenSaving。",
-      "md": "D1.3.3",
-      "refs": [
-        "D1.3.3"
-      ],
-      "chapter": 3,
-      "number": 75,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Runtime: use, standardization and background execution",
-      "index": 74
-    },
-    {
-      "id": "d41_factory",
-      "title": "Factory：让专业人员构建、评测和治理",
-      "summary": "3.3；FDE SeniorDev COOAI COO AI Team按需，草案GroupAgent接能力测试发布版本日志。",
-      "md": "D1.3.3",
-      "refs": [
-        "D1.3.3"
-      ],
-      "chapter": 3,
-      "number": 76,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Factory: let specialists build, evaluate and govern",
-      "index": 75
-    },
-    {
-      "id": "d42_qualification",
-      "title": "Qualification 与 Internal Logging",
-      "summary": "3.3；覆盖规则异常缺失权限Action时间成本接管日志版本，演示成功非上线。",
-      "md": "D1.3.3",
-      "refs": [
-        "D1.3.3"
-      ],
-      "chapter": 3,
-      "number": 77,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Qualification and Internal Logging",
-      "index": 76
-    },
-    {
-      "id": "d43_skill_modes",
-      "title": "Skill A/B：先验证，再按成熟度服务化",
-      "summary": "3.3；JEVHarness过渡ISS SkillModel目标Hollis支撑，名称与职责待确认不强制迁移。",
-      "md": "D1.3.3",
-      "refs": [
-        "D1.3.3"
-      ],
-      "chapter": 3,
-      "number": 78,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Skill A/B: validate first, then service by maturity",
-      "index": 77
-    },
-    {
-      "id": "d44_hollis_governance",
-      "title": "Open → Transform → Engineer 的阶段治理",
-      "summary": "3.3；Hollis框架探索场景工程，登记评测标准接入认证必要托管保留创新。",
-      "md": "D1.3.3",
-      "refs": [
-        "D1.3.3"
-      ],
-      "chapter": 3,
-      "number": 79,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Open → Transform → Engineer: staged governance",
-      "index": 78
-    },
-    {
-      "id": "d45_knowledge_inputs",
-      "title": "知识挖掘的四种起点",
-      "summary": "3.4；ticket、数据代码、WIKIUKMSOP、视频操作分别产问题/本体/规则/流程。",
+      "id": "r5_knowledge_foundation",
+      "title": "知识挖掘的四种起点，接入同一能力底座",
+      "en": "Four knowledge starting points, one reusable foundation",
+      "summary": "知识挖掘的四种起点，接入同一能力底座",
       "md": "D1.3.4",
       "refs": [
-        "D1.3.4"
-      ],
-      "chapter": 3,
-      "number": 80,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Four starting points for knowledge mining",
-      "index": 79
-    },
-    {
-      "id": "d46_ontology_cycle",
-      "title": "Ontology 共建：按任务复杂度选择规模",
-      "summary": "3.4；采集审核对象关系规则行动验证发布反馈，OwnerFDE COOITEM COO AI Team按需。",
-      "md": "D1.3.4",
-      "refs": [
-        "D1.3.4"
-      ],
-      "chapter": 3,
-      "number": 81,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Co-build ontology at the right task scale",
-      "index": 80
-    },
-    {
-      "id": "d47_knowledge_states",
-      "title": "原始记录、草稿、审核与发布不可混用",
-      "summary": "3.4；来源Owner有效期、不确定推断合成标注，使用错误版本更新。",
-      "md": "D1.3.4",
-      "refs": [
-        "D1.3.4"
-      ],
-      "chapter": 3,
-      "number": 82,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Raw records, drafts, review and release must stay separate",
-      "index": 81
-    },
-    {
-      "id": "r5_platform_evolution",
-      "title": "平台演进：把业务变更变成可回归的长期资产",
-      "en": "Platform evolution: turn business change into regressed, durable assets",
-      "md": "D1.3.5",
-      "refs": [
+        "D1.3.3",
+        "D1.3.4",
         "D1.3.5"
       ],
       "chapter": 3,
       "day": 1,
-      "case": null,
       "notes": false,
-      "index": 82,
-      "number": 83,
-      "total": 148
+      "case": null,
+      "index": 69,
+      "number": 70,
+      "total": 126
     },
     {
-      "id": "d61_accuracy",
-      "title": "准确性：以任务、风险和证据定义门槛",
-      "summary": "5.1；分任务质量覆盖风险人工独立样本来源拒答澄清，不以模型自评或平均分上线。",
-      "md": "D1.4.1",
+      "id": "r5_delivery_boundaries",
+      "title": "落地边界：复用现有能力，以业务结果验收",
+      "en": "Delivery boundaries: reuse capabilities, verify business outcomes",
+      "summary": "落地边界：复用现有能力，以业务结果验收",
+      "md": "D1.4",
       "refs": [
-        "D1.4.1"
+        "D1.4"
       ],
       "chapter": 4,
-      "number": 84,
       "day": 1,
-      "total": 148,
       "notes": false,
       "case": null,
-      "en": "Accuracy: define the gate by task, risk and evidence",
-      "index": 83
-    },
-    {
-      "id": "d62_super_agent",
-      "title": "Super Agent：业务编排，不是无限权限",
-      "summary": "5.2；工作定义目标授权子Skill任务异常Cost责任，简单流程足够不增加复杂。",
-      "md": "D1.4.2",
-      "refs": [
-        "D1.4.2"
-      ],
-      "chapter": 4,
-      "number": 85,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Super Agent: orchestration, not unlimited access",
-      "index": 84
-    },
-    {
-      "id": "d63_supplyx",
-      "title": "SupplyX：先确认范围，再比较复用边界",
-      "summary": "5.3；具体版本未知不猜能力，流程数据语义模型接口治理成本同场景，复用补充重复分类。",
-      "md": "D1.4.3",
-      "refs": [
-        "D1.4.3"
-      ],
-      "chapter": 4,
-      "number": 86,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "SupplyX: Confirm Scope Before Comparing Reuse",
-      "index": 85
-    },
-    {
-      "id": "d64_copilot",
-      "title": "Copilot：保留入口，验证能力融合",
-      "summary": "5.4；版本实施接口待确认，知识代码流程Action日志回写，权限验证不承诺无缝。",
-      "md": "D1.4.4",
-      "refs": [
-        "D1.4.4"
-      ],
-      "chapter": 4,
-      "number": 87,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Copilot: Keep the Entry, Verify the Integration",
-      "index": 86
-    },
-    {
-      "id": "d65_activity",
-      "title": "Agent 热活报告：采用和有效任务",
-      "summary": "5.5；用户团队活跃重复任务完成异常质量来源避免自调用重试指标虚高，口径周期版本。",
-      "md": "D1.4.5",
-      "refs": [
-        "D1.4.5"
-      ],
-      "chapter": 4,
-      "number": 88,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Agent Activity: Adoption and Effective Tasks",
-      "index": 87
-    },
-    {
-      "id": "d66_business_value",
-      "title": "业务价值：基线、成本与实际结果",
-      "summary": "5.5；时间人工返工净成本Token维护，CustomerPromise关闭流程客户体验复用Owner签认。",
-      "md": "D1.4.5",
-      "refs": [
-        "D1.4.5"
-      ],
-      "chapter": 4,
-      "number": 89,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Business Value: Baseline, Cost and Outcomes",
-      "index": 88
-    },
-    {
-      "id": "d67_ap_inventory",
-      "title": "AP 的 Agent：先取得可复用清单",
-      "summary": "5.6；AP定义Owner未知，能力输入输出数据模型权限版本质量成本运维盘点。",
-      "md": "D1.4.6",
-      "refs": [
-        "D1.4.6"
-      ],
-      "chapter": 4,
-      "number": 90,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "AP Agents: Build the Reuse Inventory",
-      "index": 89
-    },
-    {
-      "id": "d68_ap_reuse",
-      "title": "AP 复用：分类接入，不一次性重写",
-      "summary": "5.6；直复用适配改规则合并待评估五类，Hollis阶段治理质量权限不成熟不入生产。",
-      "md": "D1.4.6",
-      "refs": [
-        "D1.4.6"
-      ],
-      "chapter": 4,
-      "number": 91,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "AP Reuse: Classify, Integrate, Don’t Rewrite All",
-      "index": 90
-    },
-    {
-      "id": "r4_risk_to_implementation",
-      "title": "把风险结论带入实施与第二天决策",
-      "en": "Carry risk evidence into implementation",
-      "chapter": 4,
-      "day": 1,
-      "refs": [
-        "D1.4.7"
-      ],
-      "md": "D1.4.7",
-      "number": 92,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "index": 91
-    },
-    {
-      "id": "d48_best_practice",
-      "title": "ISS 最佳实践：业务轴与功能轴",
-      "summary": "4.1A；UKMPEI等候选业务功能双分类价值数据风险评测维护复用，本轮不锁BO。",
-      "md": "D1.5.1",
-      "refs": [
-        "D1.5.1"
-      ],
-      "chapter": 5,
-      "number": 93,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "ISS Best Practice: Two Axes",
-      "index": 92
-    },
-    {
-      "id": "d49_reform_process",
-      "title": "AI 重塑流程，而不只是增加聊天入口",
-      "summary": "4.1B；目标倒推、消除重复减少交接自动辅助人工上下游规则指标。",
-      "md": "D1.5.1",
-      "refs": [
-        "D1.5.1"
-      ],
-      "chapter": 5,
-      "number": 94,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Reform the Process, Not Just the Chat Entry",
-      "index": 93
-    },
-    {
-      "id": "d50_accelerator",
-      "title": "与 Accelerator 对齐已有能力和边界",
-      "summary": "4.1C；Hollis数据算力模型部署认证Agent服务化五域，材料能力实际可用另确认技术Marketplace。",
-      "md": "D1.5.1",
-      "refs": [
-        "D1.5.1"
-      ],
-      "chapter": 5,
-      "number": 95,
-      "day": 1,
-      "total": 148,
-      "notes": false,
-      "case": null,
-      "en": "Align Existing Accelerator Capabilities",
-      "index": 94
+      "index": 70,
+      "number": 71,
+      "total": 126
     },
     {
       "id": "d51_joint_roles",
@@ -1670,13 +1266,47 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 96,
+      "number": 72,
       "day": 1,
-      "total": 148,
+      "total": 126,
       "notes": false,
       "case": null,
       "en": "Three-Way Build, COO AI Team as Needed",
-      "index": 95
+      "index": 71
+    },
+    {
+      "id": "d50_accelerator",
+      "title": "与 Accelerator 对齐已有能力和边界",
+      "summary": "4.1C；Hollis数据算力模型部署认证Agent服务化五域，材料能力实际可用另确认技术Marketplace。",
+      "md": "D1.5.1",
+      "refs": [
+        "D1.5.1"
+      ],
+      "chapter": 5,
+      "number": 73,
+      "day": 1,
+      "total": 126,
+      "notes": false,
+      "case": null,
+      "en": "Align Existing Accelerator Capabilities",
+      "index": 72
+    },
+    {
+      "id": "r5_implementation_overview",
+      "title": "实施总图：业务轴 × 功能轴，沿七阶段持续共建",
+      "en": "Implementation map: business × function, delivered in seven stages",
+      "summary": "实施总图：业务轴 × 功能轴，沿七阶段持续共建",
+      "md": "D1.5.1",
+      "refs": [
+        "D1.5.1"
+      ],
+      "chapter": 5,
+      "day": 1,
+      "notes": false,
+      "case": null,
+      "index": 73,
+      "number": 74,
+      "total": 126
     },
     {
       "id": "d52_phase1",
@@ -1687,13 +1317,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 97,
+      "number": 75,
       "day": 1,
-      "total": 148,
+      "total": 126,
       "notes": false,
       "case": null,
       "en": "Phase 1: Discover Knowledge & Practice",
-      "index": 96
+      "index": 74
     },
     {
       "id": "d53_phase2",
@@ -1704,13 +1334,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 98,
+      "number": 76,
       "day": 1,
-      "total": 148,
+      "total": 126,
       "notes": false,
       "case": null,
       "en": "Phase 2: Prepare the Capability Base",
-      "index": 97
+      "index": 75
     },
     {
       "id": "d54_phase3",
@@ -1721,13 +1351,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 99,
+      "number": 77,
       "day": 1,
-      "total": 148,
+      "total": 126,
       "notes": false,
       "case": null,
       "en": "Phase 3: Co-build Agent & Flow",
-      "index": 98
+      "index": 76
     },
     {
       "id": "d55_phase4",
@@ -1738,13 +1368,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 100,
+      "number": 78,
       "day": 1,
-      "total": 148,
+      "total": 126,
       "notes": false,
       "case": null,
       "en": "Phase 4: Training & Adoption",
-      "index": 99
+      "index": 77
     },
     {
       "id": "d56_phase5",
@@ -1755,13 +1385,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 101,
+      "number": 79,
       "day": 1,
-      "total": 148,
+      "total": 126,
       "notes": false,
       "case": null,
       "en": "Phase 5: Optimize & Deepen",
-      "index": 100
+      "index": 78
     },
     {
       "id": "d57_phase6",
@@ -1772,13 +1402,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 102,
+      "number": 80,
       "day": 1,
-      "total": 148,
+      "total": 126,
       "notes": false,
       "case": null,
       "en": "Phase 6: Productize",
-      "index": 101
+      "index": 79
     },
     {
       "id": "d58_phase7",
@@ -1789,13 +1419,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 103,
+      "number": 81,
       "day": 1,
-      "total": 148,
+      "total": 126,
       "notes": false,
       "case": null,
       "en": "Phase 7: Replicate & Promote",
-      "index": 102
+      "index": 80
     },
     {
       "id": "r4_day1_inputs",
@@ -1807,11 +1437,11 @@
         "D1.5.1"
       ],
       "md": "D1.5.1",
-      "number": 104,
-      "total": 148,
+      "number": 82,
+      "total": 126,
       "notes": false,
       "case": null,
-      "index": 103
+      "index": 81
     },
     {
       "id": "r4_moat",
@@ -1823,11 +1453,11 @@
         "D1.5.1"
       ],
       "md": "D1.5.1",
-      "number": 105,
-      "total": 148,
+      "number": 83,
+      "total": 126,
       "notes": false,
       "case": null,
-      "index": 104
+      "index": 82
     },
     {
       "id": "r4_day1_fields",
@@ -1839,11 +1469,11 @@
         "D1.5.2"
       ],
       "md": "D1.5.2",
-      "number": 106,
-      "total": 148,
+      "number": 84,
+      "total": 126,
       "notes": false,
       "case": null,
-      "index": 105
+      "index": 83
     },
     {
       "id": "r4_d2_cover",
@@ -1855,11 +1485,11 @@
         "day2"
       ],
       "md": "day2",
-      "number": 107,
-      "total": 148,
+      "number": 85,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 106
+      "index": 84
     },
     {
       "id": "r4_d2_agenda",
@@ -1871,11 +1501,11 @@
         "day2"
       ],
       "md": "day2",
-      "number": 108,
-      "total": 148,
+      "number": 86,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 107
+      "index": 85
     },
     {
       "id": "r5_d2_blueprint",
@@ -1889,9 +1519,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 108,
-      "number": 109,
-      "total": 148
+      "index": 86,
+      "number": 87,
+      "total": 126
     },
     {
       "id": "r5_d2_future_work",
@@ -1905,9 +1535,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 109,
-      "number": 110,
-      "total": 148
+      "index": 87,
+      "number": 88,
+      "total": 126
     },
     {
       "id": "r4_hollis_elements",
@@ -1920,11 +1550,11 @@
         "D2.1.12"
       ],
       "md": "D2.1.11",
-      "number": 111,
-      "total": 148,
+      "number": 89,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 110
+      "index": 88
     },
     {
       "id": "r4_hollis_evolution",
@@ -1937,11 +1567,11 @@
         "D2.1.14"
       ],
       "md": "D2.1.12",
-      "number": 112,
-      "total": 148,
+      "number": 90,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 111
+      "index": 89
     },
     {
       "id": "r4_hollis_cooperation",
@@ -1954,11 +1584,11 @@
         "D2.1.15"
       ],
       "md": "D2.1.13",
-      "number": 113,
-      "total": 148,
+      "number": 91,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 112
+      "index": 90
     },
     {
       "id": "r4_domain_template",
@@ -1970,11 +1600,11 @@
         "D2.2.2"
       ],
       "md": "D2.2.2",
-      "number": 114,
-      "total": 148,
+      "number": 92,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 113
+      "index": 91
     },
     {
       "id": "r4_domain_cec",
@@ -1987,11 +1617,11 @@
         "D1.2.7"
       ],
       "md": "D2.2.3",
-      "number": 115,
-      "total": 148,
+      "number": 93,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 114
+      "index": 92
     },
     {
       "id": "r4_domain_eservice",
@@ -2004,11 +1634,11 @@
         "D1.2.8"
       ],
       "md": "D2.2.3",
-      "number": 116,
-      "total": 148,
+      "number": 94,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 115
+      "index": 93
     },
     {
       "id": "r4_domain_bo",
@@ -2021,11 +1651,11 @@
         "D1.2.5"
       ],
       "md": "D2.2.3",
-      "number": 117,
-      "total": 148,
+      "number": 95,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 116
+      "index": 94
     },
     {
       "id": "r4_domain_procurement",
@@ -2037,11 +1667,11 @@
         "D2.2.3"
       ],
       "md": "D2.2.3",
-      "number": 118,
-      "total": 148,
+      "number": 96,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 117
+      "index": 95
     },
     {
       "id": "r4_domain_parts",
@@ -2053,11 +1683,11 @@
         "D2.2.3"
       ],
       "md": "D2.2.3",
-      "number": 119,
-      "total": 148,
+      "number": 97,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 118
+      "index": 96
     },
     {
       "id": "r4_domain_ukm",
@@ -2070,11 +1700,11 @@
         "D1.3.4"
       ],
       "md": "D2.2.3",
-      "number": 120,
-      "total": 148,
+      "number": 98,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 119
+      "index": 97
     },
     {
       "id": "r4_domain_synthesis",
@@ -2088,11 +1718,11 @@
         "D2.2.6"
       ],
       "md": "D2.2.4",
-      "number": 121,
-      "total": 148,
+      "number": 99,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 120
+      "index": 98
     },
     {
       "id": "r5_d2_gap_map",
@@ -2106,9 +1736,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 121,
-      "number": 122,
-      "total": 148
+      "index": 99,
+      "number": 100,
+      "total": 126
     },
     {
       "id": "r5_d2_breakthroughs",
@@ -2122,9 +1752,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 122,
-      "number": 123,
-      "total": 148
+      "index": 100,
+      "number": 101,
+      "total": 126
     },
     {
       "id": "r5_d2_four_lanes",
@@ -2138,9 +1768,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 123,
-      "number": 124,
-      "total": 148
+      "index": 101,
+      "number": 102,
+      "total": 126
     },
     {
       "id": "r5_d2_hands_on",
@@ -2154,9 +1784,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 124,
-      "number": 125,
-      "total": 148
+      "index": 102,
+      "number": 103,
+      "total": 126
     },
     {
       "id": "r4_assets_types",
@@ -2168,11 +1798,11 @@
         "D2.3.11"
       ],
       "md": "D2.3.11",
-      "number": 126,
-      "total": 148,
+      "number": 104,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 125
+      "index": 103
     },
     {
       "id": "r4_assets_before_release",
@@ -2184,11 +1814,11 @@
         "D2.3.12"
       ],
       "md": "D2.3.12",
-      "number": 127,
-      "total": 148,
+      "number": 105,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 126
+      "index": 104
     },
     {
       "id": "r4_assets_after_release",
@@ -2200,11 +1830,11 @@
         "D2.3.12"
       ],
       "md": "D2.3.12",
-      "number": 128,
-      "total": 148,
+      "number": 106,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 127
+      "index": 105
     },
     {
       "id": "r4_asset_card",
@@ -2216,11 +1846,11 @@
         "D2.3.13"
       ],
       "md": "D2.3.13",
-      "number": 129,
-      "total": 148,
+      "number": 107,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 128
+      "index": 106
     },
     {
       "id": "r4_asset_evolution",
@@ -2233,11 +1863,11 @@
         "D2.3.14"
       ],
       "md": "D2.3.13",
-      "number": 130,
-      "total": 148,
+      "number": 108,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 129
+      "index": 107
     },
     {
       "id": "r4_org_native",
@@ -2249,11 +1879,11 @@
         "D2.3.21"
       ],
       "md": "D2.3.21",
-      "number": 131,
-      "total": 148,
+      "number": 109,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 130
+      "index": 108
     },
     {
       "id": "r4_org_roles",
@@ -2265,11 +1895,11 @@
         "D2.3.22"
       ],
       "md": "D2.3.22",
-      "number": 132,
-      "total": 148,
+      "number": 110,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 131
+      "index": 109
     },
     {
       "id": "r4_org_operation",
@@ -2281,11 +1911,11 @@
         "D2.3.23"
       ],
       "md": "D2.3.23",
-      "number": 133,
-      "total": 148,
+      "number": 111,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 132
+      "index": 110
     },
     {
       "id": "r4_org_human",
@@ -2298,11 +1928,11 @@
         "D2.3.24"
       ],
       "md": "D2.3.23",
-      "number": 134,
-      "total": 148,
+      "number": 112,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 133
+      "index": 111
     },
     {
       "id": "r4_unified_roadmap",
@@ -2314,11 +1944,11 @@
         "D2.5.12"
       ],
       "md": "D2.5.12",
-      "number": 135,
-      "total": 148,
+      "number": 113,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 134
+      "index": 112
     },
     {
       "id": "r5_d2_ip",
@@ -2332,9 +1962,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 135,
-      "number": 136,
-      "total": 148
+      "index": 113,
+      "number": 114,
+      "total": 126
     },
     {
       "id": "r5_d2_product",
@@ -2348,9 +1978,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 136,
-      "number": 137,
-      "total": 148
+      "index": 114,
+      "number": 115,
+      "total": 126
     },
     {
       "id": "r5_d2_december",
@@ -2364,9 +1994,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 137,
-      "number": 138,
-      "total": 148
+      "index": 115,
+      "number": 116,
+      "total": 126
     },
     {
       "id": "r5_d2_outputs",
@@ -2380,9 +2010,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 138,
-      "number": 139,
-      "total": 148
+      "index": 116,
+      "number": 117,
+      "total": 126
     },
     {
       "id": "r4_unified_fields",
@@ -2395,11 +2025,11 @@
         "D2.5.13"
       ],
       "md": "D2.5.11",
-      "number": 140,
-      "total": 148,
+      "number": 118,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 139
+      "index": 117
     },
     {
       "id": "r4_unified_dependencies",
@@ -2411,11 +2041,11 @@
         "D2.5.14"
       ],
       "md": "D2.5.14",
-      "number": 141,
-      "total": 148,
+      "number": 119,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 140
+      "index": 118
     },
     {
       "id": "r4_gate_states",
@@ -2428,11 +2058,11 @@
         "D2.5.22"
       ],
       "md": "D2.5.21",
-      "number": 142,
-      "total": 148,
+      "number": 120,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 141
+      "index": 119
     },
     {
       "id": "r4_gate_actions",
@@ -2445,11 +2075,11 @@
         "D2.5.25"
       ],
       "md": "D2.5.23",
-      "number": 143,
-      "total": 148,
+      "number": 121,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 142
+      "index": 120
     },
     {
       "id": "r4_gate_authority",
@@ -2462,11 +2092,11 @@
         "D2.5.26"
       ],
       "md": "D2.5.24",
-      "number": 144,
-      "total": 148,
+      "number": 122,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 143
+      "index": 121
     },
     {
       "id": "r4_closing",
@@ -2479,11 +2109,11 @@
         "decisions"
       ],
       "md": "D2.5.26",
-      "number": 145,
-      "total": 148,
+      "number": 123,
+      "total": 126,
       "notes": true,
       "case": null,
-      "index": 144
+      "index": 122
     },
     {
       "id": "r5_convergence_form",
@@ -2497,9 +2127,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 145,
-      "number": 146,
-      "total": 148
+      "index": 123,
+      "number": 124,
+      "total": 126
     },
     {
       "id": "r4_preparation",
@@ -2511,11 +2141,11 @@
         "appendix-a"
       ],
       "md": "appendix-a",
-      "number": 147,
-      "total": 148,
+      "number": 125,
+      "total": 126,
       "notes": false,
       "case": null,
-      "index": 146
+      "index": 124
     },
     {
       "id": "r4_source_map",
@@ -2528,11 +2158,11 @@
         "appendix-c"
       ],
       "md": "overview",
-      "number": 148,
-      "total": 148,
+      "number": 126,
+      "total": 126,
       "notes": false,
       "case": null,
-      "index": 147
+      "index": 125
     }
   ],
   "schedule": {

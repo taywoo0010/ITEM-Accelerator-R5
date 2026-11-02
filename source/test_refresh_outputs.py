@@ -151,7 +151,8 @@ class DeckAssemblyTests(unittest.TestCase):
         reader = html.fromstring((ROOT / 'docs/reader.html').read_text())
         self.assertIn('Evaluation Agent', reader.text_content())
         self.assertIn('ItemGPT', reader.text_content())
-        self.assertEqual(len(document.xpath('//section[@class="scene"]')), 148)
+        manifest = json.loads((ROOT / 'source/detailed_manifest.json').read_text())
+        self.assertEqual(len(document.xpath('//section[@class="scene"]')), len(manifest['pages']))
 
     def test_small_model_review_keeps_both_pages_and_all_examples(self):
         document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
