@@ -33,7 +33,7 @@ class DeckAssemblyTests(unittest.TestCase):
             ('D1.2.9.3', '自建模型实验复盘', ['r5_c09_08', 'r5_c09_09', 'r5_c09_10']),
             ('D1.2.9.4', '小模型训练复盘：样本、规则与可解释性的边界', ['r5_c09_small_models', 'r5_c09_model_selection']),
             ('D1.2.9.5', 'AI 招聘的跨国本地化', ['r5_c09_hiring']),
-            ('D1.2.9.6', '可信 Agent：一套标准，三重保障', ['r5_agent_assurance']),
+            ('D1.2.9.7', '可信 Agent：一套标准，三重保障', ['r5_agent_assurance']),
         )
         document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
         reader = html.fromstring((ROOT / 'docs/reader.html').read_text())
@@ -136,10 +136,10 @@ class DeckAssemblyTests(unittest.TestCase):
         text = (ROOT / 'Item_ISS_Meeting_R5.html').read_text()
         document = html.fromstring(text)
         scene = document.get_element_by_id('r5_agent_assurance')
-        self.assertEqual(scene.getprevious().get('id'), 'r5_c09_hiring')
+        self.assertEqual(scene.getprevious().get('id'), 'r5_ontology_accuracy')
         self.assertEqual(scene.getnext().get('data-md'), 'D1.3.1')
         self.assertEqual(len(scene.xpath('.//*[@data-trust-step]')), 4)
-        self.assertEqual(scene.get('data-md'), 'D1.2.9.6')
+        self.assertEqual(scene.get('data-md'), 'D1.2.9.7')
         link = scene.xpath('.//a[@data-trust-attachment]')[0].get('href')
         self.assertTrue((ROOT / link).is_file())
         video = scene.xpath('.//video[@data-trust-video]')[0]

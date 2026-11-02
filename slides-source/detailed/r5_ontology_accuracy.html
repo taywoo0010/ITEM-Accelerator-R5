@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh"><head><meta charset="utf-8"><title>本体准确性：四条保证措施</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+.en{display:none!important}
+html[data-lang=en] .zh{display:none!important}
+html[data-lang=en] .en{display:revert!important}
+.slide-container{width:1280px;height:720px;background:var(--bg,#F4F6F8);color:var(--ink,#1A2229);font-family:Inter,"Noto Sans SC",Arial,sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.page-inner{margin:44px 56px;height:calc(100% - 88px);display:flex;flex-direction:column}
+.motif{width:48px;height:3px;background:#2C5F6B}
+.kicker{font:11px/14px monospace;color:var(--accent,#2C5F6B);padding-top:6px}
+h1{font-size:26px;line-height:1.12;padding-top:6px}
+.lead{font-size:15px;line-height:1.35;color:var(--muted,#5C6D7E);padding-top:10px}
+.lead strong{color:var(--ink,#1A2229)}
+.content{flex:1;display:flex;flex-direction:column;gap:14px;padding-top:16px}
+.rows{flex:1;display:flex;flex-direction:column;gap:12px;justify-content:space-between}
+.row{display:grid;grid-template-columns:54px 292px 1fr;gap:16px;align-items:center;border:1px solid var(--line,#D1D8E0);background:var(--paper,#FFFFFF);padding:14px 16px}
+.num{font:700 18px/1 monospace;color:var(--accent,#2C5F6B);padding-top:2px}
+.row h2{font-size:17px;line-height:1.24}
+.row h2 small{display:block;font:400 11px/1.2 monospace;color:var(--accent,#2C5F6B);padding-top:4px;letter-spacing:.04em}
+.row p{font-size:13.5px;line-height:1.45;color:#33414F}
+.band{border-top:1px solid var(--line,#D1D8E0);border-bottom:1px solid var(--line,#D1D8E0);font-size:13px;line-height:1.3;color:var(--accent,#2C5F6B);padding:8px 0;display:flex;gap:8px;align-items:center}
+.band b{color:#1A2229}
+.foot{font-size:11px;line-height:1.2;color:var(--muted,#5C6D7E);padding-top:9px;display:flex;justify-content:space-between;gap:20px}
+</style></head><body><div class="slide-container"><div class="page-inner"><div class="motif"></div>
+<header><div class="kicker">DAY 1 · MD §D1.2.9.6 · ONTOLOGY ACCURACY</div><h1><span class="zh">本体准确性：四条保证措施</span><span class="en">Ontology accuracy: four guarantees</span></h1></header>
+<p class="lead"><span class="zh">本体不是建完就准。<strong>接入、准出、执行、回流</strong>四条措施持续保证准确性，每条都留下可复核的证据。</span><span class="en">An ontology is not accurate once it is built. <strong>Ingestion, exit tests, action execution and issue feedback</strong> keep it accurate, each leaving reviewable evidence.</span></p>
+<main class="content"><div class="rows">
+<section class="row"><div class="num">01</div><h2><span class="zh">高质量数据接入</span><span class="en">High-quality data ingestion</span><small><span class="zh">数据</span><span class="en">DATA</span></small></h2><p><span class="zh">优先接入可追溯、已授权、口径明确的数据；来源或口径暂不清晰的先标为待确认，补齐后再进本体；原始数据、AI 草稿与专家确认分层存放。</span><span class="en">Prefer traceable, authorised data with clear definitions; data whose source or meaning is still unclear is marked as pending and only enters the ontology once confirmed; raw data, AI drafts and expert-confirmed knowledge stay in separate layers.</span></p></section>
+<section class="row"><div class="num">02</div><h2><span class="zh">测试用例的准出执行</span><span class="en">Test cases gate the exit</span><small><span class="zh">准出</span><span class="en">EXIT TESTS</span></small></h2><p><span class="zh">每次本体或规则变更都跑既定用例集，覆盖正常、缺失、冲突与异常样本；不通过不准出，差异、版本与回归记录留档；准出门槛在测试前与业务共同锁定，验收过程中不下调。</span><span class="en">Every ontology or rule change runs the fixed test set covering normal, missing, conflicting and exception samples; no pass, no release, with diffs, versions and regression records kept; thresholds are agreed with the business before testing and are not lowered during acceptance.</span></p></section>
+<section class="row"><div class="num">03</div><h2><span class="zh">标准稳定 Action 的执行</span><span class="en">Standard, stable action execution</span><small><span class="zh">执行</span><span class="en">ACTION</span></small></h2><p><span class="zh">Action 走标准接口与受控权限，不绕过系统规则；执行前校验对象、状态与条件，执行后回写结果与回执；失败、越界或高风险动作转人工，并记录原因与处理人。</span><span class="en">Actions run through standard interfaces and scoped permissions, never around system rules; object, state and conditions are validated before execution and the result and receipt written back; failures, out-of-bound or high-risk actions go to people with the reason and owner recorded.</span></p></section>
+<section class="row"><div class="num">04</div><h2><span class="zh">Agent 用 issue 驱动本体自迭代</span><span class="en">Agents raise issues, the ontology iterates</span><small><span class="zh">回流</span><span class="en">FEEDBACK</span></small></h2><p><span class="zh">真实任务遇到缺口、歧义或错误时，Agent 提 issue 而不是自行补造；issue 进本体评审，按影响范围分级，修复后回归，再以新版本发布并回流到用例集，形成闭环。</span><span class="en">When a real task hits a gap, ambiguity or error the agent raises an issue instead of inventing an answer; issues go to ontology review, are triaged by impact, regressed after the fix and released as a new version that feeds back into the test set.</span></p></section>
+</div>
+<div class="band"><b><span class="zh">闭环</span><span class="en">LOOP</span></b><span><span class="zh">数据接入 → 用例准出 → Action 执行 → Issue 回流 → 本体新版本</span><span class="en">Ingestion → exit tests → action execution → issue feedback → new ontology version</span></span></div>
+</main>
+<footer class="foot"><span>ITEM × COO AI Team × ISS Biz (team)</span><span>R5 · MD §D1.2.9.6</span></footer>
+</div></div></body></html>
