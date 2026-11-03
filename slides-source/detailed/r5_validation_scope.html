@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head><meta charset="utf-8"><title>客户接入：复用产品、配置集成、按角色推广</title>
+<style>
+*{margin:0;box-sizing:border-box}
+.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+.slide-container{width:1280px;min-height:720px;background:var(--bg,#f6f7f9);color:var(--ink,#152439);font-family:Inter,"Noto Sans SC",Arial,sans-serif;display:flex;flex-direction:column}
+.page-inner{margin:80px 60px 60px;min-height:580px;display:flex;flex-direction:column}
+.motif{width:24px;min-height:4px;background:var(--accent,#007f86)}
+.kicker{font:14px/20px monospace;color:var(--accent,#007f86);padding-top:8px}
+h1{font-size:32px;line-height:1.2;padding-top:8px}
+.lead{font-size:18px;line-height:1.5;color:var(--muted,#5a6b82);padding-top:12px}
+.content{flex:1;display:flex;flex-direction:column;justify-content:space-evenly;padding-top:18px}
+.faces{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.face{border-top:3px solid var(--accent,#007f86);padding-top:12px}
+.label{font:18px/24px monospace;color:var(--accent,#007f86)}
+h2{font-size:24px;line-height:1.3;padding-top:8px}
+.face p{font-size:18px;line-height:1.5;padding-top:10px}
+.output{color:var(--accent,#007f86);font-weight:650}
+.path{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;border-top:1px solid var(--line,#d1d7e0);padding-top:14px}
+.path p{font-size:18px;line-height:1.5}.path b{display:block;color:var(--accent,#007f86);font-size:20px;padding-top:4px}
+.boundary{font-size:18px;line-height:1.5;background:var(--soft,#eef0f4);padding:14px 18px 0;min-height:70px}
+.foot{font-size:14px;line-height:1.45;color:var(--muted,#5a6b82);padding-top:18px;display:flex;justify-content:space-between;gap:18px}.foot a{color:inherit}.foot span:last-child{white-space:nowrap}
+</style></head>
+<body><div class="slide-container"><div class="page-inner"><div class="motif"></div>
+<header><div class="kicker">DAY 1 · MD §D1.3.11 · CONFIGURE, INTEGRATE, ADOPT</div><h1><span class="zh">客户接入：复用产品、配置集成、按角色推广</span><span class="en">Customer adoption: reuse, configure, integrate and train</span></h1></header>
+<p class="lead"><span class="zh">不从零研发一个平台：复用已有知识、Agent、Skill 和运行能力，差异通过配置、集成与必要扩展承接。</span><span class="en">Reuse existing knowledge, agents and runtime; configure and integrate what the client needs instead of rebuilding.</span></p>
+<main class="content"><div class="faces">
+<section class="face"><div class="label">01 · BUSINESS</div><h2><span class="zh">业务专家与使用者</span><span class="en">Experts and business users</span></h2><p><span class="zh">提供材料、规则与样本，确认业务含义和完成标准；检查来源与结果，关键动作确认或接管。</span><span class="en">Provide evidence, rules and samples; define success, inspect results and approve or take over key actions.</span></p><p class="output">Knowledge Fabric + ItemGPT<br><span class="zh">共建知识，学会使用和反馈</span><span class="en">Co-build, use and give feedback</span></p></section>
+<section class="face"><div class="label">02 · BUILDERS</div><h2><span class="zh">ITEM / FDE / 建设者</span><span class="en">ITEM / FDEs / builders</span></h2><p><span class="zh">配置本体、Skill、工具与流程；设计测试、发布和版本维护，把验证后的能力沉淀为资产。</span><span class="en">Configure ontology, skills, tools and workflows; test, release and maintain reusable assets.</span></p><p class="output">Agent Factory + Marketplace<br><span class="zh">建设、测试、发布与复用</span><span class="en">Build, test, publish and reuse</span></p></section>
+<section class="face"><div class="label">03 · ENTERPRISE SUPPORT</div><h2><span class="zh">COO AI Team 按需支撑</span><span class="en">COO AI: support as needed</span></h2><p><span class="zh">对齐数据、接口、身份权限、模型、部署与治理；保留客户现有系统，不成为所有探索的前置门槛。</span><span class="en">Align data, APIs, access, models and governance; preserve existing systems and enable exploration.</span></p><p class="output"><span class="zh">权限、运营与使用边界训练</span><span class="en">Access and operations training</span><br><span class="zh">明确发布、维护与接管责任</span><span class="en">Release, maintenance and handover</span></p></section>
+</div><div class="path"><p><b><span class="zh">确认输入 →</span><span class="en">Scope →</span></b><span class="zh">材料、场景、Owner 与基线</span><span class="en">Evidence, owner and baseline</span></p><p><b><span class="zh">复用与配置 →</span><span class="en">Reuse &amp; configure →</span></b><span class="zh">对象、规则、Agent 与 Skill</span><span class="en">Objects, rules, agents and skills</span></p><p><b><span class="zh">集成与试运行 →</span><span class="en">Integrate &amp; trial →</span></b><span class="zh">接口、权限、异常与人工确认</span><span class="en">APIs, access, exceptions, approval</span></p><p><b><span class="zh">验收与推广</span><span class="en">Accept &amp; adopt</span></b><span class="zh">业务结果、成本、培训与反馈</span><span class="en">Outcomes, cost, training, feedback</span></p></div>
+<p class="boundary"><span class="zh"><strong>明天的讨论输入：</strong>可从服务工单、知识服务或资料分析切入；先确认材料与系统边界，再约定配置、集成、测试和验收范围。</span><span class="en"><strong>Workshop input:</strong> consider tickets, knowledge services or analysis; confirm evidence and boundaries before scoping integration and acceptance.</span></p></main>
+<footer class="foot"><span><a href="https://tommyyula.github.io/item-ai-plateform-v2/" target="_blank" rel="noopener">ITEM Enterprise AI v2</a> · Training + D1.4 / D1.5 · <span class="zh">接入路径为建议；不预设客户场景已上线。</span><span class="en">Proposed adoption path, not a rollout claim.</span></span><span>D1.3 · 09 / 09</span></footer>
+</div></div></body>
+</html>

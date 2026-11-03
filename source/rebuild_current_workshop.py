@@ -26,11 +26,41 @@ REVISION_PAGES = {
         "r5_platform_architecture",
         "r5_product_panorama",
         "r5_knowledge_foundation",
+        "r5_task_outcomes",
+        "r5_task_execution",
+        "r5_platform_mechanisms",
+        "r5_execution_controls",
+        "r5_reusable_assets",
+        "r5_validation_scope",
         "r5_delivery_boundaries",
         "r5_implementation_overview",
         "r5_c01_04",
     },
 }
+
+# ``scope_css`` intentionally drops at-rules from native slide styles. Keep the
+# mobile overrides here, where their selectors can remain limited to the six
+# newly authored detailed pages rather than changing shared deck CSS.
+MOBILE_RESPONSIVE_PAGES = {
+    "r5_task_outcomes",
+    "r5_task_execution",
+    "r5_platform_mechanisms",
+    "r5_execution_controls",
+    "r5_reusable_assets",
+    "r5_validation_scope",
+}
+MOBILE_GRID_CLASSES = (
+    "chain",
+    "examples",
+    "faces",
+    "path",
+    "layer",
+    "system",
+    "head",
+    "row",
+    "scope",
+    "steps",
+)
 
 
 def _load_module(name: str, path: Path) -> ModuleType:
@@ -101,7 +131,58 @@ def native_style_css(kind: str, manifest: dict) -> str:
         scoped = scope_css(css, page_id)
         if scoped.strip():
             blocks.append(f"/* {page_id} */\n{scoped}")
+    mobile_pages = {page["id"] for page in manifest["pages"]} & MOBILE_RESPONSIVE_PAGES
+    if mobile_pages:
+        blocks.append(mobile_revision_css(mobile_pages))
     return "\n".join(blocks)
+
+
+def mobile_revision_css(page_ids: set[str]) -> str:
+    """Return narrowly scoped mobile rules omitted by ``scope_css``."""
+    pages = sorted(page_ids)
+    slide_containers = ",\n".join(f"#{page_id} .slide-container" for page_id in pages)
+    constrained = ",\n".join(
+        f"#{page_id} .{class_name}"
+        for page_id in pages
+        for class_name in ("page-inner", "content", *MOBILE_GRID_CLASSES)
+    )
+    grids = ",\n".join(
+        f"#{page_id} .{class_name}"
+        for page_id in pages
+        for class_name in MOBILE_GRID_CLASSES
+    )
+    return f"""/* Mobile layout overrides for the six newly authored detailed pages. */
+@media(max-width:700px){{
+{slide_containers}{{
+width:100%!important;
+min-width:0!important;
+max-width:100%!important;
+}}
+{constrained}{{
+min-width:0!important;
+max-width:100%!important;
+}}
+{grids}{{
+grid-template-columns:minmax(0,1fr)!important;
+}}
+#r5_reusable_assets .matrix{{
+width:100%!important;
+min-width:0!important;
+max-width:100%!important;
+table-layout:fixed!important;
+}}
+#r5_reusable_assets .matrix tr > :nth-child(1){{width:21%!important;}}
+#r5_reusable_assets .matrix tr > :nth-child(2){{width:45%!important;}}
+#r5_reusable_assets .matrix tr > :nth-child(3){{width:34%!important;}}
+#r5_reusable_assets .matrix th,
+#r5_reusable_assets .matrix td{{
+min-width:0!important;
+overflow-wrap:anywhere;
+word-break:break-word;
+padding-left:6px!important;
+padding-right:6px!important;
+}}
+}}"""
 
 
 def inject_revision_css(text: str, css: str) -> str:

@@ -1,6 +1,6 @@
 # ISS AI Native Workshop · R5 关联HTML安装包
 
-解压后从根目录的 `index.html` 进入。两套演示、完整MD、表单、资料和讨论记录的链接已经连好。主持人为Tom；会前版16页，会中版127页。九例展开，其中D1.2.6 Record & Reply按理念、实现、合规、复用和现场演示共六页；D1.2.2 WMS 动态表单压缩为四页；iCEO按数字分身、跨平台访问、案例分析和能力验收共4页展开；其余按七段展开，其中D1.2.9.2根据Knowledge Fabric源材料拆为两页，D1.2.9另加一页WMS真实样例，并保留完整原细节。Day2按目标蓝图、差距、路线图、IP/商业化和最终收敛组织，原六业务域、能力资产、组织、风险与七阶段材料仍可取用。
+解压后从根目录的 `index.html` 进入。两套演示、完整MD、表单、资料和讨论记录的链接已经连好。主持人为Tom；会前版16页，会中版133页。九例展开，其中D1.2.6 Record & Reply按理念、实现、合规、复用和现场演示共六页；D1.2.2 WMS 动态表单压缩为四页；iCEO按数字分身、跨平台访问、案例分析和能力验收共4页展开；其余按七段展开，其中D1.2.9.2根据Knowledge Fabric源材料拆为两页，D1.2.9另加一页WMS真实样例，并保留完整原细节。D1.3原三页之后增加六页平台机制介绍。Day2按目标蓝图、差距、路线图、IP/商业化和最终收敛组织，原六业务域、能力资产、组织、风险与七阶段材料仍可取用。
 
 ## 1. 本机打开
 
@@ -82,7 +82,7 @@ python3 source/rebuild_current_workshop.py
 
 ## 平台与实施页精简修订
 
-D1.3/D1.4 原 25 页替换为参考 04/05 的架构及产品全景两页，加知识/能力底座与落地边界两页补充。D1.5 删除旧前两页、交换职责与能力对齐页，在七阶段前增加业务轴 × 功能轴总图。其余案例和媒体保留。当前会中版共 127 页。会议目的不是寻找单一 Hero 案例，而是形成 ISS 整体转型蓝图、共用能力和实施路线。
+D1.3/D1.4 原 25 页替换为参考 04/05 的架构及产品全景两页，加知识/能力底座与落地边界两页补充。本次保留这些页面，在 D1.3 第三页之后插入六页，当前会中版共 133 页。D1.5 删除旧前两页、交换职责与能力对齐页，在七阶段前增加业务轴 × 功能轴总图。其余案例和媒体保留。会议目的不是寻找单一 Hero 案例，而是形成 ISS 整体转型蓝图、共用能力和实施路线。
 
 参考来源：https://tommyyula.github.io/item-ai-strategy/product_general_investor_v4.3 。命名产品和验证状态沿用参考定位，不作 ISS 全量已开通承诺。
 
@@ -100,3 +100,9 @@ python -m unittest discover -s source -p 'test*.py'
 测试开发依赖：`pip install -r requirements-dev.txt`。本次针对章节精简、页序、22 个产品、四种知识输入、七阶段总图、内嵌正文以及未修改页面原样保留的 7 项检查通过：`python source/test_workshop_revision.py`。
 
 完整历史套件 `source/test_refresh_outputs.py` 在修改前已存在原生页与组装页 kicker 不一致、已删除的模型页和 WMS 历史七页期望等失配。本次与原 main 的基线比较没有新增失败；不将该历史套件标为全通过，也不通过删除旧断言掩盖问题。
+
+### D1.3 六页平台机制补充
+
+六页位于会中第72–77页，对应正文 D1.3.6–D1.3.11。新版采用 [ITEM Enterprise AI Platform v2](https://tommyyula.github.io/item-ai-plateform-v2/)：企业问题与共用底座、Knowledge Fabric、本体生命周期、共用架构、Agent Factory、Marketplace / ItemGPT，以及客户配置集成和角色培训。工单、SOP、知识服务和资料分析为通用示意；平台介绍不再以WMS为主要依据，也不照搬无统计口径的营销数字。原三页、D1.4、其他案例、媒体和两天议程时长均保留；产品材料描述与 ISS 实际接入、权限、部署和验收分开说明。
+
+六页原生 HTML 由 Manus Slides 制作，再通过既有重建流程组装。`source/test_platform_execution_supplement.py` 检查插入顺序、正文锚点、双语、133/16页数、日程、manifest一致性，及新版来源、标题同步、无WMS专属依赖和无依据数字。相关测试可分别运行：`python source/test_workshop_revision.py`、`python source/test_platform_execution_supplement.py`。新增页在重建程序中显式登记，提交后再次重建也会保留样式。

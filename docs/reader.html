@@ -468,32 +468,32 @@
 <tr>
 <td>业务对象</td>
 <td>核心对象、流程和规则是否成文，Agent 能否读懂并判断一个需求用到哪些对象？</td>
-<td>ISS Biz（team）业务 Owner：<strong><em>_；本体维护人：</em></strong>_</td>
+<td>ISS Biz（team）业务 Owner：<strong><strong>；本体维护人：</strong></strong></td>
 </tr>
 <tr>
 <td>接口</td>
 <td>常用读写操作是否都有接口、能否按操作检索？不能默认可读或可改；缺写接口的先做只读看板。</td>
-<td>接口 Owner：<strong><em>_；COO AI Team 支撑人：</em></strong>_</td>
+<td>接口 Owner：<strong><strong>；COO AI Team 支撑人：</strong></strong></td>
 </tr>
 <tr>
 <td>组件</td>
 <td>表单、扫码、拍照、审批、派工、看板等是否可复用？反复出现的环节是否值得沉淀为新积木？</td>
-<td>FDE：<strong><em>_；组件清单：</em></strong>_</td>
+<td>FDE：<strong><strong>；组件清单：</strong></strong></td>
 </tr>
 <tr>
 <td>权限与审计</td>
 <td>能否以用户本人身份调用接口？角色、站点和任务归属能否由系统判定？写入能否追溯到人、来源页面与版本？</td>
-<td>权限 Owner：<strong><em>_；审计位置：</em></strong>_</td>
+<td>权限 Owner：<strong><strong>；审计位置：</strong></strong></td>
 </tr>
 <tr>
 <td>数据与样例</td>
 <td>是否有授权、脱敏、可复现的测试环境与样例数据？哪些字段不能离开目标环境？</td>
-<td>数据 Owner：<strong><em>_；批准记录：</em></strong>_</td>
+<td>数据 Owner：<strong><strong>；批准记录：</strong></strong></td>
 </tr>
 <tr>
 <td>发布治理</td>
 <td>测试/生产是否隔离？定制包导入、审批、发布、停用和回退由谁负责？</td>
-<td>发布人：<strong><em>_；回退授权人：</em></strong>_</td>
+<td>发布人：<strong><strong>；回退授权人：</strong></strong></td>
 </tr>
 </tbody>
 </table>
@@ -996,7 +996,7 @@
 <td>知识</td>
 <td>可将审核 SOP 放入 UKM、Ontology 或 Skill</td>
 <td>有版本、授权、审核人、失效日期与回滚</td>
-<td>首个承载位置：<strong><em>_；Owner：</em></strong>_</td>
+<td>首个承载位置：<strong><strong>；Owner：</strong></strong></td>
 </tr>
 <tr>
 <td>数据</td>
@@ -1646,7 +1646,7 @@
 <p><strong>本节结论：</strong>形成“该做、先缩小、暂不做、需要其他团队处理”的分类，并把相关条件回填首个共建场景的边界和验收要求。</p>
 <hr/>
 <h3 id="md-D1-3">D1.3. 平台架构、产品全景与能力底座｜讨论时段沿用原议程</h3>
-<p>本节以平台架构和产品全景为主线，不再逐页罗列零散工具。会中保留三页：参考演示 04 的七层架构、参考演示 05 的产品全景，以及一页知识挖掘与能力底座补充。<a href="https://tommyyula.github.io/item-ai-strategy/product_general_investor_v4.3">参考演示：product_general_investor_v4.3</a>。产品名称和原稿验证状态作为参考定位，不等于这些能力已经在 ISS 开通或集成。</p>
+<p>本节保留原有三页：参考演示 04 的七层架构、参考演示 05 的产品全景，以及知识挖掘与能力底座补充。在第三页之后保留六页补充，采用 <a href="https://tommyyula.github.io/item-ai-plateform-v2/">ITEM Enterprise AI Platform v2</a> 的通用平台主线，介绍企业问题、Knowledge Fabric、本体、共用架构、Factory、Marketplace、ItemGPT 与客户接入，共九页，讨论时段沿用原议程。<a href="https://tommyyula.github.io/item-ai-strategy/product_general_investor_v4.3">参考演示：product_general_investor_v4.3</a>。产品名称和原稿验证状态作为参考定位，不等于这些能力已经在 ISS 开通或集成；新增六页不依赖特定业务系统，以工单、SOP 和资料分析为示意；产品材料描述与 ISS 实际接入、权限、部署和验收分开说明。</p>
 <h4 id="md-D1-3-1">D1.3.1 七层平台架构：五层核心产品 + 两层开放集成</h4>
 <p>第 1 层和第 7 层是客户已有基础设施与终端系统，不是 ITEM 产品。ITEM 的核心产品集中在第 2–6 层；通过开放接口连接现有业务系统，不重复建设客户的系统和硬件。</p>
 <table>
@@ -1779,6 +1779,42 @@
 <p><strong>真实来源 → 提取 → 业务／专家审核 → 对象、关系、规则、Action → 场景样本验证 → 发布与反馈。</strong> 按任务复杂度选择规则、小本体或完整建模，不要求每个任务先建大型本体。</p>
 <h4 id="md-D1-3-5">D1.3.5 发布与持续演进的最低要求</h4>
 <p>原始记录、AI 草稿、审核知识和已发布规则分开；业务 Owner 确认定义、例外及有效期。变更经过正常、异常及独立样本回归，再授权发布；保留版本、日志、反馈和回滚。业务状态回写与知识／能力反馈分别管理，客户敏感资料及未审核推断不自动成为产品资产。</p>
+<h4 id="md-D1-3-6">D1.3.6 企业 AI：贯通知识、能力与业务执行</h4>
+<p><a href="https://tommyyula.github.io/item-ai-plateform-v2/">ITEM Enterprise AI Platform v2</a> 将企业知识、能力建设、受控执行与持续复用组织在同一个平台中。客户面对的通常不是单纯“缺少一个大模型”，而是知识散落、业务含义不一致、回答与行动脱节，以及单项目成果难以复用。</p>
+<p>Knowledge Fabric 汇集文档、SOP、工单、视频、代码与数据，保留业务来源；Ontology 定义对象、关系、规则与上下文；Agent Factory 将需求组织成可测试和发布的 Agent / Team；Runtime 承接运行；Marketplace 与 ItemGPT 让能力可发现、可授权、可组合并进入用户日常工作。</p>
+<p>用通用服务工单说明用户价值：“请依据服务 SOP，分析这张工单并准备处理建议。”这是面向客户的任务示意，不是 ISS 已完成集成的案例。相同底座可用于知识服务、资料分析、客户沟通与审批协作，具体动作仍取决于数据、接口与授权范围。</p>
+<p>长期资产是企业自身知识、本体、Skill、运行记录和改进经验；底层模型是可按任务替换的执行资源。本版不采用平台网页中缺少统计口径的知识占比、试点转生产比例或重复成本倍数，也不以业务系统实例数论证客户适用性。</p>
+<h4 id="md-D1-3-7">D1.3.7 Knowledge Fabric：把业务材料变成可执行知识</h4>
+<p><a href="https://tommyyula.github.io/item-ai-plateform-v2/">平台材料的 Knowledge Fabric 与 Ontology 章节</a> 描述多模态知识输入和业务可读的建模过程：不是只将文件放进检索库，而是形成可以查询、验证并交付 Agent 使用的语义资产。</p>
+<p>其内容覆盖对象与实例、关系、规则、状态、例外、Action 及证据链。业务人员使用熟悉的文档和材料共建；来源与数据绑定支撑真实上下文。CQ（Competency Question，能力问题）题树定义本体需要回答的问题，题库、Recall Profile、Issue 和专家反馈帮助定位覆盖缺口与质量问题。</p>
+<p>页面给出的生命周期为：明确目标与 CQ → 补充真实业务上下文 → 顶层设计 → 扫描来源并构建业务本体 → 问题与样本验证 → 通过 Skill、MCP、A2A 和受限令牌交付。六页中把这一路径概括为目标、建模、验证、交付四步；按任务复杂度选择规则或小本体，不要求先建设全企业大型本体。</p>
+<p>客户可以先使用一组服务 SOP、典型工单、合同条款或业务样例验证小范围定义。业务材料更新后进入知识与本体演进流程，审核、验证和发布要求沿用 D1.3.5；不把未审核推断自动变为已发布规则。</p>
+<h4 id="md-D1-3-8">D1.3.8 一套共用架构：入口、能力、语义与执行分工</h4>
+<p><a href="https://tommyyula.github.io/item-ai-plateform-v2/">新版平台的 Architecture 章节</a> 采用四层协作视图，说明产品如何共同运行；它与前面七层产品全景互补，不是替换原有产品分层，也不表示客户需要重建四套系统。</p>
+<ul>
+<li><strong>L4 用户入口：</strong>ItemGPT、Personal Assistant、协作渠道与嵌入式页面接收意图、发现专业 Agent、组织协作并展示结果。</li>
+<li><strong>L3 能力生产：</strong>Agent Factory / Steward、Agent IDE、Skill Factory 与 AI Marketplace 承接 Agent / Team 构建、测试、发布、发现、订阅与计量。</li>
+<li><strong>L2 语义与知识：</strong>Ontology Studio、Ontology Runtime、Knowledge Fabric 与 Dataset Sources 组织本体、数据绑定、来源、版本、Action 和验证。</li>
+<li><strong>L1 执行底座：</strong>Agent Runtime / Temporal、Connector、Model Gateway、Tool Gateway 与 VFS 承接持久执行、凭据和触发器、模型路由、工具调用、文件与记忆上下文。</li>
+</ul>
+<p>平台材料描述 MCP 用于能力和工具暴露，A2A 用于 Agent 发现、委派与回调，API 用于连接既有应用；Tool Gateway 可将 OpenAPI / Swagger 转成 AI 工具，Model Gateway 承接配额、故障切换以及按应用、租户、用户或 Agent 归因的用量和成本。客户已有系统保留业务事实与权威执行责任。</p>
+<p>这里引用的是产品页面描述的能力与架构，不是 ISS 部署证明。具体连接、身份权限、凭据、模型与生产运行责任仍需与客户环境对齐。</p>
+<h4 id="md-D1-3-9">D1.3.9 Agent Factory：从业务需求到受控发布</h4>
+<p><a href="https://tommyyula.github.io/item-ai-plateform-v2/">Agent Factory 与 Architecture 章节</a> 将自然语言意图转成建设、测试、发布和持续改进流程。先明确角色、工作流、预期结果与约束，连接本体、业务规则和上下文，使输入输出与完成条件可检查。</p>
+<p>Steward 组合既有知识、Skills、Tools、APIs 和 MCP 能力，形成 Agent 或 Team。多 Agent 任务由主 Agent 分解，专业 Agent 分工，使用共享上下文、会话与产物；需要升级和人工介入时保留责任边界。</p>
+<p>材料描述在批准的参数、端点和管理凭据下测试，使用 IAM / RBAC、受限令牌、配额和审计约束访问。多 Agent 运行包含步骤追踪、失败归因和人工审批机制；人工可进行单次或会话确认，也可拒绝。ISS 的正常、异常、权限及高风险测试要求在实际范围中确认，不以生成了一段指令代替系统控制。</p>
+<p>通过审核的能力发布到 Marketplace，供 ItemGPT 发现调用。Runtime 的持久执行、网关的模型与工具管理、用量与成本归因，以及运行记录和反馈支撑后续优化。具体控制粒度、恢复方式、接口副作用和生产发布要求须按客户环境确认；不将产品页面的架构描述当成客户环境已全部启用。</p>
+<h4 id="md-D1-3-10">D1.3.10 Marketplace + ItemGPT：发现、组合与复用能力</h4>
+<p><a href="https://tommyyula.github.io/item-ai-plateform-v2/">Marketplace、ItemGPT 与 Training 章节</a> 将 Agents、Skills、MCP Servers、APIs 和 Tools 组织为能力资产。Marketplace 的作用不只存放代码，而是让用途、输入输出、示例、Owner、版本、可见性及使用边界明确。</p>
+<p>团队可以发布、搜索、试用、订阅和绑定能力，配置权限、凭据与配额；能力按选定团队、企业或 Marketplace 范围共享。ItemGPT 从业务意图出发调用专业 Agent，结合本体、Skill 和工具组织多 Agent 协作，不要求用户自行了解全部后端连接。</p>
+<p>服务工单的通用示意是：读取附件 → 按服务规则理解问题 → 专业 Agent 准备回复或调用系统 → 人工确认关键动作、保存结果和运行记录。该示意用于说明机制，不声称已接入 ISS 的工单系统或审批流程。</p>
+<p>使用者检查来源、执行状态与异常，保存、分享、导出结果并给出反馈。建设与运营人员管理升级、依赖、兼容性、下线、审批和审计记录。换场景后仍要验证术语、规则、数据映射、权限、接口副作用、样本与 Owner；共享能力不等于共享所有客户数据或自动获得写权限。</p>
+<h4 id="md-D1-3-11">D1.3.11 客户接入：复用产品、配置集成、按角色推广</h4>
+<p>本轮面向客户的实施重点是复用既有平台、知识、Agent、Skill 和运行能力，配置业务对象与规则，集成客户已有系统，并完成必要扩展和测试，而不是从零研发另一套平台。对接路径结合<a href="https://tommyyula.github.io/item-ai-plateform-v2/">新版平台 Training 章节</a> 与 D1.4 / D1.5 的实施和责任边界。</p>
+<p>业务专家提供授权材料、规则与样本，确认定义和业务完成标准；业务用户检查来源、结果与异常，确认或接管关键动作。ITEM / FDE / 建设者配置本体、Skill、工具和流程，设计测试、发布、版本维护与资产沉淀。COO AI Team 按需对齐数据、接口、身份权限、模型、部署和治理，保留现有系统，不成为所有业务探索的前置入口。</p>
+<p>培训按职责组织，不要求人人掌握全部工程模块。业务专家与使用者重点学习 Knowledge Fabric 的材料与语义共建、ItemGPT 的目标表达和结果检查；建设者重点学习 Agent Factory 的构建、测试、诊断与发布，Marketplace 的登记、授权、升级和复用；运营与企业支撑人员学习相关权限、配额、审计、维护与接管要求。</p>
+<p>建议接入路径为：①确认材料、场景、Owner 与业务基线；②复用已有对象、规则、Agent 和 Skill 并进行配置；③对齐接口、权限、异常与人工确认，授权集成和试运行；④按业务结果、质量和净成本验收，并配套培训与反馈。可以从服务工单、知识服务或资料分析等候选任务讨论输入，具体场景和系统范围由客户确认。</p>
+<p>该路径是待共同确认的实施建议，不预设 ISS 已上线或承诺特定周期、费用及节省比例；不增加原议程时长，衔接 D1.4 的验收边界和 D1.5 的七阶段共建。</p>
 <hr/>
 <h3 id="md-D1-4">D1.4. 落地与验收边界｜讨论时段沿用原议程</h3>
 <p>旧风险与平台融合内容浓缩为一张补充页，不再为未定义的内部产品名词单独展开。</p>
@@ -1969,22 +2005,22 @@
 <tbody>
 <tr>
 <td><strong>① 首个共建场景与验收指标</strong></td>
-<td>场景：<strong><em>_；问题/用户：</em></strong>_；范围/排除项：<strong><em>_；业务基线与指标：</em></strong>_；测试与验收：____。</td>
+<td>场景：<strong><strong>；问题/用户：</strong></strong>；范围/排除项：<strong><strong>；业务基线与指标：</strong></strong>；测试与验收：____。</td>
 <td>待会议确认</td>
 </tr>
 <tr>
 <td><strong>② 联合团队与 Owner</strong></td>
-<td>ISS Biz：<strong><em>_；COO AI：</em></strong>_；ITEM：<strong><em>_；FDE/专家：</em></strong>_；数据/系统/审批/运营：<strong><em>_；COO AI Team 按需事项：</em></strong>_。</td>
+<td>ISS Biz：<strong><strong>；COO AI：</strong></strong>；ITEM：<strong><strong>；FDE/专家：</strong></strong>；数据/系统/审批/运营：<strong><strong>；COO AI Team 按需事项：</strong></strong>。</td>
 <td>待会议确认</td>
 </tr>
 <tr>
 <td><strong>③ 能力输入与执行边界</strong></td>
-<td>已有材料/能力：<strong><em>_；缺口：</em></strong>_；权限/部署/留存：<strong><em>_；真实执行/模拟/人工确认：</em></strong>_。</td>
+<td>已有材料/能力：<strong><strong>；缺口：</strong></strong>；权限/部署/留存：<strong><strong>；真实执行/模拟/人工确认：</strong></strong>。</td>
 <td>待会议确认</td>
 </tr>
 <tr>
 <td><strong>④ 推进方式与下一决策门</strong></td>
-<td>首轮阶段及交付：<strong><em>_；Owner/投入：</em></strong>_；计划时间：<strong><em>_；继续/调整/停止门：</em></strong>_；后续阶段：____。</td>
+<td>首轮阶段及交付：<strong><strong>；Owner/投入：</strong></strong>；计划时间：<strong><strong>；继续/调整/停止门：</strong></strong>；后续阶段：____。</td>
 <td>待会议确认</td>
 </tr>
 </tbody>
