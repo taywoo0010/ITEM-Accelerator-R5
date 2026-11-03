@@ -991,22 +991,6 @@
       "total": 133
     },
     {
-      "id": "r5_c08_11",
-      "title": "先验证，再交付可复用能力",
-      "en": "Validate first, then deliver reusable capabilities",
-      "md": "D1.2.8.4",
-      "refs": [
-        "D1.2.8.4"
-      ],
-      "chapter": 2,
-      "day": 1,
-      "case": "c08",
-      "notes": true,
-      "index": 56,
-      "number": 57,
-      "total": 133
-    },
-    {
       "id": "r5_c09_00",
       "title": "其他踩过的坑：",
       "en": "Other failure patterns:",
@@ -1018,8 +1002,8 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 57,
-      "number": 58,
+      "index": 56,
+      "number": 57,
       "total": 133
     },
     {
@@ -1034,8 +1018,8 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 58,
-      "number": 59,
+      "index": 57,
+      "number": 58,
       "total": 133,
       "topic": "知识抽取与知识生成",
       "topic_en": "Knowledge extraction and generation"
@@ -1052,8 +1036,8 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 59,
-      "number": 60,
+      "index": 58,
+      "number": 59,
       "total": 133,
       "topic": "知识抽取与知识生成",
       "topic_en": "Knowledge extraction and generation"
@@ -1070,8 +1054,8 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 60,
-      "number": 61,
+      "index": 59,
+      "number": 60,
       "total": 133,
       "topic": "知识抽取与知识生成",
       "topic_en": "Knowledge extraction and generation"
@@ -1088,8 +1072,8 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 61,
-      "number": 62,
+      "index": 60,
+      "number": 61,
       "total": 133,
       "topic": "WMS Agent：业务本体连接规则与动作",
       "topic_en": "WMS Agent: ontology connects rules to actions"
@@ -1106,8 +1090,8 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 62,
-      "number": 63,
+      "index": 61,
+      "number": 62,
       "total": 133,
       "topic": "自建模型实验复盘",
       "topic_en": "Self-built model experiment review"
@@ -1124,8 +1108,8 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 63,
-      "number": 64,
+      "index": 62,
+      "number": 63,
       "total": 133,
       "topic": "自建模型实验复盘",
       "topic_en": "Self-built model experiment review"
@@ -1142,8 +1126,8 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 64,
-      "number": 65,
+      "index": 63,
+      "number": 64,
       "total": 133,
       "topic": "小模型训练复盘：样本、规则与可解释性的边界",
       "topic_en": "Small-model training review: limits of samples, rules and explainability"
@@ -1160,8 +1144,8 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 65,
-      "number": 66,
+      "index": 64,
+      "number": 65,
       "total": 133,
       "topic": "小模型训练复盘：样本、规则与可解释性的边界",
       "topic_en": "Small-model training review: limits of samples, rules and explainability"
@@ -1178,20 +1162,37 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 66,
-      "number": 67,
+      "index": 65,
+      "number": 66,
       "total": 133,
       "topic": "AI 招聘的跨国本地化",
       "topic_en": "AI recruitment localisation"
+    },
+    {
+      "id": "r5_ontology_accuracy",
+      "title": "本体准确性：四条保证措施",
+      "en": "Ontology accuracy: four guarantees",
+      "summary": "本体准确性靠四条措施持续保证：高质量数据接入、测试用例的准出执行、标准稳定 Action 的执行、Agent 用 issue 驱动本体自迭代；每条都留下来源、版本、用例结果与回归记录。",
+      "md": "D1.2.9.6",
+      "refs": [
+        "D1.2.9.6"
+      ],
+      "chapter": 2,
+      "day": 1,
+      "notes": true,
+      "case": null,
+      "index": 66,
+      "number": 67,
+      "total": 133
     },
     {
       "id": "r5_agent_assurance",
       "title": "可信 Agent：一套标准，三重保障",
       "en": "Trustworthy agents: one set of standards, three safeguards",
       "summary": "四个横向画面按统一标准、严谨测试、精准知识、可靠验收展开：以脚本与 LLM 对照 Gold Set 自动核对、人工审核的知识基础和第三方交叉评估形成验收证据。测试页展示 PDF A1、A5、A12 参考门槛，评估页标记 K4、K5、A7 核验门槛，均不作为实测结果。",
-      "md": "D1.2.9.6",
+      "md": "D1.2.9.7",
       "refs": [
-        "D1.2.9.6"
+        "D1.2.9.7"
       ],
       "chapter": 2,
       "day": 1,

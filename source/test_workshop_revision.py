@@ -95,7 +95,7 @@ class CurrentWorkshopRevisionTests(unittest.TestCase):
         self.assertIn("会议目的不是寻找一个 Hero 案例", reader.text_content())
 
     def test_untouched_rendered_slide_containers_match_accepted_version(self):
-        revised = REVISION_REFS | {"b5_01_objectives"}
+        revised = REVISION_REFS | {"b5_01_objectives", "r5_c09_00"}
         for filename in ("Item_ISS_Meeting_R5.html", "Item_ISS_PreRead_R5.html"):
             before = html.fromstring(subprocess.check_output(["git", "show", f"HEAD:{filename}"], cwd=ROOT, text=True))
             after = html.fromstring((ROOT / filename).read_text())

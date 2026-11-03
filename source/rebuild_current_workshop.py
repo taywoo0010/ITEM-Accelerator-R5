@@ -23,6 +23,7 @@ MD_NAME = "Item_ISS_AI_Native_Workshop_R5.md"
 REVISION_PAGES = {
     "brief": {"b5_01_objectives"},
     "detailed": {
+        "r5_ontology_accuracy",
         "r5_platform_architecture",
         "r5_product_panorama",
         "r5_knowledge_foundation",

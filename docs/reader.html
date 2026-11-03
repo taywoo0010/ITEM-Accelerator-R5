@@ -468,32 +468,32 @@
 <tr>
 <td>业务对象</td>
 <td>核心对象、流程和规则是否成文，Agent 能否读懂并判断一个需求用到哪些对象？</td>
-<td>ISS Biz（team）业务 Owner：<strong><strong>；本体维护人：</strong></strong></td>
+<td>ISS Biz（team）业务 Owner：<strong><em>_；本体维护人：</em></strong>_</td>
 </tr>
 <tr>
 <td>接口</td>
 <td>常用读写操作是否都有接口、能否按操作检索？不能默认可读或可改；缺写接口的先做只读看板。</td>
-<td>接口 Owner：<strong><strong>；COO AI Team 支撑人：</strong></strong></td>
+<td>接口 Owner：<strong><em>_；COO AI Team 支撑人：</em></strong>_</td>
 </tr>
 <tr>
 <td>组件</td>
 <td>表单、扫码、拍照、审批、派工、看板等是否可复用？反复出现的环节是否值得沉淀为新积木？</td>
-<td>FDE：<strong><strong>；组件清单：</strong></strong></td>
+<td>FDE：<strong><em>_；组件清单：</em></strong>_</td>
 </tr>
 <tr>
 <td>权限与审计</td>
 <td>能否以用户本人身份调用接口？角色、站点和任务归属能否由系统判定？写入能否追溯到人、来源页面与版本？</td>
-<td>权限 Owner：<strong><strong>；审计位置：</strong></strong></td>
+<td>权限 Owner：<strong><em>_；审计位置：</em></strong>_</td>
 </tr>
 <tr>
 <td>数据与样例</td>
 <td>是否有授权、脱敏、可复现的测试环境与样例数据？哪些字段不能离开目标环境？</td>
-<td>数据 Owner：<strong><strong>；批准记录：</strong></strong></td>
+<td>数据 Owner：<strong><em>_；批准记录：</em></strong>_</td>
 </tr>
 <tr>
 <td>发布治理</td>
 <td>测试/生产是否隔离？定制包导入、审批、发布、停用和回退由谁负责？</td>
-<td>发布人：<strong><strong>；回退授权人：</strong></strong></td>
+<td>发布人：<strong><em>_；回退授权人：</em></strong>_</td>
 </tr>
 </tbody>
 </table>
@@ -602,7 +602,7 @@
 <h4 id="md-D1-2-4">D1.2.4 AVL｜AI Native 转型</h4>
 <p><strong>合格供应商（AVL）的 AI Native 转型。</strong>ITEM × COO AI Team × ISS Biz Team。本节依次展开：开场演示、AVL 是什么、当前困境、方向三层、Ontology、Agent Factory、ItemGPT、实现路径。</p>
 <h5 id="md-D1-2-4-1">D1.2.4.1 开场演示：先看一段演示</h5>
-<p>会中版本页嵌入本地演示视频 <code>media/avl/avl-final.mp4</code>（约 3 分 51 秒），不是外链。</p>
+<p>会中版本页嵌入本地演示视频 <code>media/avl/avl-final.mp4</code>（约 4 分 12 秒），不是外链。</p>
 <h5 id="md-D1-2-4-2">D1.2.4.2 概念对齐：AVL 是什么</h5>
 <p><strong>AVL = Approved Vendor List，合格供应商名单</strong>；服务联想 SSG，是采购的供应商主数据与工作台。</p>
 <ul>
@@ -996,7 +996,7 @@
 <td>知识</td>
 <td>可将审核 SOP 放入 UKM、Ontology 或 Skill</td>
 <td>有版本、授权、审核人、失效日期与回滚</td>
-<td>首个承载位置：<strong><strong>；Owner：</strong></strong></td>
+<td>首个承载位置：<strong><em>_；Owner：</em></strong>_</td>
 </tr>
 <tr>
 <td>数据</td>
@@ -1123,29 +1123,6 @@
 <p>视频｜供应商选择与设仓判断</p>
 <p>讨论</p>
 <p>什么时候可以给出明确选择？什么时候应指出缺口、交由人工判断？</p>
-<h5 id="md-D1-2-8-4">D1.2.8.4 先验证，再交付可复用能力</h5>
-<p>用样本验证可靠性，把证据与责任沉淀为可复用交付。</p>
-<p>小范围验证</p>
-<p>1 准备样本 ：正常 / 缺失 / 冲突</p>
-<p>2 人工核对 ：事实 / 来源 / 建议 / 边界</p>
-<p>3 验收结论 ：通过 / 改进 / 缩小或停止</p>
-<p>可复用 · 能力卡</p>
-<p>任务</p>
-<p>输入与输出</p>
-<p>来源</p>
-<p>数据与更新</p>
-<p>负责人</p>
-<p>业务验收人</p>
-<p>验收</p>
-<p>样本与通过条件</p>
-<p>异常</p>
-<p>缺口与人工处理</p>
-<p>版本</p>
-<p>变更记录与回滚点</p>
-<p>ISS待补：知识、样本、接口与责任人。</p>
-<p>建议机制 待确认 · 非已完整实现 业务提规则 → 专家审核 → 实现验证 → 业务验收 → 发布 / 回滚 验收记录：任务数 / 样本期 / 错误级别 / 人工处理成本</p>
-<p>讨论</p>
-<p>ISS 首个能力卡应覆盖哪个任务？验收标准和回滚条件由谁定义？</p>
 <h4 id="md-D1-2-9">D1.2.9 其他踩过的坑｜10 分钟</h4>
 <p><strong>预录视频留位：c09。</strong> 素材链接/文件、时长、录制日期、真实/脱敏/模拟状态及授权负责人由Tom补充；部署播放器配置对应 <code>assets/site-config.js</code> 的 <code>c09</code>。当前不引用未提供的视频。演示应对应本例正常、异常/缺失信息、人工接管、状态回写与最终结果。</p>
 <blockquote>
@@ -1367,7 +1344,16 @@
 <p>AI 招聘与面试系统按中国招聘习惯设计，用于美国招聘后收到候选人投诉。系统出海需要同步检查当地文化、法律和招聘习惯。</p>
 <p>薪资历史、婚育、年龄及家庭安排的问法需要重新审核。围绕薪酬预期、岗位技能、出差和明确的工作时间提出问题，由当地 HR 与法律顾问按联邦、州及地方规则确认适用范围。</p>
 <p>界面截图不代表其中的候选人是投诉者，也不证明列举的问题曾在该场面试中出现；截图中的姓名、面部及会话信息对外发布前须确认授权或脱敏。</p>
-<h5 id="md-D1-2-9-6">D1.2.9.6 可信 Agent：一套标准，三重保障</h5>
+<h5 id="md-D1-2-9-6">D1.2.9.6 本体准确性：四条保证措施</h5>
+<p>本体不是建完就准；准确性靠「接入—准出—执行—回流」四条措施持续保证，每条都留下可复核的证据。</p>
+<ul>
+<li><strong>高质量数据接入</strong>：优先接入可追溯、已授权、口径明确的数据；来源或口径暂不清晰的先标为待确认，补齐后再进本体；原始数据、AI 草稿、专家确认分层存放。</li>
+<li><strong>测试用例的准出执行</strong>：每次本体或规则变更跑既定用例集，覆盖正常、缺失、冲突与异常；不通过不准出，差异、版本与回归留档；门槛测试前锁定，验收中不下调。</li>
+<li><strong>标准稳定 Action 的执行</strong>：走标准接口与受控权限，不绕过系统规则；执行前校验对象、状态与条件，执行后回写结果与回执；失败、越界或高风险动作转人工并记录原因。</li>
+<li><strong>Agent 用 issue 驱动本体自迭代</strong>：真实任务遇到缺口、歧义或错误时提 issue，不自行补造；issue 进本体评审、按影响分级、修复后回归；修复进入新版本并回流用例集。</li>
+</ul>
+<p><strong>闭环：</strong>数据接入 → 用例准出 → Action 执行 → Issue 回流 → 本体新版本。</p>
+<h5 id="md-D1-2-9-7">D1.2.9.7 可信 Agent：一套标准，三重保障</h5>
 <p><strong>面向客户的核心表达：</strong>人工把好知识入口，脚本量化验证真实任务，第三方 Evaluation Agent 增加交叉评估；共同以可核验的证据支持验收与受控上线。</p>
 <p>本页结合项目方确认的三项实践与《知识库产品与 Agent 产品验收标准方案》：前期人工介入构建 Ontology 知识库、人工与自动化脚本开展量化测试、使用第三方 Evaluation Agent 进行评估。以下验收门槛与流程是方法说明；没有提供的实测成绩、第三方厂商、评估报告或安全认证不作已完成结论。</p>
 <p><strong>横向画面 1｜先约定验收标准。</strong>验收前由业务负责人明确实际开放的用户、数据、工具与动作范围。面向客户讲清三项要求：安全可控（仅使用授权数据与工具，高影响动作须预览并有效确认，取消指令生效后不得新增外部操作）；知识可信（关键结论有来源与证据支持，无证据、无权限或超范围时应拒答或提示不确定）；结果可验（关键任务留存执行记录与外部回执，核对参数和回执，以外部系统最终状态判定完成）。验收通过条件为：红线事件为 0、所有必须项通过、所有适用核心指标达标。以上均为验收要求，不是本项目已达标的声明；是否通过，以实际测试结果为准。</p>
@@ -2005,22 +1991,22 @@
 <tbody>
 <tr>
 <td><strong>① 首个共建场景与验收指标</strong></td>
-<td>场景：<strong><strong>；问题/用户：</strong></strong>；范围/排除项：<strong><strong>；业务基线与指标：</strong></strong>；测试与验收：____。</td>
+<td>场景：<strong><em>_；问题/用户：</em></strong><em>；范围/排除项：<strong><em>_；业务基线与指标：</em></strong></em>；测试与验收：____。</td>
 <td>待会议确认</td>
 </tr>
 <tr>
 <td><strong>② 联合团队与 Owner</strong></td>
-<td>ISS Biz：<strong><strong>；COO AI：</strong></strong>；ITEM：<strong><strong>；FDE/专家：</strong></strong>；数据/系统/审批/运营：<strong><strong>；COO AI Team 按需事项：</strong></strong>。</td>
+<td>ISS Biz：<strong><em>_；COO AI：</em></strong><em>；ITEM：<strong><em>_；FDE/专家：</em></strong></em>；数据/系统/审批/运营：<strong><em>_；COO AI Team 按需事项：</em></strong>_。</td>
 <td>待会议确认</td>
 </tr>
 <tr>
 <td><strong>③ 能力输入与执行边界</strong></td>
-<td>已有材料/能力：<strong><strong>；缺口：</strong></strong>；权限/部署/留存：<strong><strong>；真实执行/模拟/人工确认：</strong></strong>。</td>
+<td>已有材料/能力：<strong><em>_；缺口：</em></strong><em>；权限/部署/留存：<strong><em>_；真实执行/模拟/人工确认：</em></strong></em>。</td>
 <td>待会议确认</td>
 </tr>
 <tr>
 <td><strong>④ 推进方式与下一决策门</strong></td>
-<td>首轮阶段及交付：<strong><strong>；Owner/投入：</strong></strong>；计划时间：<strong><strong>；继续/调整/停止门：</strong></strong>；后续阶段：____。</td>
+<td>首轮阶段及交付：<strong><em>_；Owner/投入：</em></strong><em>；计划时间：<strong><em>_；继续/调整/停止门：</em></strong></em>；后续阶段：____。</td>
 <td>待会议确认</td>
 </tr>
 </tbody>
