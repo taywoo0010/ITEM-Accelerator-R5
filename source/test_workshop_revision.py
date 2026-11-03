@@ -22,6 +22,8 @@ RETIRED_PLATFORM_RISK = {
 PHASES = {f"d{number:02d}_phase{number - 51}" for number in range(52, 59)}
 REVISION_REFS = {
     "r5_platform_architecture", "r5_product_panorama", "r5_knowledge_foundation",
+    "r5_task_outcomes", "r5_task_execution", "r5_platform_mechanisms",
+    "r5_execution_controls", "r5_reusable_assets", "r5_validation_scope",
     "r5_delivery_boundaries", "r5_implementation_overview", "r5_c01_04",
 }
 
@@ -39,7 +41,7 @@ class CurrentWorkshopRevisionTests(unittest.TestCase):
         chapter3 = [page for page in self.manifest["pages"] if page["chapter"] == 3]
         chapter4 = [page for page in self.manifest["pages"] if page["chapter"] == 4]
         chapter5 = [page["id"] for page in self.manifest["pages"] if page["chapter"] == 5]
-        self.assertEqual(len(chapter3), 3)
+        self.assertEqual(len(chapter3), 9)
         self.assertEqual(len(chapter4), 1)
         self.assertEqual(
             chapter5[:4],
@@ -56,10 +58,12 @@ class CurrentWorkshopRevisionTests(unittest.TestCase):
 
     def test_product_knowledge_revision_pages_and_new_refs_exist(self):
         self.assertTrue(REVISION_REFS <= self.ids)
+        architecture = self.document.get_element_by_id("r5_platform_architecture")
         product = self.document.get_element_by_id("r5_product_panorama")
         knowledge = self.document.get_element_by_id("r5_knowledge_foundation")
         # Keep this intentionally content-level: native slide class names may evolve,
-        # while these two counts are the workshop promises being protected.
+        # while the original D1.3 promises and their counts remain protected.
+        self.assertRegex(architecture.text_content(), r"(?:7|七).*(?:5|五).*(?:2|两)")
         self.assertRegex(product.text_content(), r"22")
         self.assertRegex(knowledge.text_content(), r"(?:4|四)")
         for page in self.manifest["pages"]:
