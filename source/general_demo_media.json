@@ -34,5 +34,9 @@
   "r5_c08_01": {
     "src": "media/iceo/itembot-intro-en.mp4",
     "poster": "media/iceo/itembot-intro-en-poster.jpg"
+  },
+  "vision_ai_demo": {
+    "src": "media/vision-ai/vision-ai-en.mp4",
+    "poster": "media/vision-ai/vision-ai-en-poster.jpg"
   }
 }
