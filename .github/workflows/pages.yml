@@ -1,4 +1,4 @@
-name: Deploy ISS workshop to GitHub Pages
+name: Deploy ITEM General Demo to GitHub Pages
 
 on:
   push:
@@ -26,8 +26,10 @@ jobs:
       - name: Prepare only the public static files
         run: |
           mkdir -p _pages
-          cp index.html Item_ISS_PreRead_R5.html Item_ISS_Meeting_R5.html .nojekyll manus-routes.json _pages/
-          cp -R assets docs forms media brief meeting _pages/
+          cp index.html Item_General_Demo.html .nojekyll _pages/
+          cp -R assets media _pages/
+          mkdir -p _pages/docs
+          cp docs/Item_General_Demo.md _pages/docs/
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site

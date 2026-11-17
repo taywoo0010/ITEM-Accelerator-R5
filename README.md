@@ -1,3 +1,15 @@
+# ITEM 企业 AI 平台通用演示
+
+从 `index.html` 或 `Item_General_Demo.html` 打开演示。它以原会中版 Day 1 为素材，按平台定位、业务案例、核心能力、落地验收、试点与规模化展开。
+
+修改演示源文件后运行 `python3 source/build_general_demo.py`。所需 Python 依赖见 `requirements.txt`。GitHub Pages 使用通用演示入口、正文和媒体文件。
+
+英文视频放入 `media/` 对应案例目录。在 `source/general_demo_media.json` 中按页面 ID 配置英文 MP4，例如 `"r5_c01_video": {"src": "media/port-drayage/demo-en.mp4"}`，封面可用 `poster` 配置。重新生成后，英文模式优先播放已配置的英文视频。待补素材的页面会显示提示，并提供单独打开中文版的入口。
+
+以下为原联想工作坊的历史交付说明，供维护旧版时参考。
+
+---
+
 # ISS AI Native Workshop · R5 关联HTML安装包
 
 解压后从根目录的 `index.html` 进入。两套演示、完整MD、表单、资料和讨论记录的链接已经连好。主持人为Tom；会前版16页，会中版133页。九例展开，其中D1.2.6 Record & Reply按理念、实现、合规、复用和现场演示共六页；D1.2.2 WMS 动态表单压缩为四页；iCEO按数字分身、跨平台访问和案例分析共3页展开；其余按七段展开，其中D1.2.9.2根据Knowledge Fabric源材料拆为两页，D1.2.9另加一页WMS真实样例，并保留完整原细节。D1.3原三页之后增加六页平台机制介绍。Day2按目标蓝图、差距、路线图、IP/商业化和最终收敛组织，原六业务域、能力资产、组织、风险与七阶段材料仍可取用。
