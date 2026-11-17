@@ -26,7 +26,8 @@ jobs:
       - name: Prepare only the public static files
         run: |
           mkdir -p _pages
-          cp index.html Item_General_Demo.html .nojekyll _pages/
+          cp Item_General_Demo.html .nojekyll _pages/
+          cp Item_General_Demo.html _pages/index.html
           cp Item_General_Demo.html _pages/Item_ISS_Meeting_R5.html
           cp -R assets media _pages/
           mkdir -p _pages/docs
