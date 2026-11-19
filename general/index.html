@@ -4791,7 +4791,7 @@ html[data-theme="night"] .scene .collection-shell textarea { background:var(--bg
 (()=>{'use strict';
 const root=document.documentElement,meta=JSON.parse(document.getElementById('page-data').textContent),pages=meta.pages,scenes=[...document.querySelectorAll('.scene')],prefix='iss-r5-detailed-';
 const store={get(k,d){try{return localStorage.getItem(prefix+k)||d}catch{return d}},set(k,v){try{localStorage.setItem(prefix+k,v)}catch{}}};
-let lang=store.get('lang','zh'),theme=store.get('theme','day'),dayFilter=Number(store.get('day','0')),current=0,hidden=new Set();
+let lang=store.get('lang','en'),theme=store.get('theme','day'),dayFilter=Number(store.get('day','0')),current=0,hidden=new Set();
 if(![0,1,2].includes(dayFilter))dayFilter=0;
 try{hidden=new Set(JSON.parse(store.get('hidden','[]')).filter(id=>pages.some(p=>p.id===id)))}catch{}
 const dialogs=[...document.querySelectorAll('dialog')],safe=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
