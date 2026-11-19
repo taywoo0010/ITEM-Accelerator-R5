@@ -27,7 +27,7 @@ jobs:
         run: |
           mkdir -p _pages
           cp index.html Item_ISS_PreRead_R5.html Item_ISS_Meeting_R5.html .nojekyll manus-routes.json _pages/
-          cp -R assets docs forms media brief meeting _pages/
+          cp -R assets docs forms media brief meeting general _pages/
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site
