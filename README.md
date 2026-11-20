@@ -1,6 +1,18 @@
+# ITEM 企业 AI 平台通用演示
+
+通用演示通过 `general/` 发布，可在本地打开 `general/index.html`，首次访问默认英文。根目录的 `Item_General_Demo.html` 提供同一套演示内容。它以原会中版 Day 1 为素材，按平台定位、业务案例、核心能力、落地验收、试点与规模化展开。
+
+运行 `python3 source/build_general_demo.py` 可重新生成 `Item_General_Demo.html` 和 `docs/Item_General_Demo.md`。所需 Python 依赖见 `requirements.txt`。发布 `general/index.html` 时需同步其正文和媒体引用，并保留上级目录路径及默认英文设置。
+
+英文视频放入 `media/` 对应案例目录。在 `source/general_demo_media.json` 中按页面 ID 配置英文 MP4，例如 `"r5_c01_video": {"src": "media/port-drayage/demo-en.mp4"}`，封面可用 `poster` 配置。重新生成后，英文模式优先播放已配置的英文视频。待补素材的页面会显示提示，并提供单独打开中文版的入口。
+
+联想工作坊通过根目录的 `index.html` 进入，以下保留其交付与维护说明。
+
+---
+
 # ISS AI Native Workshop · R5 关联HTML安装包
 
-解压后从根目录的 `index.html` 进入。两套演示、完整MD、表单、资料和讨论记录的链接已经连好。主持人为Tom；会前版16页，会中版133页。九例展开，其中D1.2.6 Record & Reply按理念、实现、合规、复用和现场演示共六页；D1.2.2 WMS 动态表单压缩为四页；iCEO按数字分身、跨平台访问和案例分析共3页展开；其余按七段展开，其中D1.2.9.2根据Knowledge Fabric源材料拆为两页，D1.2.9另加一页WMS真实样例，并保留完整原细节。D1.3原三页之后增加六页平台机制介绍。Day2按目标蓝图、差距、路线图、IP/商业化和最终收敛组织，原六业务域、能力资产、组织、风险与七阶段材料仍可取用。
+解压后从根目录的 `index.html` 进入。两套演示、完整MD、表单、资料和讨论记录的链接已经连好。主持人为Tom；会前版16页，会中版133页。九例展开，其中D1.2.6 Record & Replay按理念、实现、合规、复用和现场演示共六页；D1.2.2 WMS 动态表单压缩为四页；iCEO按数字分身、跨平台访问和案例分析共3页展开；其余按七段展开，其中D1.2.9.2根据Knowledge Fabric源材料拆为两页，D1.2.9另加一页WMS真实样例，并保留完整原细节。D1.3原三页之后增加六页平台机制介绍。Day2按目标蓝图、差距、路线图、IP/商业化和最终收敛组织，原六业务域、能力资产、组织、风险与七阶段材料仍可取用。
 
 ## 1. 本机打开
 

@@ -107,7 +107,7 @@ def normalize_kicker(doc,slide,page,reader,case_titles):
                 topic='概览' if lang=='zh' else 'Overview'
             topics[lang]=names[lang]+' · '+topic
     elif page['md']=='D1.2.0':
-        topics={'zh':'九案例总览','en':'Nine-case overview'}
+        topics={'zh':page['title'],'en':page['en']}
     prefix=('DAY '+str(page['day']) if page['day'] else 'R5')+' · MD §'+' / '.join(page['refs'])+' · '
     kicker.clear()
     kicker.append(prefix)
@@ -115,7 +115,7 @@ def normalize_kicker(doc,slide,page,reader,case_titles):
         topic=doc.new_tag('span');topic['class']=[lang];topic.string=topics[lang];kicker.append(topic)
 
 
-def build(kind):
+def build(kind, case_count=9):
     meta=json.loads((SOURCE/(kind+'_manifest.json')).read_text())
     deck=ROOT/'slides-source'/kind
     if not deck.is_dir():deck=Path(meta['project_dir'])
@@ -128,7 +128,7 @@ def build(kind):
             number=heading.select_one('.num')
             if number:
                 case_titles[int(number.get_text(strip=True))]={lang:heading.select_one('.'+lang).get_text(' ',strip=True) for lang in ['zh','en']}
-        if set(case_titles)!=set(range(1,10)):raise ValueError('Expected nine case titles in overview')
+        if set(case_titles)!=set(range(1,case_count+1)):raise ValueError(f'Expected {case_count} case titles in overview')
     scenes=[];styles=[];titles=[]
     actual_form={'brief':'prework','detailed':'convergence'}[kind]
     for i,p in enumerate(meta['pages']):
